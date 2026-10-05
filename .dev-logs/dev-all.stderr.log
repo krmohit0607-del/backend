@@ -1,0 +1,2 @@
+npm notice run fleetview-webapp@0.1.0 dev:all
+npm notice run concurrently -k -n "BACKEND,FRONTEND" -c "magenta.bold,cyan.bold" "npm run backend:run" "npm run dev"
