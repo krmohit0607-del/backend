@@ -39,14 +39,22 @@ try
             options.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
         });
 
-    // 5. CORS
+    // 5. CORS — explicit origins (+ Vercel preview URLs) are required because the
+    // frontend sends credentials (cookies/Authorization) with cross-origin requests,
+    // which browsers block when the response uses a wildcard "*" origin.
+    var allowedOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>()
+        ?? Array.Empty<string>();
+
     builder.Services.AddCors(options =>
     {
-        options.AddPolicy("AllowAll", policy =>
+        options.AddPolicy("Frontend", policy =>
         {
-            policy.AllowAnyOrigin()
+            policy.SetIsOriginAllowed(origin =>
+                      allowedOrigins.Contains(origin) ||
+                      System.Text.RegularExpressions.Regex.IsMatch(origin, @"^https://[a-z0-9-]+\.vercel\.app$"))
                   .AllowAnyMethod()
-                  .AllowAnyHeader();
+                  .AllowAnyHeader()
+                  .AllowCredentials();
         });
     });
 
@@ -136,7 +144,7 @@ try
 
     app.UseSerilogRequestLogging();
     app.UseHttpsRedirection();
-    app.UseCors("AllowAll");
+    app.UseCors("Frontend");
 
     app.UseAuthentication();
     app.UseAuthorization();
