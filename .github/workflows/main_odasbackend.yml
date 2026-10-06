@@ -8,7 +8,7 @@ on:
 
 env:
   AZURE_WEBAPP_NAME: odasbackend
-  PROJECT_PATH: https://github.com/krmohit0607-del/backend/tree/main/src/MultiTenantSaaS.API.csproj
+  PROJECT_PATH: src/MultiTenantSaaS.API/MultiTenantSaaS.API.csproj
   DOTNET_VERSION: '8.0.x'
 
 jobs:
