@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6515D615-CF53-14D3-A790-EA07B5FDD40A}|src\\MultiTenantSaaS.API\\MultiTenantSaaS.API.csproj|c:\\users\\chmokum\\source\\repos\\backend\\src\\multitenantsaas.api\\properties\\publishprofiles\\odasbackend - zip deploy.pubxml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{6515D615-CF53-14D3-A790-EA07B5FDD40A}|src\\MultiTenantSaaS.API\\MultiTenantSaaS.API.csproj|solutionrelative:src\\multitenantsaas.api\\properties\\publishprofiles\\odasbackend - zip deploy.pubxml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{6515D615-CF53-14D3-A790-EA07B5FDD40A}|src\\MultiTenantSaaS.API\\MultiTenantSaaS.API.csproj|c:\\users\\chmokum\\source\\repos\\backend\\src\\multitenantsaas.api\\dotnet-tools.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6515D615-CF53-14D3-A790-EA07B5FDD40A}|src\\MultiTenantSaaS.API\\MultiTenantSaaS.API.csproj|solutionrelative:src\\multitenantsaas.api\\dotnet-tools.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6515D615-CF53-14D3-A790-EA07B5FDD40A}|src\\MultiTenantSaaS.API\\MultiTenantSaaS.API.csproj|c:\\users\\chmokum\\source\\repos\\backend\\src\\multitenantsaas.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -27,14 +27,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Odasbackend - Zip Deploy.pubxml",
-              "DocumentMoniker": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.API\\Properties\\PublishProfiles\\Odasbackend - Zip Deploy.pubxml",
-              "RelativeDocumentMoniker": "src\\MultiTenantSaaS.API\\Properties\\PublishProfiles\\Odasbackend - Zip Deploy.pubxml",
-              "ToolTip": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.API\\Properties\\PublishProfiles\\Odasbackend - Zip Deploy.pubxml",
-              "RelativeToolTip": "src\\MultiTenantSaaS.API\\Properties\\PublishProfiles\\Odasbackend - Zip Deploy.pubxml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2026-10-06T15:49:31.942Z",
+              "Title": "dotnet-tools.json",
+              "DocumentMoniker": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.API\\dotnet-tools.json",
+              "RelativeDocumentMoniker": "src\\MultiTenantSaaS.API\\dotnet-tools.json",
+              "ToolTip": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.API\\dotnet-tools.json",
+              "RelativeToolTip": "src\\MultiTenantSaaS.API\\dotnet-tools.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-10-06T17:22:40.514Z",
               "EditorCaption": ""
             },
             {
@@ -45,7 +45,7 @@
               "RelativeDocumentMoniker": "src\\MultiTenantSaaS.API\\appsettings.json",
               "ToolTip": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.API\\appsettings.json",
               "RelativeToolTip": "src\\MultiTenantSaaS.API\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-10-06T14:19:48.318Z",
               "EditorCaption": ""
