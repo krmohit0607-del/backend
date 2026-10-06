@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MultiTenantSaaS.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+83a14e6966e2cf578dd1d567bb4695473ad96a30")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1020a577b5b142a3649c91cb6600212499907aee")]
 [assembly: System.Reflection.AssemblyProductAttribute("MultiTenantSaaS.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MultiTenantSaaS.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

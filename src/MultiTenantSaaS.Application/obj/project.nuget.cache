@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "B78kgbxbRP0=",
+  "dgSpecHash": "F/yJIp1wIxs=",
   "success": true,
   "projectFilePath": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Application\\MultiTenantSaaS.Application.csproj",
   "expectedPackageFiles": [
@@ -35,7 +35,8 @@
       "filePath": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Application\\MultiTenantSaaS.Application.csproj",
       "libraryId": "AutoMapper",
       "targetGraphs": [
-        "net8.0"
+        "net8.0",
+        "net8.0/linux-x64"
       ]
     }
   ]

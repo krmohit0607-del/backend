@@ -1,7 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6515D615-CF53-14D3-A790-EA07B5FDD40A}|src\\MultiTenantSaaS.API\\MultiTenantSaaS.API.csproj|c:\\users\\chmokum\\source\\repos\\backend\\src\\multitenantsaas.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6515D615-CF53-14D3-A790-EA07B5FDD40A}|src\\MultiTenantSaaS.API\\MultiTenantSaaS.API.csproj|solutionrelative:src\\multitenantsaas.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +14,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.API\\appsettings.json",
+              "RelativeDocumentMoniker": "src\\MultiTenantSaaS.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.API\\appsettings.json",
+              "RelativeToolTip": "src\\MultiTenantSaaS.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-10-06T14:19:48.318Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",

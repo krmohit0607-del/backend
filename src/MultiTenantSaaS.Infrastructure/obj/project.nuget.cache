@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "RO54H8tquP0=",
+  "dgSpecHash": "nA3fV1Xenew=",
   "success": true,
   "projectFilePath": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Infrastructure\\MultiTenantSaaS.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -103,7 +103,8 @@
       "filePath": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Infrastructure\\MultiTenantSaaS.Infrastructure.csproj",
       "libraryId": "Microsoft.Extensions.Http",
       "targetGraphs": [
-        "net8.0"
+        "net8.0",
+        "net8.0/linux-x64"
       ]
     }
   ]
