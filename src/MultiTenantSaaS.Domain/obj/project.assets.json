@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 3,
   "targets": {
     "net8.0": {
       "Microsoft.AspNetCore.Cryptography.Internal/8.0.8": {
@@ -565,11 +565,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Domain\\MultiTenantSaaS.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Domain\\MultiTenantSaaS.Domain.csproj",
       "projectName": "MultiTenantSaaS.Domain",
-      "projectPath": "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Domain\\MultiTenantSaaS.Domain.csproj",
+      "projectPath": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Domain\\MultiTenantSaaS.Domain.csproj",
       "packagesPath": "C:\\Users\\CHMOKUM\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Domain\\obj\\",
+      "outputPath": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -589,7 +589,6 @@
       },
       "frameworks": {
         "net8.0": {
-          "framework": "net8.0",
           "targetAlias": "net8.0",
           "projectReferences": {}
         }
@@ -604,11 +603,10 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "10.0.400"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
-        "framework": "net8.0",
         "targetAlias": "net8.0",
         "dependencies": {
           "Microsoft.Extensions.Identity.Stores": {
@@ -632,7 +630,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.318/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

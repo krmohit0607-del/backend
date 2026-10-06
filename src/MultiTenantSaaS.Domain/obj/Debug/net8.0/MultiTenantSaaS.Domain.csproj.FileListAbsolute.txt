@@ -11,3 +11,16 @@ C:\Users\CHMOKUM\source\repos\STEM\backend\src\MultiTenantSaaS.Domain\obj\Debug\
 C:\Users\CHMOKUM\source\repos\STEM\backend\src\MultiTenantSaaS.Domain\obj\Debug\net8.0\refint\MultiTenantSaaS.Domain.dll
 C:\Users\CHMOKUM\source\repos\STEM\backend\src\MultiTenantSaaS.Domain\obj\Debug\net8.0\MultiTenantSaaS.Domain.pdb
 C:\Users\CHMOKUM\source\repos\STEM\backend\src\MultiTenantSaaS.Domain\obj\Debug\net8.0\ref\MultiTenantSaaS.Domain.dll
+C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.Domain\bin\Debug\net8.0\MultiTenantSaaS.Domain.deps.json
+C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.Domain\bin\Debug\net8.0\MultiTenantSaaS.Domain.dll
+C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.Domain\bin\Debug\net8.0\MultiTenantSaaS.Domain.pdb
+C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.Domain\obj\Debug\net8.0\MultiTenantSaaS.Domain.csproj.AssemblyReference.cache
+C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.Domain\obj\Debug\net8.0\MultiTenantSaaS.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.Domain\obj\Debug\net8.0\MultiTenantSaaS.Domain.AssemblyInfoInputs.cache
+C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.Domain\obj\Debug\net8.0\MultiTenantSaaS.Domain.AssemblyInfo.cs
+C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.Domain\obj\Debug\net8.0\MultiTenantSaaS.Domain.csproj.CoreCompileInputs.cache
+C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.Domain\obj\Debug\net8.0\MultiTenantSaaS.Domain.sourcelink.json
+C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.Domain\obj\Debug\net8.0\MultiTenantSaaS.Domain.dll
+C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.Domain\obj\Debug\net8.0\refint\MultiTenantSaaS.Domain.dll
+C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.Domain\obj\Debug\net8.0\MultiTenantSaaS.Domain.pdb
+C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.Domain\obj\Debug\net8.0\ref\MultiTenantSaaS.Domain.dll

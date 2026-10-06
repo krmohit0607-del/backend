@@ -1,5 +1,211 @@
 [
   {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.AccountsController",
+    "Method": "GetTransactions",
+    "RelativePath": "api/accounts/transactions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Collections.Generic.List\u00601[[MultiTenantSaaS.Application.DTOs.Accounts.FinancialTransactionDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.AccountsController",
+    "Method": "CreateTransaction",
+    "RelativePath": "api/accounts/transactions",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.Accounts.CreateFinancialTransactionRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Accounts.FinancialTransactionDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 201
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.AccountsController",
+    "Method": "UpdateTransaction",
+    "RelativePath": "api/accounts/transactions/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.Accounts.UpdateFinancialTransactionRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Accounts.FinancialTransactionDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.AccountsController",
+    "Method": "GetTransaction",
+    "RelativePath": "api/accounts/transactions/{idOrNo}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idOrNo",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Accounts.FinancialTransactionDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.AdditionalServicesController",
+    "Method": "GetAdditionalServices",
+    "RelativePath": "api/additional-services",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "voyageId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.AdditionalServicesController",
+    "Method": "CreateAdditionalService",
+    "RelativePath": "api/additional-services",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.AdditionalServices.CreateAdditionalServiceRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.AdditionalServicesController",
+    "Method": "GetAdditionalServiceById",
+    "RelativePath": "api/additional-services/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.AdditionalServicesController",
+    "Method": "UpdateAdditionalService",
+    "RelativePath": "api/additional-services/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.AdditionalServices.UpdateAdditionalServiceRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.AdditionalServicesController",
+    "Method": "DeleteAdditionalService",
+    "RelativePath": "api/additional-services/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MultiTenantSaaS.API.Controllers.AdminController",
     "Method": "SetEmployeePermissions",
     "RelativePath": "api/admin/employee-permissions",
@@ -185,6 +391,176 @@
     ]
   },
   {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.AgentInvoicesController",
+    "Method": "GetAgentInvoices",
+    "RelativePath": "api/agent-invoices",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "voyageId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.AgentInvoicesController",
+    "Method": "CreateAgentInvoice",
+    "RelativePath": "api/agent-invoices",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.AgentInvoices.CreateAgentInvoiceRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.AgentInvoicesController",
+    "Method": "GetAgentInvoiceById",
+    "RelativePath": "api/agent-invoices/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.AgentInvoicesController",
+    "Method": "UpdateAgentInvoice",
+    "RelativePath": "api/agent-invoices/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.AgentInvoices.UpdateAgentInvoiceRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.AgentInvoicesController",
+    "Method": "DeleteAgentInvoice",
+    "RelativePath": "api/agent-invoices/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.AreaConstraintsController",
+    "Method": "GetAreaConstraints",
+    "RelativePath": "api/area-constraints",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "constraintType",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.AreaConstraintsController",
+    "Method": "CreateAreaConstraint",
+    "RelativePath": "api/area-constraints",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.AreaConstraints.CreateAreaConstraintRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.AreaConstraintsController",
+    "Method": "GetAreaConstraintById",
+    "RelativePath": "api/area-constraints/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.AreaConstraintsController",
+    "Method": "UpdateAreaConstraint",
+    "RelativePath": "api/area-constraints/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.AreaConstraints.UpdateAreaConstraintRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.AreaConstraintsController",
+    "Method": "DeleteAreaConstraint",
+    "RelativePath": "api/area-constraints/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MultiTenantSaaS.API.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/auth/login",
@@ -281,6 +657,1305 @@
     ]
   },
   {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.BunkerController",
+    "Method": "GetRequirements",
+    "RelativePath": "api/bunker/requirements",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Collections.Generic.List\u00601[[MultiTenantSaaS.Application.DTOs.Bunker.BunkerRequirementDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.BunkerController",
+    "Method": "CreateRequirement",
+    "RelativePath": "api/bunker/requirements",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.Bunker.CreateBunkerRequirementRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Bunker.BunkerRequirementDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 201
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.BunkerController",
+    "Method": "UpdateRequirement",
+    "RelativePath": "api/bunker/requirements/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.Bunker.UpdateBunkerRequirementRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Bunker.BunkerRequirementDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.BunkerController",
+    "Method": "DeleteRequirement",
+    "RelativePath": "api/bunker/requirements/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.BunkerController",
+    "Method": "GetRequirement",
+    "RelativePath": "api/bunker/requirements/{idOrNo}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idOrNo",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Bunker.BunkerRequirementDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.CargoMastersController",
+    "Method": "GetCargoMasters",
+    "RelativePath": "api/cargo-masters",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "imoClass",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Collections.Generic.List\u00601[[MultiTenantSaaS.Application.DTOs.CargoMasters.CargoMasterDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.CargoMastersController",
+    "Method": "CreateCargoMaster",
+    "RelativePath": "api/cargo-masters",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.CargoMasters.CreateCargoMasterRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.CargoMasters.CargoMasterDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 201
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.CargoMastersController",
+    "Method": "GetCargoMasterById",
+    "RelativePath": "api/cargo-masters/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.CargoMasters.CargoMasterDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.CargoMastersController",
+    "Method": "UpdateCargoMaster",
+    "RelativePath": "api/cargo-masters/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.CargoMasters.UpdateCargoMasterRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.CargoMasters.CargoMasterDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.CargoMastersController",
+    "Method": "DeleteCargoMaster",
+    "RelativePath": "api/cargo-masters/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.CargoMastersController",
+    "Method": "GetCargoMasterByCode",
+    "RelativePath": "api/cargo-masters/by-code/{cargoCode}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cargoCode",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.CargoMasters.CargoMasterDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.CharteringController",
+    "Method": "GetCargoBook",
+    "RelativePath": "api/chartering/books/cargo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Collections.Generic.List\u00601[[MultiTenantSaaS.Application.DTOs.Chartering.CargoBookDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.CharteringController",
+    "Method": "GetTonnageBook",
+    "RelativePath": "api/chartering/books/tonnage",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Collections.Generic.List\u00601[[MultiTenantSaaS.Application.DTOs.Chartering.TonnageBookDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.CharteringController",
+    "Method": "CalculateEstimate",
+    "RelativePath": "api/chartering/calculate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dataJson",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Chartering.VoyageEstimateCalculationDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.CharteringController",
+    "Method": "GetCalculationDetails",
+    "RelativePath": "api/chartering/calculate-details",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dataJson",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Chartering.CalculationDetailResultDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.CharteringController",
+    "Method": "CalculateLoadableQuantity",
+    "RelativePath": "api/chartering/calculate-loadable-quantity",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MultiTenantSaaS.API.Controllers.CalculateLoadableQuantityRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Chartering.LoadableQuantityDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.CharteringController",
+    "Method": "CalculateBunkerROB",
+    "RelativePath": "api/chartering/calculate-rob",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MultiTenantSaaS.API.Controllers.CalculateBunkerRobRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Chartering.BunkerRobCalculationResultDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.CharteringController",
+    "Method": "GetEstimates",
+    "RelativePath": "api/chartering/estimates",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Collections.Generic.List\u00601[[MultiTenantSaaS.Application.DTOs.Chartering.VoyageEstimateDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.CharteringController",
+    "Method": "UpsertEstimate",
+    "RelativePath": "api/chartering/estimates",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.Chartering.CreateVoyageEstimateRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Chartering.VoyageEstimateDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.CharteringController",
+    "Method": "DeleteEstimate",
+    "RelativePath": "api/chartering/estimates/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.CharteringController",
+    "Method": "AutoSaveEstimate",
+    "RelativePath": "api/chartering/estimates/auto-save",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.Chartering.CreateVoyageEstimateRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Chartering.VoyageEstimateDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.CharteringController",
+    "Method": "ValidateEstimate",
+    "RelativePath": "api/chartering/validate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dataJson",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Chartering.EstimationValidationResultDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.ClaimRecordsController",
+    "Method": "GetClaimRecords",
+    "RelativePath": "api/claim-records",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "voyageId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.ClaimRecordsController",
+    "Method": "CreateClaimRecord",
+    "RelativePath": "api/claim-records",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.ClaimRecords.CreateClaimRecordRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.ClaimRecordsController",
+    "Method": "GetClaimRecordById",
+    "RelativePath": "api/claim-records/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.ClaimRecordsController",
+    "Method": "UpdateClaimRecord",
+    "RelativePath": "api/claim-records/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.ClaimRecords.UpdateClaimRecordRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.ClaimRecordsController",
+    "Method": "DeleteClaimRecord",
+    "RelativePath": "api/claim-records/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.ClientsController",
+    "Method": "GetClients",
+    "RelativePath": "api/clients",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Collections.Generic.List\u00601[[MultiTenantSaaS.Application.DTOs.Clients.ClientDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.ClientsController",
+    "Method": "CreateClient",
+    "RelativePath": "api/clients",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.Clients.CreateClientRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Clients.ClientDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 201
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.ClientsController",
+    "Method": "GetClientById",
+    "RelativePath": "api/clients/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Clients.ClientDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.ClientsController",
+    "Method": "UpdateClient",
+    "RelativePath": "api/clients/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.Clients.UpdateClientRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Clients.ClientDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.ClientsController",
+    "Method": "DeleteClient",
+    "RelativePath": "api/clients/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.CyclonesController",
+    "Method": "GetActive",
+    "RelativePath": "api/cyclones/active",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.EmailDistributionListsController",
+    "Method": "GetEmailDistributionLists",
+    "RelativePath": "api/email-distribution-lists",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.EmailDistributionListsController",
+    "Method": "CreateEmailDistributionList",
+    "RelativePath": "api/email-distribution-lists",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.EmailDistributionLists.CreateEmailDistributionListRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.EmailDistributionListsController",
+    "Method": "GetEmailDistributionListById",
+    "RelativePath": "api/email-distribution-lists/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.EmailDistributionListsController",
+    "Method": "UpdateEmailDistributionList",
+    "RelativePath": "api/email-distribution-lists/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.EmailDistributionLists.UpdateEmailDistributionListRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.EmailDistributionListsController",
+    "Method": "DeleteEmailDistributionList",
+    "RelativePath": "api/email-distribution-lists/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.EmailTemplatesController",
+    "Method": "GetEmailTemplates",
+    "RelativePath": "api/email-templates",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "category",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Collections.Generic.List\u00601[[MultiTenantSaaS.Application.DTOs.EmailTemplates.EmailTemplateDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.EmailTemplatesController",
+    "Method": "CreateEmailTemplate",
+    "RelativePath": "api/email-templates",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.EmailTemplates.CreateEmailTemplateRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.EmailTemplates.EmailTemplateDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 201
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.EmailTemplatesController",
+    "Method": "GetEmailTemplateById",
+    "RelativePath": "api/email-templates/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.EmailTemplates.EmailTemplateDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.EmailTemplatesController",
+    "Method": "UpdateEmailTemplate",
+    "RelativePath": "api/email-templates/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.EmailTemplates.UpdateEmailTemplateRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.EmailTemplates.EmailTemplateDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.EmailTemplatesController",
+    "Method": "DeleteEmailTemplate",
+    "RelativePath": "api/email-templates/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.EmissionsController",
+    "Method": "GetAllEmissions",
+    "RelativePath": "api/emissions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Collections.Generic.List\u00601[[MultiTenantSaaS.Application.DTOs.Emissions.EmissionsRecordDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.EmissionsController",
+    "Method": "SaveEmissionsRecord",
+    "RelativePath": "api/emissions",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.Emissions.SaveEmissionsRecordRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Emissions.EmissionsRecordDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.EmissionsController",
+    "Method": "GetEmissionsByVoyage",
+    "RelativePath": "api/emissions/{voyageCode}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "voyageCode",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Emissions.EmissionsRecordDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.EmissionsController",
+    "Method": "CreateScenario",
+    "RelativePath": "api/emissions/scenarios",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.Emissions.SaveEmissionsScenarioRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Emissions.EmissionsScenarioDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.EmissionsController",
+    "Method": "UpdateScenario",
+    "RelativePath": "api/emissions/scenarios/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.Emissions.SaveEmissionsScenarioRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Emissions.EmissionsScenarioDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.EmissionsController",
+    "Method": "DeleteScenario",
+    "RelativePath": "api/emissions/scenarios/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.EmissionsController",
+    "Method": "GetScenarios",
+    "RelativePath": "api/emissions/scenarios/{voyageCode}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "voyageCode",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Collections.Generic.List\u00601[[MultiTenantSaaS.Application.DTOs.Emissions.EmissionsScenarioDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "MultiTenantSaaS.API.Controllers.EmployeeController",
     "Method": "GetMyModules",
     "RelativePath": "api/employee/my-modules",
@@ -299,6 +1974,223 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.EnumerationValuesController",
+    "Method": "GetEnumerationValues",
+    "RelativePath": "api/enumeration-values",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "type",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.EnumerationValuesController",
+    "Method": "CreateEnumerationValue",
+    "RelativePath": "api/enumeration-values",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.EnumerationValues.CreateEnumerationValueRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.EnumerationValuesController",
+    "Method": "GetEnumerationValueById",
+    "RelativePath": "api/enumeration-values/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.EnumerationValuesController",
+    "Method": "UpdateEnumerationValue",
+    "RelativePath": "api/enumeration-values/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.EnumerationValues.UpdateEnumerationValueRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.EnumerationValuesController",
+    "Method": "DeleteEnumerationValue",
+    "RelativePath": "api/enumeration-values/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.FinalDisbursementsController",
+    "Method": "GetFinalDisbursements",
+    "RelativePath": "api/final-disbursements",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "voyageId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.FinalDisbursementsController",
+    "Method": "CreateFinalDisbursement",
+    "RelativePath": "api/final-disbursements",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.FinalDisbursements.CreateFinalDisbursementRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.FinalDisbursementsController",
+    "Method": "GetFinalDisbursementById",
+    "RelativePath": "api/final-disbursements/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.FinalDisbursementsController",
+    "Method": "UpdateFinalDisbursement",
+    "RelativePath": "api/final-disbursements/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.FinalDisbursements.UpdateFinalDisbursementRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.FinalDisbursementsController",
+    "Method": "DeleteFinalDisbursement",
+    "RelativePath": "api/final-disbursements/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.HirePaymentsController",
+    "Method": "GetHirePayments",
+    "RelativePath": "api/hire-payments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "voyageId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "side",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "openOnly",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.HirePaymentsController",
+    "Method": "GetHirePaymentById",
+    "RelativePath": "api/hire-payments/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "MultiTenantSaaS.API.Controllers.InventoryController",
@@ -404,6 +2296,698 @@
     ]
   },
   {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.InvoiceDocumentsController",
+    "Method": "Extract",
+    "RelativePath": "api/invoice-documents/extract",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MultiTenantSaaS.API.Controllers.InvoiceDocumentsController\u002BExtractRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.LaytimeCalculationsController",
+    "Method": "GetLaytimeCalculations",
+    "RelativePath": "api/laytime-calculations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "voyageId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.LaytimeCalculationsController",
+    "Method": "CreateLaytimeCalculation",
+    "RelativePath": "api/laytime-calculations",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.LaytimeCalculations.CreateLaytimeCalculationRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.LaytimeCalculationsController",
+    "Method": "GetLaytimeCalculationById",
+    "RelativePath": "api/laytime-calculations/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.LaytimeCalculationsController",
+    "Method": "UpdateLaytimeCalculation",
+    "RelativePath": "api/laytime-calculations/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.LaytimeCalculations.UpdateLaytimeCalculationRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.LaytimeCalculationsController",
+    "Method": "DeleteLaytimeCalculation",
+    "RelativePath": "api/laytime-calculations/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.PassagesController",
+    "Method": "GetPassageById",
+    "RelativePath": "api/passages/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Voyages.PassageDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.PassagesController",
+    "Method": "UpdatePassage",
+    "RelativePath": "api/passages/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.Passages.UpdatePassageRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Voyages.PassageDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.PassagesController",
+    "Method": "DeletePassage",
+    "RelativePath": "api/passages/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.PerformanceController",
+    "Method": "GetReport",
+    "RelativePath": "api/performance/report",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "voyageId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Performance.PerformanceReportResponseDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.PerformanceController",
+    "Method": "SaveReport",
+    "RelativePath": "api/performance/report",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "voyageId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.Performance.SavePerformanceReportRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Performance.PerformanceReportResponseDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.PerformanceController",
+    "Method": "GetTracksheet",
+    "RelativePath": "api/performance/tracksheet",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "voyageId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Collections.Generic.List\u00601[[MultiTenantSaaS.Application.DTOs.Performance.TracksheetRowDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.PerformanceController",
+    "Method": "SaveTracksheet",
+    "RelativePath": "api/performance/tracksheet",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "voyageId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.Performance.SaveTracksheetRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Collections.Generic.List\u00601[[MultiTenantSaaS.Application.DTOs.Performance.TracksheetRowDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.ProFormaDisbursementsController",
+    "Method": "GetProFormaDisbursements",
+    "RelativePath": "api/pro-forma-disbursements",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "voyageId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.ProFormaDisbursementsController",
+    "Method": "CreateProFormaDisbursement",
+    "RelativePath": "api/pro-forma-disbursements",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.ProFormaDisbursements.CreateProFormaDisbursementRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.ProFormaDisbursementsController",
+    "Method": "GetProFormaDisbursementById",
+    "RelativePath": "api/pro-forma-disbursements/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.ProFormaDisbursementsController",
+    "Method": "UpdateProFormaDisbursement",
+    "RelativePath": "api/pro-forma-disbursements/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.ProFormaDisbursements.UpdateProFormaDisbursementRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.ProFormaDisbursementsController",
+    "Method": "DeleteProFormaDisbursement",
+    "RelativePath": "api/pro-forma-disbursements/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.SavedPassagesController",
+    "Method": "GetSavedPassages",
+    "RelativePath": "api/saved-passages",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.SavedPassagesController",
+    "Method": "CreateSavedPassage",
+    "RelativePath": "api/saved-passages",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.SavedPassages.CreateSavedPassageRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.SavedPassagesController",
+    "Method": "GetSavedPassageById",
+    "RelativePath": "api/saved-passages/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.SavedPassagesController",
+    "Method": "UpdateSavedPassage",
+    "RelativePath": "api/saved-passages/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.SavedPassages.UpdateSavedPassageRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.SavedPassagesController",
+    "Method": "DeleteSavedPassage",
+    "RelativePath": "api/saved-passages/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.SettingsController",
+    "Method": "Get",
+    "RelativePath": "api/settings/{key}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "key",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.API.Controllers.SettingResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.SettingsController",
+    "Method": "Put",
+    "RelativePath": "api/settings/{key}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "key",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "MultiTenantSaaS.API.Controllers.SettingRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.API.Controllers.SettingResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.SettingsController",
+    "Method": "SaveImoShips",
+    "RelativePath": "api/settings/master-data/imo-ships",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MultiTenantSaaS.Application.Features.Settings.Commands.SaveImoShipsRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.SettingsController",
+    "Method": "SavePorts",
+    "RelativePath": "api/settings/master-data/ports",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MultiTenantSaaS.Application.Features.Settings.Commands.SavePortsRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.SettlementMilestonesController",
+    "Method": "GetSettlementMilestones",
+    "RelativePath": "api/settlement-milestones",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "voyageId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.SettlementMilestonesController",
+    "Method": "CreateSettlementMilestone",
+    "RelativePath": "api/settlement-milestones",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.SettlementMilestones.CreateSettlementMilestoneRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.SettlementMilestonesController",
+    "Method": "GetSettlementMilestoneById",
+    "RelativePath": "api/settlement-milestones/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.SettlementMilestonesController",
+    "Method": "UpdateSettlementMilestone",
+    "RelativePath": "api/settlement-milestones/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.SettlementMilestones.UpdateSettlementMilestoneRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.SettlementMilestonesController",
+    "Method": "DeleteSettlementMilestone",
+    "RelativePath": "api/settlement-milestones/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MultiTenantSaaS.API.Controllers.SuperAdminController",
     "Method": "CreateAdmin",
     "RelativePath": "api/superadmin/admins",
@@ -455,6 +3039,41 @@
           "text/json"
         ],
         "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.SuperAdminController",
+    "Method": "DeleteTenant",
+    "RelativePath": "api/superadmin/admins/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
       }
     ]
   },
@@ -624,6 +3243,96 @@
     ]
   },
   {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.SuperAdminController",
+    "Method": "GetTenantUsers",
+    "RelativePath": "api/superadmin/tenants/{tenantId}/users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tenantId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.SuperAdminController",
+    "Method": "CreateTenantUser",
+    "RelativePath": "api/superadmin/tenants/users",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.SuperAdmin.CreateTenantUserRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.SuperAdminController",
+    "Method": "UpdateTenantUser",
+    "RelativePath": "api/superadmin/tenants/users/{userId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.SuperAdmin.UpdateTenantUserRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.SuperAdminController",
+    "Method": "DeleteTenantUser",
+    "RelativePath": "api/superadmin/tenants/users/{userId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.SuperAdminController",
+    "Method": "SetTenantUserPermissions",
+    "RelativePath": "api/superadmin/tenants/users/{userId}/permissions",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.SuperAdmin.TenantUserPermissionDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MultiTenantSaaS.API.Controllers.UsersController",
     "Method": "GetMe",
     "RelativePath": "api/users/me",
@@ -651,5 +3360,860 @@
         "StatusCode": 401
       }
     ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.VesselReportsController",
+    "Method": "GetReports",
+    "RelativePath": "api/vessel-reports",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "imo",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "voyageCode",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Collections.Generic.List\u00601[[MultiTenantSaaS.Application.DTOs.VesselReports.VesselReportDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.VesselReportsController",
+    "Method": "SubmitReport",
+    "RelativePath": "api/vessel-reports",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.VesselReports.SubmitVesselReportRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.VesselReports.VesselReportDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 201
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.VesselReportsController",
+    "Method": "GetReport",
+    "RelativePath": "api/vessel-reports/{idOrNo}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idOrNo",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.VesselReports.VesselReportDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.VesselReportsController",
+    "Method": "GetVoyageProgress",
+    "RelativePath": "api/vessel-reports/progress",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "imo",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "voyageCode",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.VesselReports.VoyageProgressDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.VesselsController",
+    "Method": "GetVessels",
+    "RelativePath": "api/vessels",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Collections.Generic.List\u00601[[MultiTenantSaaS.Application.DTOs.Vessels.VesselDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.VesselsController",
+    "Method": "CreateVessel",
+    "RelativePath": "api/vessels",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.Vessels.CreateVesselRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Vessels.VesselDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.VesselsController",
+    "Method": "UpdateVessel",
+    "RelativePath": "api/vessels/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.Vessels.UpdateVesselRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Vessels.VesselDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.VesselsController",
+    "Method": "DeleteVessel",
+    "RelativePath": "api/vessels/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.VesselsController",
+    "Method": "GetVessel",
+    "RelativePath": "api/vessels/{idOrImo}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idOrImo",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Vessels.VesselDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.VoyageOrdersController",
+    "Method": "GetVoyageOrders",
+    "RelativePath": "api/voyage-orders",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.VoyageOrdersController",
+    "Method": "CreateVoyageOrder",
+    "RelativePath": "api/voyage-orders",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.VoyageOrders.CreateVoyageOrderRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.VoyageOrdersController",
+    "Method": "GetVoyageOrderById",
+    "RelativePath": "api/voyage-orders/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.VoyageOrdersController",
+    "Method": "UpdateVoyageOrder",
+    "RelativePath": "api/voyage-orders/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.VoyageOrders.UpdateVoyageOrderRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.VoyageOrdersController",
+    "Method": "DeleteVoyageOrder",
+    "RelativePath": "api/voyage-orders/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.VoyageRecapsController",
+    "Method": "GetVoyageRecaps",
+    "RelativePath": "api/voyage-recaps",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "voyageId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.VoyageRecapsController",
+    "Method": "CreateVoyageRecap",
+    "RelativePath": "api/voyage-recaps",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.VoyageRecaps.CreateVoyageRecapRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.VoyageRecapsController",
+    "Method": "GetVoyageRecapById",
+    "RelativePath": "api/voyage-recaps/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.VoyageRecapsController",
+    "Method": "UpdateVoyageRecap",
+    "RelativePath": "api/voyage-recaps/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.VoyageRecaps.UpdateVoyageRecapRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.VoyageRecapsController",
+    "Method": "DeleteVoyageRecap",
+    "RelativePath": "api/voyage-recaps/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.VoyagesController",
+    "Method": "GetVoyages",
+    "RelativePath": "api/voyages",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Collections.Generic.List\u00601[[MultiTenantSaaS.Application.DTOs.Voyages.VoyageDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.VoyagesController",
+    "Method": "CreateVoyage",
+    "RelativePath": "api/voyages",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.Voyages.CreateVoyageRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Voyages.VoyageDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 201
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.VoyagesController",
+    "Method": "UpdateVoyage",
+    "RelativePath": "api/voyages/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.Voyages.UpdateVoyageRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Voyages.VoyageDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.VoyagesController",
+    "Method": "DeleteVoyage",
+    "RelativePath": "api/voyages/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.VoyagesController",
+    "Method": "GetVoyageById",
+    "RelativePath": "api/voyages/{idOrCode}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idOrCode",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Voyages.VoyageDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.VoyagesController",
+    "Method": "SetActivePassage",
+    "RelativePath": "api/voyages/{voyageId}/active-passage",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "voyageId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.API.Controllers.SetActivePassageRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Voyages.VoyageDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.VoyagesController",
+    "Method": "GetVoyagePassages",
+    "RelativePath": "api/voyages/{voyageId}/passages",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "voyageId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[System.Collections.Generic.List\u00601[[MultiTenantSaaS.Application.DTOs.Voyages.PassageDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.VoyagesController",
+    "Method": "CreateVoyagePassage",
+    "RelativePath": "api/voyages/{voyageId}/passages",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "voyageId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.Passages.CreatePassageRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse\u00601[[MultiTenantSaaS.Application.DTOs.Voyages.PassageDto, MultiTenantSaaS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 201
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.VoyagesController",
+    "Method": "DeleteAllVoyages",
+    "RelativePath": "api/voyages/admin/delete-all",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "MultiTenantSaaS.Application.Common.Models.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.WeatherController",
+    "Method": "GetGrid",
+    "RelativePath": "api/weather/grid",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "factorId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "timestamp",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "south",
+        "Type": "System.Double",
+        "IsRequired": false
+      },
+      {
+        "Name": "west",
+        "Type": "System.Double",
+        "IsRequired": false
+      },
+      {
+        "Name": "north",
+        "Type": "System.Double",
+        "IsRequired": false
+      },
+      {
+        "Name": "east",
+        "Type": "System.Double",
+        "IsRequired": false
+      },
+      {
+        "Name": "cols",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "rows",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.WorkflowConfigurationsController",
+    "Method": "GetWorkflowConfigurations",
+    "RelativePath": "api/workflow-configurations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.WorkflowConfigurationsController",
+    "Method": "CreateWorkflowConfiguration",
+    "RelativePath": "api/workflow-configurations",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.WorkflowConfigurations.CreateWorkflowConfigurationRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.WorkflowConfigurationsController",
+    "Method": "GetWorkflowConfigurationById",
+    "RelativePath": "api/workflow-configurations/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.WorkflowConfigurationsController",
+    "Method": "UpdateWorkflowConfiguration",
+    "RelativePath": "api/workflow-configurations/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MultiTenantSaaS.Application.DTOs.WorkflowConfigurations.UpdateWorkflowConfigurationRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MultiTenantSaaS.API.Controllers.WorkflowConfigurationsController",
+    "Method": "DeleteWorkflowConfiguration",
+    "RelativePath": "api/workflow-configurations/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zlGTFMGk/Cw=",
+  "dgSpecHash": "RV6GCmZq9yc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Domain\\MultiTenantSaaS.Domain.csproj",
+  "projectFilePath": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Domain\\MultiTenantSaaS.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\CHMOKUM\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.8\\microsoft.aspnetcore.cryptography.internal.8.0.8.nupkg.sha512",
     "C:\\Users\\CHMOKUM\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\8.0.8\\microsoft.aspnetcore.cryptography.keyderivation.8.0.8.nupkg.sha512",

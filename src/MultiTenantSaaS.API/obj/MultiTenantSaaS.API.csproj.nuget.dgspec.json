@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.API\\MultiTenantSaaS.API.csproj": {}
+    "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.API\\MultiTenantSaaS.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.API\\MultiTenantSaaS.API.csproj": {
+    "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.API\\MultiTenantSaaS.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.API\\MultiTenantSaaS.API.csproj",
+        "projectUniqueName": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.API\\MultiTenantSaaS.API.csproj",
         "projectName": "MultiTenantSaaS.API",
-        "projectPath": "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.API\\MultiTenantSaaS.API.csproj",
+        "projectPath": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.API\\MultiTenantSaaS.API.csproj",
         "packagesPath": "C:\\Users\\CHMOKUM\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.API\\obj\\",
+        "outputPath": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -31,17 +31,16 @@
         },
         "frameworks": {
           "net8.0": {
-            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Application\\MultiTenantSaaS.Application.csproj": {
-                "projectPath": "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Application\\MultiTenantSaaS.Application.csproj"
+              "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Application\\MultiTenantSaaS.Application.csproj": {
+                "projectPath": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Application\\MultiTenantSaaS.Application.csproj"
               },
-              "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Domain\\MultiTenantSaaS.Domain.csproj": {
-                "projectPath": "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Domain\\MultiTenantSaaS.Domain.csproj"
+              "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Domain\\MultiTenantSaaS.Domain.csproj": {
+                "projectPath": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Domain\\MultiTenantSaaS.Domain.csproj"
               },
-              "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Infrastructure\\MultiTenantSaaS.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Infrastructure\\MultiTenantSaaS.Infrastructure.csproj"
+              "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Infrastructure\\MultiTenantSaaS.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Infrastructure\\MultiTenantSaaS.Infrastructure.csproj"
               }
             }
           }
@@ -56,11 +55,10 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.400"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
-          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore.Design": {
@@ -105,18 +103,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.318/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Application\\MultiTenantSaaS.Application.csproj": {
+    "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Application\\MultiTenantSaaS.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Application\\MultiTenantSaaS.Application.csproj",
+        "projectUniqueName": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Application\\MultiTenantSaaS.Application.csproj",
         "projectName": "MultiTenantSaaS.Application",
-        "projectPath": "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Application\\MultiTenantSaaS.Application.csproj",
+        "projectPath": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Application\\MultiTenantSaaS.Application.csproj",
         "packagesPath": "C:\\Users\\CHMOKUM\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Application\\obj\\",
+        "outputPath": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -136,11 +134,10 @@
         },
         "frameworks": {
           "net8.0": {
-            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Domain\\MultiTenantSaaS.Domain.csproj": {
-                "projectPath": "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Domain\\MultiTenantSaaS.Domain.csproj"
+              "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Domain\\MultiTenantSaaS.Domain.csproj": {
+                "projectPath": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Domain\\MultiTenantSaaS.Domain.csproj"
               }
             }
           }
@@ -155,11 +152,10 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.400"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
-          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "AutoMapper": {
@@ -199,18 +195,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.318/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Domain\\MultiTenantSaaS.Domain.csproj": {
+    "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Domain\\MultiTenantSaaS.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Domain\\MultiTenantSaaS.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Domain\\MultiTenantSaaS.Domain.csproj",
         "projectName": "MultiTenantSaaS.Domain",
-        "projectPath": "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Domain\\MultiTenantSaaS.Domain.csproj",
+        "projectPath": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Domain\\MultiTenantSaaS.Domain.csproj",
         "packagesPath": "C:\\Users\\CHMOKUM\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Domain\\obj\\",
+        "outputPath": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -230,7 +226,6 @@
         },
         "frameworks": {
           "net8.0": {
-            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {}
           }
@@ -245,11 +240,10 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.400"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
-          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "Microsoft.Extensions.Identity.Stores": {
@@ -273,18 +267,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.318/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Infrastructure\\MultiTenantSaaS.Infrastructure.csproj": {
+    "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Infrastructure\\MultiTenantSaaS.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Infrastructure\\MultiTenantSaaS.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Infrastructure\\MultiTenantSaaS.Infrastructure.csproj",
         "projectName": "MultiTenantSaaS.Infrastructure",
-        "projectPath": "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Infrastructure\\MultiTenantSaaS.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Infrastructure\\MultiTenantSaaS.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\CHMOKUM\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -304,14 +298,13 @@
         },
         "frameworks": {
           "net8.0": {
-            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Application\\MultiTenantSaaS.Application.csproj": {
-                "projectPath": "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Application\\MultiTenantSaaS.Application.csproj"
+              "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Application\\MultiTenantSaaS.Application.csproj": {
+                "projectPath": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Application\\MultiTenantSaaS.Application.csproj"
               },
-              "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Domain\\MultiTenantSaaS.Domain.csproj": {
-                "projectPath": "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Domain\\MultiTenantSaaS.Domain.csproj"
+              "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Domain\\MultiTenantSaaS.Domain.csproj": {
+                "projectPath": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Domain\\MultiTenantSaaS.Domain.csproj"
               }
             }
           }
@@ -326,11 +319,10 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.400"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
-          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
@@ -376,7 +368,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.318/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

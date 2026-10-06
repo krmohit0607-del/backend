@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wLR1/BVmu0w=",
+  "dgSpecHash": "FW3WuAfoNP4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\tests\\MultiTenantSaaS.UnitTests\\MultiTenantSaaS.UnitTests.csproj",
+  "projectFilePath": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\tests\\MultiTenantSaaS.UnitTests\\MultiTenantSaaS.UnitTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\CHMOKUM\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\CHMOKUM\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
@@ -186,9 +186,9 @@
       "code": "NU1603",
       "level": "Warning",
       "message": "MultiTenantSaaS.Infrastructure depends on Microsoft.Extensions.Http (>= 8.0.8) but Microsoft.Extensions.Http 8.0.8 was not found. Microsoft.Extensions.Http 9.0.0 was resolved instead.",
-      "projectPath": "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\tests\\MultiTenantSaaS.UnitTests\\MultiTenantSaaS.UnitTests.csproj",
+      "projectPath": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\tests\\MultiTenantSaaS.UnitTests\\MultiTenantSaaS.UnitTests.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\tests\\MultiTenantSaaS.UnitTests\\MultiTenantSaaS.UnitTests.csproj",
+      "filePath": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\tests\\MultiTenantSaaS.UnitTests\\MultiTenantSaaS.UnitTests.csproj",
       "libraryId": "Microsoft.Extensions.Http",
       "targetGraphs": [
         "net8.0"

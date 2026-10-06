@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nhToCtDesQ4=",
+  "dgSpecHash": "B78kgbxbRP0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Application\\MultiTenantSaaS.Application.csproj",
+  "projectFilePath": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Application\\MultiTenantSaaS.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\CHMOKUM\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\CHMOKUM\\.nuget\\packages\\fluentvalidation\\11.9.2\\fluentvalidation.11.9.2.nupkg.sha512",
@@ -30,9 +30,9 @@
       "code": "NU1903",
       "level": "Warning",
       "message": "Package 'AutoMapper' 13.0.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-rvv3-g6hj-g44x",
-      "projectPath": "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Application\\MultiTenantSaaS.Application.csproj",
+      "projectPath": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Application\\MultiTenantSaaS.Application.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\CHMOKUM\\source\\repos\\STEM\\backend\\src\\MultiTenantSaaS.Application\\MultiTenantSaaS.Application.csproj",
+      "filePath": "C:\\Users\\CHMOKUM\\source\\repos\\backend\\src\\MultiTenantSaaS.Application\\MultiTenantSaaS.Application.csproj",
       "libraryId": "AutoMapper",
       "targetGraphs": [
         "net8.0"
