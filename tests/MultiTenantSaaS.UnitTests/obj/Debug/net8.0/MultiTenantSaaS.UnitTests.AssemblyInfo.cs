@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MultiTenantSaaS.UnitTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8a884b62aff607b0cb3083b5201f20c741965a35")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+83a14e6966e2cf578dd1d567bb4695473ad96a30")]
 [assembly: System.Reflection.AssemblyProductAttribute("MultiTenantSaaS.UnitTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MultiTenantSaaS.UnitTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
