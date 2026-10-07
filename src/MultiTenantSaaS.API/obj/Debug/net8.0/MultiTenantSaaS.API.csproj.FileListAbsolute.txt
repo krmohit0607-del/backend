@@ -351,10 +351,13 @@ C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.API\obj\Debug\net8.0\s
 C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.API\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.API\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.API\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.API\obj\Debug\net8.0\MultiTen.BA728426.Up2Date
 C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.API\obj\Debug\net8.0\MultiTenantSaaS.API.dll
 C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.API\obj\Debug\net8.0\refint\MultiTenantSaaS.API.dll
 C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.API\obj\Debug\net8.0\MultiTenantSaaS.API.pdb
 C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.API\obj\Debug\net8.0\MultiTenantSaaS.API.genruntimeconfig.cache
 C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.API\obj\Debug\net8.0\ref\MultiTenantSaaS.API.dll
+C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.API\bin\Debug\net8.0\dotnet-tools.json
+C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.API\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.API\bin\Debug\net8.0\System.ClientModel.dll
+C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.API\obj\Debug\net8.0\swae.build.ex.cache

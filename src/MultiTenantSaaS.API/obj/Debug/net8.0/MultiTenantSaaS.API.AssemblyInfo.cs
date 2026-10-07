@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MultiTenantSaaS.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0045f46dec6e396d17511ec72d0cfa266b7a1db3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb6006d6489e7ed2d7fd88ae464f4025cbce8646")]
 [assembly: System.Reflection.AssemblyProductAttribute("MultiTenantSaaS.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MultiTenantSaaS.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
