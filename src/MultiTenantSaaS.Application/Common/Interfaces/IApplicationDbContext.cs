@@ -51,6 +51,8 @@ public interface IApplicationDbContext
     DbSet<SavedPassage> SavedPassages { get; }
     DbSet<WorkflowConfiguration> WorkflowConfigurations { get; }
     DbSet<WeatherGridSnapshot> WeatherGridSnapshots { get; }
+    DbSet<MultiTenantSaaS.Domain.Entities.Optimization.OptimizationRun> OptimizationRuns { get; }
+    DbSet<MultiTenantSaaS.Domain.Entities.Optimization.OptimizationScenarioResult> OptimizationScenarioResults { get; }
 
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }

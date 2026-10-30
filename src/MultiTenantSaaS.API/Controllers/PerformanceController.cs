@@ -157,6 +157,26 @@ public class PerformanceController : ControllerBase
         }));
     }
 
+    /// <summary>
+    /// The wind/wave weather-factor calibration table (global reference data,
+    /// not tenant-scoped) — fetched once by the frontend and cached, used for
+    /// every wind/wave factor lookup during Tracksheet "Validate".
+    /// </summary>
+    [HttpGet("weather-factors")]
+    [ProducesResponseType(typeof(ApiResponse<List<WeatherFactorEntryDto>>), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetWeatherFactors()
+    {
+        var entries = await _db.WeatherFactorEntries.AsNoTracking().ToListAsync();
+        return Ok(ApiResponse<List<WeatherFactorEntryDto>>.SuccessResult(entries.Select(e => new WeatherFactorEntryDto
+        {
+            Weather = e.Weather,
+            DeadWeight = e.DeadWeight,
+            Magnitude = e.Magnitude,
+            Angle = e.Angle,
+            Value = e.Value,
+        }).ToList()));
+    }
+
     private static TracksheetRowDto MapToDto(TracksheetRow r) => new()
     {
         Id = r.Id.ToString(),

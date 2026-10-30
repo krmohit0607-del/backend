@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using MultiTenantSaaS.Application.Common.Interfaces;
 using MultiTenantSaaS.Domain.Common;
 using MultiTenantSaaS.Domain.Entities;
+using MultiTenantSaaS.Domain.Entities.Optimization;
 using MultiTenantSaaS.Domain.Enums;
 using Module = MultiTenantSaaS.Domain.Entities.Module;
 
@@ -71,6 +72,8 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, Applicati
     public DbSet<SavedPassage> SavedPassages => Set<SavedPassage>();
     public DbSet<WorkflowConfiguration> WorkflowConfigurations => Set<WorkflowConfiguration>();
     public DbSet<WeatherGridSnapshot> WeatherGridSnapshots => Set<WeatherGridSnapshot>();
+    public DbSet<OptimizationRun> OptimizationRuns => Set<OptimizationRun>();
+    public DbSet<OptimizationScenarioResult> OptimizationScenarioResults => Set<OptimizationScenarioResult>();
 
     public Guid? CurrentTenantId => _currentUserService?.TenantId;
     public string? CurrentUserRole => _currentUserService?.Role;

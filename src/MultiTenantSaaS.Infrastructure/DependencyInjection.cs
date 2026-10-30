@@ -10,6 +10,7 @@ using MultiTenantSaaS.Domain.Entities;
 using MultiTenantSaaS.Infrastructure.Identity;
 using MultiTenantSaaS.Infrastructure.Persistence;
 using MultiTenantSaaS.Infrastructure.Services;
+using MultiTenantSaaS.Infrastructure.Services.Optimization;
 
 namespace MultiTenantSaaS.Infrastructure;
 
@@ -98,6 +99,7 @@ public static class DependencyInjection
         services.AddHttpClient();
         services.AddSingleton<ICycloneDataService, CycloneDataService>();
         services.AddScoped<IWeatherDataService, WeatherDataService>();
+        services.AddScoped<IRouteOptimizationEngine, RouteOptimizationEngine>();
 
         return services;
     }

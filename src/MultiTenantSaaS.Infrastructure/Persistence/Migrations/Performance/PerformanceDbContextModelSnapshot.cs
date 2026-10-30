@@ -17,7 +17,7 @@ namespace MultiTenantSaaS.Infrastructure.Persistence.Migrations.Performance
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.8")
+                .HasAnnotation("ProductVersion", "8.0.14")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -215,6 +215,13862 @@ namespace MultiTenantSaaS.Infrastructure.Persistence.Migrations.Performance
                         .HasFilter("[TenantId] IS NOT NULL");
 
                     b.ToTable("VoyagePerformanceReports", (string)null);
+                });
+
+            modelBuilder.Entity("MultiTenantSaaS.Domain.Entities.Performance.WeatherFactorEntry", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<double>("Angle")
+                        .HasColumnType("float");
+
+                    b.Property<double>("DeadWeight")
+                        .HasColumnType("float");
+
+                    b.Property<double>("Magnitude")
+                        .HasColumnType("float");
+
+                    b.Property<double>("Value")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Weather")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Weather", "DeadWeight", "Magnitude", "Angle");
+
+                    b.ToTable("WeatherFactorEntries", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000001"),
+                            Angle = 0.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 4.0,
+                            Value = -0.19,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000002"),
+                            Angle = 0.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 4.0,
+                            Value = -0.17000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000003"),
+                            Angle = 0.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 4.0,
+                            Value = -0.14999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000004"),
+                            Angle = 0.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 4.0,
+                            Value = -0.14000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000005"),
+                            Angle = 0.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 4.0,
+                            Value = -0.10000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000006"),
+                            Angle = 0.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 4.0,
+                            Value = -0.080000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000007"),
+                            Angle = 0.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 4.0,
+                            Value = -0.070000000000000007,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000008"),
+                            Angle = 0.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 4.0,
+                            Value = -0.059999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000009"),
+                            Angle = 0.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 4.0,
+                            Value = -0.040000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000000a"),
+                            Angle = 0.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 4.0,
+                            Value = -0.040000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000000b"),
+                            Angle = 0.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 4.0,
+                            Value = -0.029999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000000c"),
+                            Angle = 0.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 4.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000000d"),
+                            Angle = 0.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 5.0,
+                            Value = -0.56999999999999995,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000000e"),
+                            Angle = 0.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 5.0,
+                            Value = -0.51000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000000f"),
+                            Angle = 0.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 5.0,
+                            Value = -0.45000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000010"),
+                            Angle = 0.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 5.0,
+                            Value = -0.40000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000011"),
+                            Angle = 0.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 5.0,
+                            Value = -0.31,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000012"),
+                            Angle = 0.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 5.0,
+                            Value = -0.23999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000013"),
+                            Angle = 0.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 5.0,
+                            Value = -0.20000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000014"),
+                            Angle = 0.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 5.0,
+                            Value = -0.17000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000015"),
+                            Angle = 0.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 5.0,
+                            Value = -0.14999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000016"),
+                            Angle = 0.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 5.0,
+                            Value = -0.10000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000017"),
+                            Angle = 0.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 5.0,
+                            Value = -0.089999999999999997,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000018"),
+                            Angle = 0.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 5.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000019"),
+                            Angle = 0.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 6.0,
+                            Value = -0.87,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000001a"),
+                            Angle = 0.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 6.0,
+                            Value = -0.79000000000000004,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000001b"),
+                            Angle = 0.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 6.0,
+                            Value = -0.68000000000000005,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000001c"),
+                            Angle = 0.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 6.0,
+                            Value = -0.60999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000001d"),
+                            Angle = 0.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 6.0,
+                            Value = -0.53000000000000003,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000001e"),
+                            Angle = 0.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 6.0,
+                            Value = -0.45000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000001f"),
+                            Angle = 0.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 6.0,
+                            Value = -0.34000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000020"),
+                            Angle = 0.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 6.0,
+                            Value = -0.26000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000021"),
+                            Angle = 0.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 6.0,
+                            Value = -0.16,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000022"),
+                            Angle = 0.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 6.0,
+                            Value = -0.14000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000023"),
+                            Angle = 0.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 6.0,
+                            Value = -0.089999999999999997,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000024"),
+                            Angle = 0.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 6.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000025"),
+                            Angle = 0.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 7.0,
+                            Value = -1.6200000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000026"),
+                            Angle = 0.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 7.0,
+                            Value = -1.47,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000027"),
+                            Angle = 0.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 7.0,
+                            Value = -1.26,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000028"),
+                            Angle = 0.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 7.0,
+                            Value = -1.1399999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000029"),
+                            Angle = 0.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 7.0,
+                            Value = -1.0,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000002a"),
+                            Angle = 0.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 7.0,
+                            Value = -0.94999999999999996,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000002b"),
+                            Angle = 0.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 7.0,
+                            Value = -0.92000000000000004,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000002c"),
+                            Angle = 0.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 7.0,
+                            Value = -0.85999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000002d"),
+                            Angle = 0.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 7.0,
+                            Value = -0.84999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000002e"),
+                            Angle = 0.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 7.0,
+                            Value = -0.81999999999999995,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000002f"),
+                            Angle = 0.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 7.0,
+                            Value = -0.69999999999999996,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000030"),
+                            Angle = 0.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 7.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000031"),
+                            Angle = 0.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 8.0,
+                            Value = -2.1899999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000032"),
+                            Angle = 0.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 8.0,
+                            Value = -2.0699999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000033"),
+                            Angle = 0.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 8.0,
+                            Value = -1.95,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000034"),
+                            Angle = 0.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 8.0,
+                            Value = -1.8600000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000035"),
+                            Angle = 0.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 8.0,
+                            Value = -1.78,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000036"),
+                            Angle = 0.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 8.0,
+                            Value = -1.6899999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000037"),
+                            Angle = 0.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 8.0,
+                            Value = -1.55,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000038"),
+                            Angle = 0.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 8.0,
+                            Value = -1.52,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000039"),
+                            Angle = 0.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 8.0,
+                            Value = -1.5,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000003a"),
+                            Angle = 0.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 8.0,
+                            Value = -1.3100000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000003b"),
+                            Angle = 0.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 8.0,
+                            Value = -1.3100000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000003c"),
+                            Angle = 0.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 8.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000003d"),
+                            Angle = 0.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 9.0,
+                            Value = -2.8399999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000003e"),
+                            Angle = 0.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 9.0,
+                            Value = -2.7799999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000003f"),
+                            Angle = 0.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 9.0,
+                            Value = -2.6099999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000040"),
+                            Angle = 0.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 9.0,
+                            Value = -2.5299999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000041"),
+                            Angle = 0.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 9.0,
+                            Value = -2.48,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000042"),
+                            Angle = 0.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 9.0,
+                            Value = -2.4199999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000043"),
+                            Angle = 0.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 9.0,
+                            Value = -2.3599999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000044"),
+                            Angle = 0.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 9.0,
+                            Value = -2.27,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000045"),
+                            Angle = 0.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 9.0,
+                            Value = -2.1899999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000046"),
+                            Angle = 0.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 9.0,
+                            Value = -2.0899999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000047"),
+                            Angle = 0.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 9.0,
+                            Value = -2.04,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000048"),
+                            Angle = 0.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 9.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000049"),
+                            Angle = 0.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 10.0,
+                            Value = -3.9300000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000004a"),
+                            Angle = 0.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 10.0,
+                            Value = -3.8500000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000004b"),
+                            Angle = 0.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 10.0,
+                            Value = -3.6099999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000004c"),
+                            Angle = 0.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 10.0,
+                            Value = -3.5,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000004d"),
+                            Angle = 0.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 10.0,
+                            Value = -3.4199999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000004e"),
+                            Angle = 0.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 10.0,
+                            Value = -3.3399999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000004f"),
+                            Angle = 0.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 10.0,
+                            Value = -3.2599999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000050"),
+                            Angle = 0.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 10.0,
+                            Value = -3.1499999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000051"),
+                            Angle = 0.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 10.0,
+                            Value = -3.04,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000052"),
+                            Angle = 0.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 10.0,
+                            Value = -2.8999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000053"),
+                            Angle = 0.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 10.0,
+                            Value = -2.8199999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000054"),
+                            Angle = 0.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 10.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000055"),
+                            Angle = 11.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 4.0,
+                            Value = -0.17000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000056"),
+                            Angle = 11.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 4.0,
+                            Value = -0.14999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000057"),
+                            Angle = 11.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 4.0,
+                            Value = -0.13,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000058"),
+                            Angle = 11.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 4.0,
+                            Value = -0.12,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000059"),
+                            Angle = 11.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 4.0,
+                            Value = -0.089999999999999997,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000005a"),
+                            Angle = 11.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 4.0,
+                            Value = -0.070000000000000007,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000005b"),
+                            Angle = 11.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 4.0,
+                            Value = -0.059999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000005c"),
+                            Angle = 11.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 4.0,
+                            Value = -0.050000000000000003,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000005d"),
+                            Angle = 11.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 4.0,
+                            Value = -0.040000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000005e"),
+                            Angle = 11.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 4.0,
+                            Value = -0.029999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000005f"),
+                            Angle = 11.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 4.0,
+                            Value = -0.02,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000060"),
+                            Angle = 11.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 4.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000061"),
+                            Angle = 11.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 5.0,
+                            Value = -0.51000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000062"),
+                            Angle = 11.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 5.0,
+                            Value = -0.46000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000063"),
+                            Angle = 11.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 5.0,
+                            Value = -0.40000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000064"),
+                            Angle = 11.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 5.0,
+                            Value = -0.35999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000065"),
+                            Angle = 11.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 5.0,
+                            Value = -0.27000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000066"),
+                            Angle = 11.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 5.0,
+                            Value = -0.20999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000067"),
+                            Angle = 11.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 5.0,
+                            Value = -0.17999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000068"),
+                            Angle = 11.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 5.0,
+                            Value = -0.14999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000069"),
+                            Angle = 11.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 5.0,
+                            Value = -0.13,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000006a"),
+                            Angle = 11.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 5.0,
+                            Value = -0.089999999999999997,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000006b"),
+                            Angle = 11.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 5.0,
+                            Value = -0.080000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000006c"),
+                            Angle = 11.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 5.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000006d"),
+                            Angle = 11.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 6.0,
+                            Value = -0.78000000000000003,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000006e"),
+                            Angle = 11.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 6.0,
+                            Value = -0.70999999999999996,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000006f"),
+                            Angle = 11.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 6.0,
+                            Value = -0.60999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000070"),
+                            Angle = 11.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 6.0,
+                            Value = -0.55000000000000004,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000071"),
+                            Angle = 11.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 6.0,
+                            Value = -0.47999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000072"),
+                            Angle = 11.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 6.0,
+                            Value = -0.40000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000073"),
+                            Angle = 11.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 6.0,
+                            Value = -0.29999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000074"),
+                            Angle = 11.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 6.0,
+                            Value = -0.23999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000075"),
+                            Angle = 11.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 6.0,
+                            Value = -0.14000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000076"),
+                            Angle = 11.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 6.0,
+                            Value = -0.12,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000077"),
+                            Angle = 11.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 6.0,
+                            Value = -0.080000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000078"),
+                            Angle = 11.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 6.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000079"),
+                            Angle = 11.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 7.0,
+                            Value = -1.4399999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000007a"),
+                            Angle = 11.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 7.0,
+                            Value = -1.3100000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000007b"),
+                            Angle = 11.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 7.0,
+                            Value = -1.1200000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000007c"),
+                            Angle = 11.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 7.0,
+                            Value = -1.02,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000007d"),
+                            Angle = 11.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 7.0,
+                            Value = -0.90000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000007e"),
+                            Angle = 11.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 7.0,
+                            Value = -0.84999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000007f"),
+                            Angle = 11.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 7.0,
+                            Value = -0.81999999999999995,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000080"),
+                            Angle = 11.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 7.0,
+                            Value = -0.77000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000081"),
+                            Angle = 11.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 7.0,
+                            Value = -0.76000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000082"),
+                            Angle = 11.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 7.0,
+                            Value = -0.72999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000083"),
+                            Angle = 11.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 7.0,
+                            Value = -0.63,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000084"),
+                            Angle = 11.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 7.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000085"),
+                            Angle = 11.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 8.0,
+                            Value = -1.9199999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000086"),
+                            Angle = 11.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 8.0,
+                            Value = -1.8200000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000087"),
+                            Angle = 11.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 8.0,
+                            Value = -1.71,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000088"),
+                            Angle = 11.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 8.0,
+                            Value = -1.6299999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000089"),
+                            Angle = 11.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 8.0,
+                            Value = -1.5600000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000008a"),
+                            Angle = 11.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 8.0,
+                            Value = -1.48,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000008b"),
+                            Angle = 11.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 8.0,
+                            Value = -1.3600000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000008c"),
+                            Angle = 11.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 8.0,
+                            Value = -1.3400000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000008d"),
+                            Angle = 11.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 8.0,
+                            Value = -1.3200000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000008e"),
+                            Angle = 11.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 8.0,
+                            Value = -1.1499999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000008f"),
+                            Angle = 11.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 8.0,
+                            Value = -1.1499999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000090"),
+                            Angle = 11.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 8.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000091"),
+                            Angle = 11.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 9.0,
+                            Value = -2.4900000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000092"),
+                            Angle = 11.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 9.0,
+                            Value = -2.4399999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000093"),
+                            Angle = 11.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 9.0,
+                            Value = -2.29,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000094"),
+                            Angle = 11.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 9.0,
+                            Value = -2.2200000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000095"),
+                            Angle = 11.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 9.0,
+                            Value = -2.1699999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000096"),
+                            Angle = 11.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 9.0,
+                            Value = -2.1200000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000097"),
+                            Angle = 11.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 9.0,
+                            Value = -2.0699999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000098"),
+                            Angle = 11.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 9.0,
+                            Value = -1.99,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000099"),
+                            Angle = 11.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 9.0,
+                            Value = -1.9199999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000009a"),
+                            Angle = 11.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 9.0,
+                            Value = -1.8300000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000009b"),
+                            Angle = 11.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 9.0,
+                            Value = -1.79,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000009c"),
+                            Angle = 11.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 9.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000009d"),
+                            Angle = 11.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 10.0,
+                            Value = -3.4500000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000009e"),
+                            Angle = 11.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 10.0,
+                            Value = -3.3799999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000009f"),
+                            Angle = 11.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 10.0,
+                            Value = -3.1699999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000a0"),
+                            Angle = 11.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 10.0,
+                            Value = -3.0699999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000a1"),
+                            Angle = 11.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 10.0,
+                            Value = -3.0,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000a2"),
+                            Angle = 11.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 10.0,
+                            Value = -2.9300000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000a3"),
+                            Angle = 11.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 10.0,
+                            Value = -2.8599999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000a4"),
+                            Angle = 11.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 10.0,
+                            Value = -2.7599999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000a5"),
+                            Angle = 11.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 10.0,
+                            Value = -2.6600000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000a6"),
+                            Angle = 11.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 10.0,
+                            Value = -2.54,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000a7"),
+                            Angle = 11.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 10.0,
+                            Value = -2.48,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000a8"),
+                            Angle = 11.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 10.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000a9"),
+                            Angle = 45.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 4.0,
+                            Value = -0.14999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000aa"),
+                            Angle = 45.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 4.0,
+                            Value = -0.13,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000ab"),
+                            Angle = 45.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 4.0,
+                            Value = -0.11,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000ac"),
+                            Angle = 45.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 4.0,
+                            Value = -0.10000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000ad"),
+                            Angle = 45.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 4.0,
+                            Value = -0.080000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000ae"),
+                            Angle = 45.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 4.0,
+                            Value = -0.059999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000af"),
+                            Angle = 45.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 4.0,
+                            Value = -0.050000000000000003,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000b0"),
+                            Angle = 45.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 4.0,
+                            Value = -0.040000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000b1"),
+                            Angle = 45.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 4.0,
+                            Value = -0.040000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000b2"),
+                            Angle = 45.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 4.0,
+                            Value = -0.02,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000b3"),
+                            Angle = 45.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 4.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000b4"),
+                            Angle = 45.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 4.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000b5"),
+                            Angle = 45.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 5.0,
+                            Value = -0.45000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000b6"),
+                            Angle = 45.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 5.0,
+                            Value = -0.40999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000b7"),
+                            Angle = 45.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 5.0,
+                            Value = -0.34999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000b8"),
+                            Angle = 45.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 5.0,
+                            Value = -0.32000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000b9"),
+                            Angle = 45.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 5.0,
+                            Value = -0.23000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000ba"),
+                            Angle = 45.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 5.0,
+                            Value = -0.17999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000bb"),
+                            Angle = 45.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 5.0,
+                            Value = -0.16,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000bc"),
+                            Angle = 45.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 5.0,
+                            Value = -0.13,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000bd"),
+                            Angle = 45.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 5.0,
+                            Value = -0.11,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000be"),
+                            Angle = 45.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 5.0,
+                            Value = -0.080000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000bf"),
+                            Angle = 45.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 5.0,
+                            Value = -0.070000000000000007,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000c0"),
+                            Angle = 45.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 5.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000c1"),
+                            Angle = 45.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 6.0,
+                            Value = -0.68999999999999995,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000c2"),
+                            Angle = 45.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 6.0,
+                            Value = -0.63,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000c3"),
+                            Angle = 45.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 6.0,
+                            Value = -0.54000000000000004,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000c4"),
+                            Angle = 45.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 6.0,
+                            Value = -0.48999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000c5"),
+                            Angle = 45.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 6.0,
+                            Value = -0.42999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000c6"),
+                            Angle = 45.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 6.0,
+                            Value = -0.34999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000c7"),
+                            Angle = 45.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 6.0,
+                            Value = -0.26000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000c8"),
+                            Angle = 45.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 6.0,
+                            Value = -0.22,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000c9"),
+                            Angle = 45.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 6.0,
+                            Value = -0.12,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000ca"),
+                            Angle = 45.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 6.0,
+                            Value = -0.10000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000cb"),
+                            Angle = 45.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 6.0,
+                            Value = -0.070000000000000007,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000cc"),
+                            Angle = 45.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 6.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000cd"),
+                            Angle = 45.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 7.0,
+                            Value = -1.26,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000ce"),
+                            Angle = 45.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 7.0,
+                            Value = -1.1499999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000cf"),
+                            Angle = 45.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 7.0,
+                            Value = -0.97999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000d0"),
+                            Angle = 45.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 7.0,
+                            Value = -0.90000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000d1"),
+                            Angle = 45.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 7.0,
+                            Value = -0.80000000000000004,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000d2"),
+                            Angle = 45.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 7.0,
+                            Value = -0.75,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000d3"),
+                            Angle = 45.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 7.0,
+                            Value = -0.71999999999999997,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000d4"),
+                            Angle = 45.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 7.0,
+                            Value = -0.68000000000000005,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000d5"),
+                            Angle = 45.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 7.0,
+                            Value = -0.67000000000000004,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000d6"),
+                            Angle = 45.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 7.0,
+                            Value = -0.64000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000d7"),
+                            Angle = 45.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 7.0,
+                            Value = -0.56000000000000005,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000d8"),
+                            Angle = 45.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 7.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000d9"),
+                            Angle = 45.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 8.0,
+                            Value = -1.6499999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000da"),
+                            Angle = 45.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 8.0,
+                            Value = -1.5700000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000db"),
+                            Angle = 45.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 8.0,
+                            Value = -1.47,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000dc"),
+                            Angle = 45.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 8.0,
+                            Value = -1.3999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000dd"),
+                            Angle = 45.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 8.0,
+                            Value = -1.3400000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000de"),
+                            Angle = 45.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 8.0,
+                            Value = -1.27,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000df"),
+                            Angle = 45.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 8.0,
+                            Value = -1.1699999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000e0"),
+                            Angle = 45.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 8.0,
+                            Value = -1.1599999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000e1"),
+                            Angle = 45.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 8.0,
+                            Value = -1.1399999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000e2"),
+                            Angle = 45.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 8.0,
+                            Value = -0.98999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000e3"),
+                            Angle = 45.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 8.0,
+                            Value = -0.98999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000e4"),
+                            Angle = 45.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 8.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000e5"),
+                            Angle = 45.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 9.0,
+                            Value = -2.1400000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000e6"),
+                            Angle = 45.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 9.0,
+                            Value = -2.1000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000e7"),
+                            Angle = 45.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 9.0,
+                            Value = -1.97,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000e8"),
+                            Angle = 45.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 9.0,
+                            Value = -1.9099999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000e9"),
+                            Angle = 45.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 9.0,
+                            Value = -1.8600000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000ea"),
+                            Angle = 45.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 9.0,
+                            Value = -1.8200000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000eb"),
+                            Angle = 45.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 9.0,
+                            Value = -1.78,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000ec"),
+                            Angle = 45.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 9.0,
+                            Value = -1.71,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000ed"),
+                            Angle = 45.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 9.0,
+                            Value = -1.6499999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000ee"),
+                            Angle = 45.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 9.0,
+                            Value = -1.5700000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000ef"),
+                            Angle = 45.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 9.0,
+                            Value = -1.54,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000f0"),
+                            Angle = 45.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 9.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000f1"),
+                            Angle = 45.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 10.0,
+                            Value = -2.9700000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000f2"),
+                            Angle = 45.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 10.0,
+                            Value = -2.9100000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000f3"),
+                            Angle = 45.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 10.0,
+                            Value = -2.73,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000f4"),
+                            Angle = 45.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 10.0,
+                            Value = -2.6400000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000f5"),
+                            Angle = 45.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 10.0,
+                            Value = -2.5800000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000f6"),
+                            Angle = 45.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 10.0,
+                            Value = -2.52,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000f7"),
+                            Angle = 45.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 10.0,
+                            Value = -2.46,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000f8"),
+                            Angle = 45.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 10.0,
+                            Value = -2.3700000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000f9"),
+                            Angle = 45.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 10.0,
+                            Value = -2.2799999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000fa"),
+                            Angle = 45.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 10.0,
+                            Value = -2.1800000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000fb"),
+                            Angle = 45.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 10.0,
+                            Value = -2.1400000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000fc"),
+                            Angle = 45.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 10.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000fd"),
+                            Angle = 78.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 4.0,
+                            Value = -0.13,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000fe"),
+                            Angle = 78.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 4.0,
+                            Value = -0.12,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000000ff"),
+                            Angle = 78.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 4.0,
+                            Value = -0.10000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000100"),
+                            Angle = 78.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 4.0,
+                            Value = -0.089999999999999997,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000101"),
+                            Angle = 78.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 4.0,
+                            Value = -0.070000000000000007,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000102"),
+                            Angle = 78.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 4.0,
+                            Value = -0.050000000000000003,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000103"),
+                            Angle = 78.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 4.0,
+                            Value = -0.050000000000000003,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000104"),
+                            Angle = 78.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 4.0,
+                            Value = -0.040000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000105"),
+                            Angle = 78.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 4.0,
+                            Value = -0.029999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000106"),
+                            Angle = 78.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 4.0,
+                            Value = -0.02,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000107"),
+                            Angle = 78.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 4.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000108"),
+                            Angle = 78.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 4.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000109"),
+                            Angle = 78.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 5.0,
+                            Value = -0.40999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000010a"),
+                            Angle = 78.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 5.0,
+                            Value = -0.37,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000010b"),
+                            Angle = 78.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 5.0,
+                            Value = -0.32000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000010c"),
+                            Angle = 78.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 5.0,
+                            Value = -0.28999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000010d"),
+                            Angle = 78.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 5.0,
+                            Value = -0.20999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000010e"),
+                            Angle = 78.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 5.0,
+                            Value = -0.17000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000010f"),
+                            Angle = 78.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 5.0,
+                            Value = -0.14000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000110"),
+                            Angle = 78.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 5.0,
+                            Value = -0.12,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000111"),
+                            Angle = 78.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 5.0,
+                            Value = -0.10000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000112"),
+                            Angle = 78.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 5.0,
+                            Value = -0.070000000000000007,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000113"),
+                            Angle = 78.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 5.0,
+                            Value = -0.070000000000000007,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000114"),
+                            Angle = 78.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 5.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000115"),
+                            Angle = 78.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 6.0,
+                            Value = -0.64000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000116"),
+                            Angle = 78.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 6.0,
+                            Value = -0.57999999999999996,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000117"),
+                            Angle = 78.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 6.0,
+                            Value = -0.5,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000118"),
+                            Angle = 78.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 6.0,
+                            Value = -0.45000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000119"),
+                            Angle = 78.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 6.0,
+                            Value = -0.40000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000011a"),
+                            Angle = 78.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 6.0,
+                            Value = -0.33000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000011b"),
+                            Angle = 78.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 6.0,
+                            Value = -0.23999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000011c"),
+                            Angle = 78.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 6.0,
+                            Value = -0.20000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000011d"),
+                            Angle = 78.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 6.0,
+                            Value = -0.12,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000011e"),
+                            Angle = 78.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 6.0,
+                            Value = -0.10000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000011f"),
+                            Angle = 78.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 6.0,
+                            Value = -0.059999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000120"),
+                            Angle = 78.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 6.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000121"),
+                            Angle = 78.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 7.0,
+                            Value = -1.1899999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000122"),
+                            Angle = 78.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 7.0,
+                            Value = -1.0800000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000123"),
+                            Angle = 78.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 7.0,
+                            Value = -0.93000000000000005,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000124"),
+                            Angle = 78.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 7.0,
+                            Value = -0.84999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000125"),
+                            Angle = 78.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 7.0,
+                            Value = -0.75,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000126"),
+                            Angle = 78.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 7.0,
+                            Value = -0.69999999999999996,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000127"),
+                            Angle = 78.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 7.0,
+                            Value = -0.68000000000000005,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000128"),
+                            Angle = 78.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 7.0,
+                            Value = -0.64000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000129"),
+                            Angle = 78.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 7.0,
+                            Value = -0.63,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000012a"),
+                            Angle = 78.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 7.0,
+                            Value = -0.60999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000012b"),
+                            Angle = 78.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 7.0,
+                            Value = -0.52000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000012c"),
+                            Angle = 78.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 7.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000012d"),
+                            Angle = 78.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 8.0,
+                            Value = -1.46,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000012e"),
+                            Angle = 78.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 8.0,
+                            Value = -1.3899999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000012f"),
+                            Angle = 78.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 8.0,
+                            Value = -1.3,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000130"),
+                            Angle = 78.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 8.0,
+                            Value = -1.24,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000131"),
+                            Angle = 78.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 8.0,
+                            Value = -1.1799999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000132"),
+                            Angle = 78.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 8.0,
+                            Value = -1.1200000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000133"),
+                            Angle = 78.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 8.0,
+                            Value = -1.04,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000134"),
+                            Angle = 78.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 8.0,
+                            Value = -1.02,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000135"),
+                            Angle = 78.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 8.0,
+                            Value = -1.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000136"),
+                            Angle = 78.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 8.0,
+                            Value = -0.88,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000137"),
+                            Angle = 78.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 8.0,
+                            Value = -0.88,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000138"),
+                            Angle = 78.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 8.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000139"),
+                            Angle = 78.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 9.0,
+                            Value = -1.8899999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000013a"),
+                            Angle = 78.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 9.0,
+                            Value = -1.8500000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000013b"),
+                            Angle = 78.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 9.0,
+                            Value = -1.74,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000013c"),
+                            Angle = 78.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 9.0,
+                            Value = -1.6799999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000013d"),
+                            Angle = 78.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 9.0,
+                            Value = -1.6499999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000013e"),
+                            Angle = 78.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 9.0,
+                            Value = -1.6100000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000013f"),
+                            Angle = 78.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 9.0,
+                            Value = -1.5700000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000140"),
+                            Angle = 78.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 9.0,
+                            Value = -1.51,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000141"),
+                            Angle = 78.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 9.0,
+                            Value = -1.46,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000142"),
+                            Angle = 78.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 9.0,
+                            Value = -1.3899999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000143"),
+                            Angle = 78.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 9.0,
+                            Value = -1.3600000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000144"),
+                            Angle = 78.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 9.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000145"),
+                            Angle = 78.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 10.0,
+                            Value = -2.6200000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000146"),
+                            Angle = 78.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 10.0,
+                            Value = -2.5699999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000147"),
+                            Angle = 78.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 10.0,
+                            Value = -2.4100000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000148"),
+                            Angle = 78.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 10.0,
+                            Value = -2.3300000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000149"),
+                            Angle = 78.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 10.0,
+                            Value = -2.2799999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000014a"),
+                            Angle = 78.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 10.0,
+                            Value = -2.23,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000014b"),
+                            Angle = 78.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 10.0,
+                            Value = -2.1800000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000014c"),
+                            Angle = 78.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 10.0,
+                            Value = -2.1000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000014d"),
+                            Angle = 78.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 10.0,
+                            Value = -2.02,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000014e"),
+                            Angle = 78.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 10.0,
+                            Value = -1.9299999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000014f"),
+                            Angle = 78.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 10.0,
+                            Value = -1.8899999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000150"),
+                            Angle = 78.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 10.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000151"),
+                            Angle = 101.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 4.0,
+                            Value = -0.11,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000152"),
+                            Angle = 101.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 4.0,
+                            Value = -0.080000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000153"),
+                            Angle = 101.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 4.0,
+                            Value = -0.070000000000000007,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000154"),
+                            Angle = 101.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 4.0,
+                            Value = -0.059999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000155"),
+                            Angle = 101.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 4.0,
+                            Value = -0.040000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000156"),
+                            Angle = 101.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 4.0,
+                            Value = -0.029999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000157"),
+                            Angle = 101.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 4.0,
+                            Value = -0.029999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000158"),
+                            Angle = 101.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 4.0,
+                            Value = -0.029999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000159"),
+                            Angle = 101.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 4.0,
+                            Value = -0.02,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000015a"),
+                            Angle = 101.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 4.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000015b"),
+                            Angle = 101.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 4.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000015c"),
+                            Angle = 101.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 4.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000015d"),
+                            Angle = 101.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 5.0,
+                            Value = -0.33000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000015e"),
+                            Angle = 101.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 5.0,
+                            Value = -0.29999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000015f"),
+                            Angle = 101.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 5.0,
+                            Value = -0.26000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000160"),
+                            Angle = 101.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 5.0,
+                            Value = -0.23999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000161"),
+                            Angle = 101.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 5.0,
+                            Value = -0.17000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000162"),
+                            Angle = 101.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 5.0,
+                            Value = -0.14000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000163"),
+                            Angle = 101.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 5.0,
+                            Value = -0.12,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000164"),
+                            Angle = 101.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 5.0,
+                            Value = -0.10000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000165"),
+                            Angle = 101.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 5.0,
+                            Value = -0.080000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000166"),
+                            Angle = 101.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 5.0,
+                            Value = -0.059999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000167"),
+                            Angle = 101.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 5.0,
+                            Value = -0.050000000000000003,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000168"),
+                            Angle = 101.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 5.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000169"),
+                            Angle = 101.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 6.0,
+                            Value = -0.56999999999999995,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000016a"),
+                            Angle = 101.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 6.0,
+                            Value = -0.52000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000016b"),
+                            Angle = 101.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 6.0,
+                            Value = -0.44,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000016c"),
+                            Angle = 101.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 6.0,
+                            Value = -0.40000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000016d"),
+                            Angle = 101.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 6.0,
+                            Value = -0.34999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000016e"),
+                            Angle = 101.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 6.0,
+                            Value = -0.28999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000016f"),
+                            Angle = 101.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 6.0,
+                            Value = -0.22,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000170"),
+                            Angle = 101.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 6.0,
+                            Value = -0.17999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000171"),
+                            Angle = 101.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 6.0,
+                            Value = -0.10000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000172"),
+                            Angle = 101.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 6.0,
+                            Value = -0.089999999999999997,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000173"),
+                            Angle = 101.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 6.0,
+                            Value = -0.059999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000174"),
+                            Angle = 101.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 6.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000175"),
+                            Angle = 101.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 7.0,
+                            Value = -0.93000000000000005,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000176"),
+                            Angle = 101.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 7.0,
+                            Value = -0.84999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000177"),
+                            Angle = 101.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 7.0,
+                            Value = -0.72999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000178"),
+                            Angle = 101.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 7.0,
+                            Value = -0.66000000000000003,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000179"),
+                            Angle = 101.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 7.0,
+                            Value = -0.58999999999999997,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000017a"),
+                            Angle = 101.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 7.0,
+                            Value = -0.55000000000000004,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000017b"),
+                            Angle = 101.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 7.0,
+                            Value = -0.53000000000000003,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000017c"),
+                            Angle = 101.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 7.0,
+                            Value = -0.5,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000017d"),
+                            Angle = 101.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 7.0,
+                            Value = -0.48999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000017e"),
+                            Angle = 101.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 7.0,
+                            Value = -0.47999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000017f"),
+                            Angle = 101.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 7.0,
+                            Value = -0.40999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000180"),
+                            Angle = 101.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 7.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000181"),
+                            Angle = 101.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 8.0,
+                            Value = -1.25,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000182"),
+                            Angle = 101.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 8.0,
+                            Value = -1.1899999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000183"),
+                            Angle = 101.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 8.0,
+                            Value = -1.1100000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000184"),
+                            Angle = 101.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 8.0,
+                            Value = -1.0600000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000185"),
+                            Angle = 101.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 8.0,
+                            Value = -1.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000186"),
+                            Angle = 101.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 8.0,
+                            Value = -0.95999999999999996,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000187"),
+                            Angle = 101.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 8.0,
+                            Value = -0.89000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000188"),
+                            Angle = 101.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 8.0,
+                            Value = -0.87,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000189"),
+                            Angle = 101.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 8.0,
+                            Value = -0.85999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000018a"),
+                            Angle = 101.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 8.0,
+                            Value = -0.75,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000018b"),
+                            Angle = 101.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 8.0,
+                            Value = -0.75,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000018c"),
+                            Angle = 101.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 8.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000018d"),
+                            Angle = 101.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 9.0,
+                            Value = -1.6200000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000018e"),
+                            Angle = 101.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 9.0,
+                            Value = -1.5900000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000018f"),
+                            Angle = 101.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 9.0,
+                            Value = -1.49,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000190"),
+                            Angle = 101.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 9.0,
+                            Value = -1.4399999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000191"),
+                            Angle = 101.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 9.0,
+                            Value = -1.4099999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000192"),
+                            Angle = 101.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 9.0,
+                            Value = -1.3799999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000193"),
+                            Angle = 101.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 9.0,
+                            Value = -1.3400000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000194"),
+                            Angle = 101.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 9.0,
+                            Value = -1.29,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000195"),
+                            Angle = 101.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 9.0,
+                            Value = -1.25,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000196"),
+                            Angle = 101.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 9.0,
+                            Value = -1.1899999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000197"),
+                            Angle = 101.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 9.0,
+                            Value = -1.1699999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000198"),
+                            Angle = 101.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 9.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000199"),
+                            Angle = 101.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 10.0,
+                            Value = -2.21,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000019a"),
+                            Angle = 101.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 10.0,
+                            Value = -2.1600000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000019b"),
+                            Angle = 101.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 10.0,
+                            Value = -2.0299999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000019c"),
+                            Angle = 101.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 10.0,
+                            Value = -1.97,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000019d"),
+                            Angle = 101.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 10.0,
+                            Value = -1.9199999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000019e"),
+                            Angle = 101.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 10.0,
+                            Value = -1.8799999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000019f"),
+                            Angle = 101.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 10.0,
+                            Value = -1.8300000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001a0"),
+                            Angle = 101.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 10.0,
+                            Value = -1.77,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001a1"),
+                            Angle = 101.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 10.0,
+                            Value = -1.7,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001a2"),
+                            Angle = 101.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 10.0,
+                            Value = -1.6200000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001a3"),
+                            Angle = 101.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 10.0,
+                            Value = -1.5900000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001a4"),
+                            Angle = 101.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 10.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001a5"),
+                            Angle = 135.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 4.0,
+                            Value = -0.070000000000000007,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001a6"),
+                            Angle = 135.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 4.0,
+                            Value = -0.059999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001a7"),
+                            Angle = 135.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 4.0,
+                            Value = -0.050000000000000003,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001a8"),
+                            Angle = 135.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 4.0,
+                            Value = -0.050000000000000003,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001a9"),
+                            Angle = 135.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 4.0,
+                            Value = -0.040000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001aa"),
+                            Angle = 135.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 4.0,
+                            Value = -0.029999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001ab"),
+                            Angle = 135.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 4.0,
+                            Value = -0.02,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001ac"),
+                            Angle = 135.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 4.0,
+                            Value = -0.02,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001ad"),
+                            Angle = 135.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 4.0,
+                            Value = -0.02,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001ae"),
+                            Angle = 135.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 4.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001af"),
+                            Angle = 135.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 4.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001b0"),
+                            Angle = 135.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 4.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001b1"),
+                            Angle = 135.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 5.0,
+                            Value = -0.26000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001b2"),
+                            Angle = 135.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 5.0,
+                            Value = -0.23999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001b3"),
+                            Angle = 135.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 5.0,
+                            Value = -0.20000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001b4"),
+                            Angle = 135.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 5.0,
+                            Value = -0.17999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001b5"),
+                            Angle = 135.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 5.0,
+                            Value = -0.14000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001b6"),
+                            Angle = 135.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 5.0,
+                            Value = -0.11,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001b7"),
+                            Angle = 135.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 5.0,
+                            Value = -0.089999999999999997,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001b8"),
+                            Angle = 135.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 5.0,
+                            Value = -0.080000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001b9"),
+                            Angle = 135.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 5.0,
+                            Value = -0.070000000000000007,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001ba"),
+                            Angle = 135.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 5.0,
+                            Value = -0.050000000000000003,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001bb"),
+                            Angle = 135.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 5.0,
+                            Value = -0.040000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001bc"),
+                            Angle = 135.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 5.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001bd"),
+                            Angle = 135.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 6.0,
+                            Value = -0.40000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001be"),
+                            Angle = 135.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 6.0,
+                            Value = -0.35999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001bf"),
+                            Angle = 135.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 6.0,
+                            Value = -0.31,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001c0"),
+                            Angle = 135.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 6.0,
+                            Value = -0.28000000000000003,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001c1"),
+                            Angle = 135.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 6.0,
+                            Value = -0.25,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001c2"),
+                            Angle = 135.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 6.0,
+                            Value = -0.20000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001c3"),
+                            Angle = 135.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 6.0,
+                            Value = -0.14999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001c4"),
+                            Angle = 135.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 6.0,
+                            Value = -0.12,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001c5"),
+                            Angle = 135.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 6.0,
+                            Value = -0.070000000000000007,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001c6"),
+                            Angle = 135.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 6.0,
+                            Value = -0.059999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001c7"),
+                            Angle = 135.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 6.0,
+                            Value = -0.040000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001c8"),
+                            Angle = 135.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 6.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001c9"),
+                            Angle = 135.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 7.0,
+                            Value = -0.75,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001ca"),
+                            Angle = 135.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 7.0,
+                            Value = -0.68000000000000005,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001cb"),
+                            Angle = 135.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 7.0,
+                            Value = -0.57999999999999996,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001cc"),
+                            Angle = 135.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 7.0,
+                            Value = -0.53000000000000003,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001cd"),
+                            Angle = 135.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 7.0,
+                            Value = -0.46999999999999997,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001ce"),
+                            Angle = 135.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 7.0,
+                            Value = -0.44,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001cf"),
+                            Angle = 135.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 7.0,
+                            Value = -0.42999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001d0"),
+                            Angle = 135.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 7.0,
+                            Value = -0.40000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001d1"),
+                            Angle = 135.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 7.0,
+                            Value = -0.40000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001d2"),
+                            Angle = 135.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 7.0,
+                            Value = -0.38,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001d3"),
+                            Angle = 135.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 7.0,
+                            Value = -0.33000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001d4"),
+                            Angle = 135.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 7.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001d5"),
+                            Angle = 135.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 8.0,
+                            Value = -1.04,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001d6"),
+                            Angle = 135.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 8.0,
+                            Value = -0.97999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001d7"),
+                            Angle = 135.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 8.0,
+                            Value = -0.92000000000000004,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001d8"),
+                            Angle = 135.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 8.0,
+                            Value = -0.88,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001d9"),
+                            Angle = 135.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 8.0,
+                            Value = -0.83999999999999997,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001da"),
+                            Angle = 135.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 8.0,
+                            Value = -0.80000000000000004,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001db"),
+                            Angle = 135.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 8.0,
+                            Value = -0.73999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001dc"),
+                            Angle = 135.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 8.0,
+                            Value = -0.72999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001dd"),
+                            Angle = 135.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 8.0,
+                            Value = -0.71999999999999997,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001de"),
+                            Angle = 135.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 8.0,
+                            Value = -0.62,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001df"),
+                            Angle = 135.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 8.0,
+                            Value = -0.62,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001e0"),
+                            Angle = 135.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 8.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001e1"),
+                            Angle = 135.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 9.0,
+                            Value = -1.3700000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001e2"),
+                            Angle = 135.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 9.0,
+                            Value = -1.3400000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001e3"),
+                            Angle = 135.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 9.0,
+                            Value = -1.26,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001e4"),
+                            Angle = 135.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 9.0,
+                            Value = -1.22,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001e5"),
+                            Angle = 135.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 9.0,
+                            Value = -1.1899999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001e6"),
+                            Angle = 135.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 9.0,
+                            Value = -1.1599999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001e7"),
+                            Angle = 135.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 9.0,
+                            Value = -1.1399999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001e8"),
+                            Angle = 135.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 9.0,
+                            Value = -1.1000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001e9"),
+                            Angle = 135.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 9.0,
+                            Value = -1.05,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001ea"),
+                            Angle = 135.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 9.0,
+                            Value = -1.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001eb"),
+                            Angle = 135.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 9.0,
+                            Value = -0.98999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001ec"),
+                            Angle = 135.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 9.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001ed"),
+                            Angle = 135.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 10.0,
+                            Value = -1.8300000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001ee"),
+                            Angle = 135.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 10.0,
+                            Value = -1.79,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001ef"),
+                            Angle = 135.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 10.0,
+                            Value = -1.6799999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001f0"),
+                            Angle = 135.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 10.0,
+                            Value = -1.6299999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001f1"),
+                            Angle = 135.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 10.0,
+                            Value = -1.5900000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001f2"),
+                            Angle = 135.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 10.0,
+                            Value = -1.55,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001f3"),
+                            Angle = 135.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 10.0,
+                            Value = -1.52,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001f4"),
+                            Angle = 135.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 10.0,
+                            Value = -1.46,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001f5"),
+                            Angle = 135.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 10.0,
+                            Value = -1.4099999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001f6"),
+                            Angle = 135.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 10.0,
+                            Value = -1.3400000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001f7"),
+                            Angle = 135.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 10.0,
+                            Value = -1.3200000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001f8"),
+                            Angle = 135.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 10.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001f9"),
+                            Angle = 168.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 4.0,
+                            Value = -0.050000000000000003,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001fa"),
+                            Angle = 168.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 4.0,
+                            Value = -0.050000000000000003,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001fb"),
+                            Angle = 168.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 4.0,
+                            Value = -0.040000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001fc"),
+                            Angle = 168.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 4.0,
+                            Value = -0.040000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001fd"),
+                            Angle = 168.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 4.0,
+                            Value = -0.029999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001fe"),
+                            Angle = 168.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 4.0,
+                            Value = -0.02,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000001ff"),
+                            Angle = 168.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 4.0,
+                            Value = -0.02,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000200"),
+                            Angle = 168.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 4.0,
+                            Value = -0.02,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000201"),
+                            Angle = 168.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 4.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000202"),
+                            Angle = 168.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 4.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000203"),
+                            Angle = 168.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 4.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000204"),
+                            Angle = 168.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 4.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000205"),
+                            Angle = 168.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 5.0,
+                            Value = -0.20000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000206"),
+                            Angle = 168.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 5.0,
+                            Value = -0.17999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000207"),
+                            Angle = 168.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 5.0,
+                            Value = -0.16,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000208"),
+                            Angle = 168.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 5.0,
+                            Value = -0.14000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000209"),
+                            Angle = 168.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 5.0,
+                            Value = -0.10000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000020a"),
+                            Angle = 168.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 5.0,
+                            Value = -0.080000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000020b"),
+                            Angle = 168.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 5.0,
+                            Value = -0.070000000000000007,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000020c"),
+                            Angle = 168.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 5.0,
+                            Value = -0.059999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000020d"),
+                            Angle = 168.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 5.0,
+                            Value = -0.050000000000000003,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000020e"),
+                            Angle = 168.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 5.0,
+                            Value = -0.040000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000020f"),
+                            Angle = 168.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 5.0,
+                            Value = -0.029999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000210"),
+                            Angle = 168.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 5.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000211"),
+                            Angle = 168.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 6.0,
+                            Value = -0.32000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000212"),
+                            Angle = 168.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 6.0,
+                            Value = -0.28999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000213"),
+                            Angle = 168.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 6.0,
+                            Value = -0.25,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000214"),
+                            Angle = 168.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 6.0,
+                            Value = -0.23000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000215"),
+                            Angle = 168.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 6.0,
+                            Value = -0.20000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000216"),
+                            Angle = 168.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 6.0,
+                            Value = -0.16,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000217"),
+                            Angle = 168.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 6.0,
+                            Value = -0.12,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000218"),
+                            Angle = 168.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 6.0,
+                            Value = -0.10000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000219"),
+                            Angle = 168.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 6.0,
+                            Value = -0.059999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000021a"),
+                            Angle = 168.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 6.0,
+                            Value = -0.050000000000000003,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000021b"),
+                            Angle = 168.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 6.0,
+                            Value = -0.029999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000021c"),
+                            Angle = 168.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 6.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000021d"),
+                            Angle = 168.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 7.0,
+                            Value = -0.63,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000021e"),
+                            Angle = 168.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 7.0,
+                            Value = -0.56999999999999995,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000021f"),
+                            Angle = 168.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 7.0,
+                            Value = -0.48999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000220"),
+                            Angle = 168.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 7.0,
+                            Value = -0.45000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000221"),
+                            Angle = 168.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 7.0,
+                            Value = -0.40000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000222"),
+                            Angle = 168.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 7.0,
+                            Value = -0.37,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000223"),
+                            Angle = 168.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 7.0,
+                            Value = -0.35999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000224"),
+                            Angle = 168.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 7.0,
+                            Value = -0.34000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000225"),
+                            Angle = 168.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 7.0,
+                            Value = -0.33000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000226"),
+                            Angle = 168.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 7.0,
+                            Value = -0.32000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000227"),
+                            Angle = 168.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 7.0,
+                            Value = -0.28000000000000003,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000228"),
+                            Angle = 168.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 7.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000229"),
+                            Angle = 168.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 8.0,
+                            Value = -0.75,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000022a"),
+                            Angle = 168.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 8.0,
+                            Value = -0.70999999999999996,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000022b"),
+                            Angle = 168.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 8.0,
+                            Value = -0.67000000000000004,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000022c"),
+                            Angle = 168.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 8.0,
+                            Value = -0.64000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000022d"),
+                            Angle = 168.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 8.0,
+                            Value = -0.60999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000022e"),
+                            Angle = 168.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 8.0,
+                            Value = -0.57999999999999996,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000022f"),
+                            Angle = 168.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 8.0,
+                            Value = -0.53000000000000003,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000230"),
+                            Angle = 168.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 8.0,
+                            Value = -0.52000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000231"),
+                            Angle = 168.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 8.0,
+                            Value = -0.52000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000232"),
+                            Angle = 168.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 8.0,
+                            Value = -0.45000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000233"),
+                            Angle = 168.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 8.0,
+                            Value = -0.45000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000234"),
+                            Angle = 168.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 8.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000235"),
+                            Angle = 168.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 9.0,
+                            Value = -1.0,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000236"),
+                            Angle = 168.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 9.0,
+                            Value = -0.97999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000237"),
+                            Angle = 168.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 9.0,
+                            Value = -0.92000000000000004,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000238"),
+                            Angle = 168.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 9.0,
+                            Value = -0.89000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000239"),
+                            Angle = 168.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 9.0,
+                            Value = -0.87,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000023a"),
+                            Angle = 168.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 9.0,
+                            Value = -0.84999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000023b"),
+                            Angle = 168.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 9.0,
+                            Value = -0.82999999999999996,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000023c"),
+                            Angle = 168.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 9.0,
+                            Value = -0.80000000000000004,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000023d"),
+                            Angle = 168.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 9.0,
+                            Value = -0.77000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000023e"),
+                            Angle = 168.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 9.0,
+                            Value = -0.72999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000023f"),
+                            Angle = 168.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 9.0,
+                            Value = -0.71999999999999997,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000240"),
+                            Angle = 168.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 9.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000241"),
+                            Angle = 168.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 10.0,
+                            Value = -1.3899999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000242"),
+                            Angle = 168.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 10.0,
+                            Value = -1.3600000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000243"),
+                            Angle = 168.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 10.0,
+                            Value = -1.28,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000244"),
+                            Angle = 168.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 10.0,
+                            Value = -1.23,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000245"),
+                            Angle = 168.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 10.0,
+                            Value = -1.21,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000246"),
+                            Angle = 168.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 10.0,
+                            Value = -1.1799999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000247"),
+                            Angle = 168.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 10.0,
+                            Value = -1.1499999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000248"),
+                            Angle = 168.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 10.0,
+                            Value = -1.1100000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000249"),
+                            Angle = 168.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 10.0,
+                            Value = -1.0700000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000024a"),
+                            Angle = 168.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 10.0,
+                            Value = -1.02,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000024b"),
+                            Angle = 168.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 10.0,
+                            Value = -1.0,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000024c"),
+                            Angle = 168.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 10.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000024d"),
+                            Angle = 180.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 4.0,
+                            Value = -0.029999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000024e"),
+                            Angle = 180.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 4.0,
+                            Value = -0.029999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000024f"),
+                            Angle = 180.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 4.0,
+                            Value = -0.029999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000250"),
+                            Angle = 180.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 4.0,
+                            Value = -0.02,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000251"),
+                            Angle = 180.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 4.0,
+                            Value = -0.02,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000252"),
+                            Angle = 180.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 4.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000253"),
+                            Angle = 180.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 4.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000254"),
+                            Angle = 180.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 4.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000255"),
+                            Angle = 180.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 4.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000256"),
+                            Angle = 180.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 4.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000257"),
+                            Angle = 180.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 4.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000258"),
+                            Angle = 180.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 4.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000259"),
+                            Angle = 180.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 5.0,
+                            Value = -0.12,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000025a"),
+                            Angle = 180.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 5.0,
+                            Value = -0.11,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000025b"),
+                            Angle = 180.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 5.0,
+                            Value = -0.10000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000025c"),
+                            Angle = 180.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 5.0,
+                            Value = -0.089999999999999997,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000025d"),
+                            Angle = 180.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 5.0,
+                            Value = -0.059999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000025e"),
+                            Angle = 180.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 5.0,
+                            Value = -0.050000000000000003,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000025f"),
+                            Angle = 180.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 5.0,
+                            Value = -0.040000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000260"),
+                            Angle = 180.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 5.0,
+                            Value = -0.040000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000261"),
+                            Angle = 180.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 5.0,
+                            Value = -0.029999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000262"),
+                            Angle = 180.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 5.0,
+                            Value = -0.02,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000263"),
+                            Angle = 180.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 5.0,
+                            Value = -0.02,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000264"),
+                            Angle = 180.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 5.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000265"),
+                            Angle = 180.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 6.0,
+                            Value = -0.27000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000266"),
+                            Angle = 180.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 6.0,
+                            Value = -0.20999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000267"),
+                            Angle = 180.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 6.0,
+                            Value = -0.17999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000268"),
+                            Angle = 180.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 6.0,
+                            Value = -0.16,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000269"),
+                            Angle = 180.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 6.0,
+                            Value = -0.14000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000026a"),
+                            Angle = 180.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 6.0,
+                            Value = -0.12,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000026b"),
+                            Angle = 180.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 6.0,
+                            Value = -0.089999999999999997,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000026c"),
+                            Angle = 180.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 6.0,
+                            Value = -0.070000000000000007,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000026d"),
+                            Angle = 180.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 6.0,
+                            Value = -0.040000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000026e"),
+                            Angle = 180.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 6.0,
+                            Value = -0.029999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000026f"),
+                            Angle = 180.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 6.0,
+                            Value = -0.02,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000270"),
+                            Angle = 180.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 6.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000271"),
+                            Angle = 180.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 7.0,
+                            Value = -0.37,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000272"),
+                            Angle = 180.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 7.0,
+                            Value = -0.34000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000273"),
+                            Angle = 180.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 7.0,
+                            Value = -0.28999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000274"),
+                            Angle = 180.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 7.0,
+                            Value = -0.26000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000275"),
+                            Angle = 180.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 7.0,
+                            Value = -0.23999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000276"),
+                            Angle = 180.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 7.0,
+                            Value = -0.22,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000277"),
+                            Angle = 180.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 7.0,
+                            Value = -0.20999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000278"),
+                            Angle = 180.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 7.0,
+                            Value = -0.20000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000279"),
+                            Angle = 180.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 7.0,
+                            Value = -0.20000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000027a"),
+                            Angle = 180.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 7.0,
+                            Value = -0.19,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000027b"),
+                            Angle = 180.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 7.0,
+                            Value = -0.16,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000027c"),
+                            Angle = 180.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 7.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000027d"),
+                            Angle = 180.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 8.0,
+                            Value = -0.54000000000000004,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000027e"),
+                            Angle = 180.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 8.0,
+                            Value = -0.51000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000027f"),
+                            Angle = 180.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 8.0,
+                            Value = -0.47999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000280"),
+                            Angle = 180.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 8.0,
+                            Value = -0.46000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000281"),
+                            Angle = 180.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 8.0,
+                            Value = -0.44,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000282"),
+                            Angle = 180.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 8.0,
+                            Value = -0.40999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000283"),
+                            Angle = 180.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 8.0,
+                            Value = -0.38,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000284"),
+                            Angle = 180.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 8.0,
+                            Value = -0.38,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000285"),
+                            Angle = 180.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 8.0,
+                            Value = -0.37,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000286"),
+                            Angle = 180.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 8.0,
+                            Value = -0.32000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000287"),
+                            Angle = 180.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 8.0,
+                            Value = -0.32000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000288"),
+                            Angle = 180.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 8.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000289"),
+                            Angle = 180.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 9.0,
+                            Value = -0.71999999999999997,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000028a"),
+                            Angle = 180.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 9.0,
+                            Value = -0.70999999999999996,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000028b"),
+                            Angle = 180.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 9.0,
+                            Value = -0.66000000000000003,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000028c"),
+                            Angle = 180.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 9.0,
+                            Value = -0.64000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000028d"),
+                            Angle = 180.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 9.0,
+                            Value = -0.63,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000028e"),
+                            Angle = 180.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 9.0,
+                            Value = -0.60999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000028f"),
+                            Angle = 180.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 9.0,
+                            Value = -0.59999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000290"),
+                            Angle = 180.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 9.0,
+                            Value = -0.57999999999999996,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000291"),
+                            Angle = 180.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 9.0,
+                            Value = -0.56000000000000005,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000292"),
+                            Angle = 180.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 9.0,
+                            Value = -0.53000000000000003,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000293"),
+                            Angle = 180.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 9.0,
+                            Value = -0.52000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000294"),
+                            Angle = 180.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 9.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000295"),
+                            Angle = 180.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 10.0,
+                            Value = -1.0,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000296"),
+                            Angle = 180.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 10.0,
+                            Value = -0.97999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000297"),
+                            Angle = 180.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 10.0,
+                            Value = -0.92000000000000004,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000298"),
+                            Angle = 180.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 10.0,
+                            Value = -0.89000000000000001,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000299"),
+                            Angle = 180.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 10.0,
+                            Value = -0.87,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000029a"),
+                            Angle = 180.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 10.0,
+                            Value = -0.84999999999999998,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000029b"),
+                            Angle = 180.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 10.0,
+                            Value = -0.82999999999999996,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000029c"),
+                            Angle = 180.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 10.0,
+                            Value = -0.80000000000000004,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000029d"),
+                            Angle = 180.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 10.0,
+                            Value = -0.77000000000000002,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000029e"),
+                            Angle = 180.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 10.0,
+                            Value = -0.73999999999999999,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000029f"),
+                            Angle = 180.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 10.0,
+                            Value = -0.71999999999999997,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002a0"),
+                            Angle = 180.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 10.0,
+                            Value = -0.01,
+                            Weather = "Wind"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002a1"),
+                            Angle = 0.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.38,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002a2"),
+                            Angle = 0.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.34000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002a3"),
+                            Angle = 0.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.29999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002a4"),
+                            Angle = 0.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.26000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002a5"),
+                            Angle = 0.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.19,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002a6"),
+                            Angle = 0.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.16,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002a7"),
+                            Angle = 0.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.14000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002a8"),
+                            Angle = 0.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.11,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002a9"),
+                            Angle = 0.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.089999999999999997,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002aa"),
+                            Angle = 0.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.059999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002ab"),
+                            Angle = 0.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.029999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002ac"),
+                            Angle = 0.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002ad"),
+                            Angle = 0.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 1.26,
+                            Value = -0.79000000000000004,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002ae"),
+                            Angle = 0.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 1.26,
+                            Value = -0.71999999999999997,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002af"),
+                            Angle = 0.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 1.26,
+                            Value = -0.66000000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002b0"),
+                            Angle = 0.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 1.26,
+                            Value = -0.58999999999999997,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002b1"),
+                            Angle = 0.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 1.26,
+                            Value = -0.51000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002b2"),
+                            Angle = 0.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 1.26,
+                            Value = -0.44,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002b3"),
+                            Angle = 0.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 1.26,
+                            Value = -0.34999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002b4"),
+                            Angle = 0.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 1.26,
+                            Value = -0.29999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002b5"),
+                            Angle = 0.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 1.26,
+                            Value = -0.17999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002b6"),
+                            Angle = 0.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 1.26,
+                            Value = -0.10000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002b7"),
+                            Angle = 0.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 1.26,
+                            Value = -0.059999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002b8"),
+                            Angle = 0.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 1.26,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002b9"),
+                            Angle = 0.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.88,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002ba"),
+                            Angle = 0.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.80000000000000004,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002bb"),
+                            Angle = 0.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.73999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002bc"),
+                            Angle = 0.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.68999999999999995,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002bd"),
+                            Angle = 0.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.57999999999999996,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002be"),
+                            Angle = 0.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.48999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002bf"),
+                            Angle = 0.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.45000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002c0"),
+                            Angle = 0.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.34999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002c1"),
+                            Angle = 0.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.28999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002c2"),
+                            Angle = 0.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.19,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002c3"),
+                            Angle = 0.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.13,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002c4"),
+                            Angle = 0.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002c5"),
+                            Angle = 0.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -1.1000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002c6"),
+                            Angle = 0.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -1.02,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002c7"),
+                            Angle = 0.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.93999999999999995,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002c8"),
+                            Angle = 0.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.85999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002c9"),
+                            Angle = 0.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.72999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002ca"),
+                            Angle = 0.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.62,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002cb"),
+                            Angle = 0.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.56000000000000005,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002cc"),
+                            Angle = 0.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.45000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002cd"),
+                            Angle = 0.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.34999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002ce"),
+                            Angle = 0.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.23999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002cf"),
+                            Angle = 0.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.16,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002d0"),
+                            Angle = 0.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002d1"),
+                            Angle = 0.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 2.71,
+                            Value = -1.45,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002d2"),
+                            Angle = 0.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 2.71,
+                            Value = -1.3799999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002d3"),
+                            Angle = 0.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 2.71,
+                            Value = -1.29,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002d4"),
+                            Angle = 0.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 2.71,
+                            Value = -1.23,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002d5"),
+                            Angle = 0.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 2.71,
+                            Value = -1.1100000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002d6"),
+                            Angle = 0.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 2.71,
+                            Value = -1.02,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002d7"),
+                            Angle = 0.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 2.71,
+                            Value = -0.92000000000000004,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002d8"),
+                            Angle = 0.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 2.71,
+                            Value = -0.85999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002d9"),
+                            Angle = 0.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 2.71,
+                            Value = -0.76000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002da"),
+                            Angle = 0.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 2.71,
+                            Value = -0.47999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002db"),
+                            Angle = 0.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 2.71,
+                            Value = -0.39000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002dc"),
+                            Angle = 0.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 2.71,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002dd"),
+                            Angle = 0.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -2.5099999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002de"),
+                            Angle = 0.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -2.4700000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002df"),
+                            Angle = 0.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -2.2999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002e0"),
+                            Angle = 0.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -2.2400000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002e1"),
+                            Angle = 0.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -2.1699999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002e2"),
+                            Angle = 0.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -2.1299999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002e3"),
+                            Angle = 0.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -2.0899999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002e4"),
+                            Angle = 0.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -2.0099999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002e5"),
+                            Angle = 0.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.9199999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002e6"),
+                            Angle = 0.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.8500000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002e7"),
+                            Angle = 0.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.8,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002e8"),
+                            Angle = 0.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002e9"),
+                            Angle = 0.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -3.6499999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002ea"),
+                            Angle = 0.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -3.5800000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002eb"),
+                            Angle = 0.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -3.3500000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002ec"),
+                            Angle = 0.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -3.25,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002ed"),
+                            Angle = 0.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -3.1699999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002ee"),
+                            Angle = 0.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -3.1000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002ef"),
+                            Angle = 0.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -3.04,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002f0"),
+                            Angle = 0.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -2.9199999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002f1"),
+                            Angle = 0.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -2.7999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002f2"),
+                            Angle = 0.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -2.6800000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002f3"),
+                            Angle = 0.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -2.6200000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002f4"),
+                            Angle = 0.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002f5"),
+                            Angle = 0.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -4.5700000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002f6"),
+                            Angle = 0.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -4.4800000000000004,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002f7"),
+                            Angle = 0.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -4.21,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002f8"),
+                            Angle = 0.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -4.0700000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002f9"),
+                            Angle = 0.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -3.98,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002fa"),
+                            Angle = 0.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -3.8900000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002fb"),
+                            Angle = 0.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -3.7999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002fc"),
+                            Angle = 0.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -3.6600000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002fd"),
+                            Angle = 0.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -3.52,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002fe"),
+                            Angle = 0.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -3.3700000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000002ff"),
+                            Angle = 0.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -3.2999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000300"),
+                            Angle = 0.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000301"),
+                            Angle = 0.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -5.7300000000000004,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000302"),
+                            Angle = 0.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -5.6200000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000303"),
+                            Angle = 0.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -5.2800000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000304"),
+                            Angle = 0.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -5.1100000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000305"),
+                            Angle = 0.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -5.0,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000306"),
+                            Angle = 0.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -4.8799999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000307"),
+                            Angle = 0.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -4.75,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000308"),
+                            Angle = 0.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -4.5800000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000309"),
+                            Angle = 0.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -4.4100000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000030a"),
+                            Angle = 0.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -4.2199999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000030b"),
+                            Angle = 0.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -4.1299999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000030c"),
+                            Angle = 0.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000030d"),
+                            Angle = 11.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.33000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000030e"),
+                            Angle = 11.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.29999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000030f"),
+                            Angle = 11.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.26000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000310"),
+                            Angle = 11.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.23000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000311"),
+                            Angle = 11.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.17000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000312"),
+                            Angle = 11.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.14000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000313"),
+                            Angle = 11.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.12,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000314"),
+                            Angle = 11.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.10000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000315"),
+                            Angle = 11.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.080000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000316"),
+                            Angle = 11.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.050000000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000317"),
+                            Angle = 11.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.029999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000318"),
+                            Angle = 11.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000319"),
+                            Angle = 11.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 1.26,
+                            Value = -0.68999999999999995,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000031a"),
+                            Angle = 11.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 1.26,
+                            Value = -0.63,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000031b"),
+                            Angle = 11.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 1.26,
+                            Value = -0.57999999999999996,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000031c"),
+                            Angle = 11.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 1.26,
+                            Value = -0.52000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000031d"),
+                            Angle = 11.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 1.26,
+                            Value = -0.45000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000031e"),
+                            Angle = 11.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 1.26,
+                            Value = -0.39000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000031f"),
+                            Angle = 11.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 1.26,
+                            Value = -0.31,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000320"),
+                            Angle = 11.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 1.26,
+                            Value = -0.26000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000321"),
+                            Angle = 11.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 1.26,
+                            Value = -0.16,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000322"),
+                            Angle = 11.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 1.26,
+                            Value = -0.089999999999999997,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000323"),
+                            Angle = 11.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 1.26,
+                            Value = -0.050000000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000324"),
+                            Angle = 11.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 1.26,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000325"),
+                            Angle = 11.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.77000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000326"),
+                            Angle = 11.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.69999999999999996,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000327"),
+                            Angle = 11.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.65000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000328"),
+                            Angle = 11.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.59999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000329"),
+                            Angle = 11.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.51000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000032a"),
+                            Angle = 11.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.42999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000032b"),
+                            Angle = 11.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.39000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000032c"),
+                            Angle = 11.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.31,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000032d"),
+                            Angle = 11.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.25,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000032e"),
+                            Angle = 11.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.17000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000032f"),
+                            Angle = 11.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.11,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000330"),
+                            Angle = 11.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000331"),
+                            Angle = 11.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.96999999999999997,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000332"),
+                            Angle = 11.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.89000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000333"),
+                            Angle = 11.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.81999999999999995,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000334"),
+                            Angle = 11.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.75,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000335"),
+                            Angle = 11.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.64000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000336"),
+                            Angle = 11.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.54000000000000004,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000337"),
+                            Angle = 11.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.48999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000338"),
+                            Angle = 11.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.39000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000339"),
+                            Angle = 11.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.31,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000033a"),
+                            Angle = 11.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.20999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000033b"),
+                            Angle = 11.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.14000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000033c"),
+                            Angle = 11.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000033d"),
+                            Angle = 11.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 2.71,
+                            Value = -1.27,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000033e"),
+                            Angle = 11.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 2.71,
+                            Value = -1.21,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000033f"),
+                            Angle = 11.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 2.71,
+                            Value = -1.1299999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000340"),
+                            Angle = 11.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 2.71,
+                            Value = -1.0800000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000341"),
+                            Angle = 11.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 2.71,
+                            Value = -0.96999999999999997,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000342"),
+                            Angle = 11.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 2.71,
+                            Value = -0.89000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000343"),
+                            Angle = 11.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 2.71,
+                            Value = -0.81000000000000005,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000344"),
+                            Angle = 11.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 2.71,
+                            Value = -0.76000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000345"),
+                            Angle = 11.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 2.71,
+                            Value = -0.67000000000000004,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000346"),
+                            Angle = 11.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 2.71,
+                            Value = -0.41999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000347"),
+                            Angle = 11.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 2.71,
+                            Value = -0.34000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000348"),
+                            Angle = 11.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 2.71,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000349"),
+                            Angle = 11.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -2.2000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000034a"),
+                            Angle = 11.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -2.1600000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000034b"),
+                            Angle = 11.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -2.02,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000034c"),
+                            Angle = 11.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.96,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000034d"),
+                            Angle = 11.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.9099999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000034e"),
+                            Angle = 11.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.8700000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000034f"),
+                            Angle = 11.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.8300000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000350"),
+                            Angle = 11.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.76,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000351"),
+                            Angle = 11.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.6899999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000352"),
+                            Angle = 11.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.6200000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000353"),
+                            Angle = 11.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.5800000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000354"),
+                            Angle = 11.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000355"),
+                            Angle = 11.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -3.2000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000356"),
+                            Angle = 11.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -3.1400000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000357"),
+                            Angle = 11.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -2.9399999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000358"),
+                            Angle = 11.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -2.8500000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000359"),
+                            Angle = 11.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -2.7799999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000035a"),
+                            Angle = 11.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -2.7200000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000035b"),
+                            Angle = 11.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -2.6600000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000035c"),
+                            Angle = 11.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -2.5600000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000035d"),
+                            Angle = 11.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -2.46,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000035e"),
+                            Angle = 11.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -2.3500000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000035f"),
+                            Angle = 11.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -2.2999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000360"),
+                            Angle = 11.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000361"),
+                            Angle = 11.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -4.0099999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000362"),
+                            Angle = 11.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -3.9300000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000363"),
+                            Angle = 11.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -3.6899999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000364"),
+                            Angle = 11.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -3.5699999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000365"),
+                            Angle = 11.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -3.4900000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000366"),
+                            Angle = 11.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -3.4100000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000367"),
+                            Angle = 11.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -3.3300000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000368"),
+                            Angle = 11.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -3.21,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000369"),
+                            Angle = 11.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -3.0899999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000036a"),
+                            Angle = 11.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -2.9500000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000036b"),
+                            Angle = 11.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -2.8900000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000036c"),
+                            Angle = 11.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000036d"),
+                            Angle = 11.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -5.0300000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000036e"),
+                            Angle = 11.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -4.9299999999999997,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000036f"),
+                            Angle = 11.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -4.6299999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000370"),
+                            Angle = 11.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -4.4800000000000004,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000371"),
+                            Angle = 11.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -4.3799999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000372"),
+                            Angle = 11.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -4.2800000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000373"),
+                            Angle = 11.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -4.1699999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000374"),
+                            Angle = 11.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -4.0199999999999996,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000375"),
+                            Angle = 11.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -3.8700000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000376"),
+                            Angle = 11.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -3.7000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000377"),
+                            Angle = 11.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -3.6200000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000378"),
+                            Angle = 11.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000379"),
+                            Angle = 45.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.28000000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000037a"),
+                            Angle = 45.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.26000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000037b"),
+                            Angle = 45.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.22,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000037c"),
+                            Angle = 45.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.20000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000037d"),
+                            Angle = 45.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.14999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000037e"),
+                            Angle = 45.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.12,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000037f"),
+                            Angle = 45.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.10000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000380"),
+                            Angle = 45.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.089999999999999997,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000381"),
+                            Angle = 45.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.070000000000000007,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000382"),
+                            Angle = 45.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.040000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000383"),
+                            Angle = 45.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.029999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000384"),
+                            Angle = 45.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000385"),
+                            Angle = 45.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 1.26,
+                            Value = -0.58999999999999997,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000386"),
+                            Angle = 45.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 1.26,
+                            Value = -0.54000000000000004,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000387"),
+                            Angle = 45.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 1.26,
+                            Value = -0.5,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000388"),
+                            Angle = 45.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 1.26,
+                            Value = -0.45000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000389"),
+                            Angle = 45.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 1.26,
+                            Value = -0.39000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000038a"),
+                            Angle = 45.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 1.26,
+                            Value = -0.34000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000038b"),
+                            Angle = 45.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 1.26,
+                            Value = -0.27000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000038c"),
+                            Angle = 45.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 1.26,
+                            Value = -0.22,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000038d"),
+                            Angle = 45.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 1.26,
+                            Value = -0.14000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000038e"),
+                            Angle = 45.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 1.26,
+                            Value = -0.080000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000038f"),
+                            Angle = 45.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 1.26,
+                            Value = -0.040000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000390"),
+                            Angle = 45.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 1.26,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000391"),
+                            Angle = 45.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.66000000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000392"),
+                            Angle = 45.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.59999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000393"),
+                            Angle = 45.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.56000000000000005,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000394"),
+                            Angle = 45.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.51000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000395"),
+                            Angle = 45.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.44,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000396"),
+                            Angle = 45.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.37,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000397"),
+                            Angle = 45.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.33000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000398"),
+                            Angle = 45.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.27000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000399"),
+                            Angle = 45.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.20999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000039a"),
+                            Angle = 45.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.14999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000039b"),
+                            Angle = 45.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.089999999999999997,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000039c"),
+                            Angle = 45.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000039d"),
+                            Angle = 45.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.83999999999999997,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000039e"),
+                            Angle = 45.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.76000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000039f"),
+                            Angle = 45.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.69999999999999996,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003a0"),
+                            Angle = 45.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.64000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003a1"),
+                            Angle = 45.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.55000000000000004,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003a2"),
+                            Angle = 45.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.46000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003a3"),
+                            Angle = 45.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.41999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003a4"),
+                            Angle = 45.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.33000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003a5"),
+                            Angle = 45.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.27000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003a6"),
+                            Angle = 45.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.17999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003a7"),
+                            Angle = 45.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.12,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003a8"),
+                            Angle = 45.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003a9"),
+                            Angle = 45.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 2.71,
+                            Value = -1.0900000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003aa"),
+                            Angle = 45.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 2.71,
+                            Value = -1.04,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003ab"),
+                            Angle = 45.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 2.71,
+                            Value = -0.96999999999999997,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003ac"),
+                            Angle = 45.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 2.71,
+                            Value = -0.93000000000000005,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003ad"),
+                            Angle = 45.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 2.71,
+                            Value = -0.82999999999999996,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003ae"),
+                            Angle = 45.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 2.71,
+                            Value = -0.76000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003af"),
+                            Angle = 45.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 2.71,
+                            Value = -0.69999999999999996,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003b0"),
+                            Angle = 45.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 2.71,
+                            Value = -0.66000000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003b1"),
+                            Angle = 45.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 2.71,
+                            Value = -0.57999999999999996,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003b2"),
+                            Angle = 45.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 2.71,
+                            Value = -0.35999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003b3"),
+                            Angle = 45.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 2.71,
+                            Value = -0.28999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003b4"),
+                            Angle = 45.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 2.71,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003b5"),
+                            Angle = 45.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.8899999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003b6"),
+                            Angle = 45.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.8500000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003b7"),
+                            Angle = 45.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.74,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003b8"),
+                            Angle = 45.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.6799999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003b9"),
+                            Angle = 45.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.6499999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003ba"),
+                            Angle = 45.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.6100000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003bb"),
+                            Angle = 45.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.5700000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003bc"),
+                            Angle = 45.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.51,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003bd"),
+                            Angle = 45.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.46,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003be"),
+                            Angle = 45.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.3899999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003bf"),
+                            Angle = 45.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.3600000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003c0"),
+                            Angle = 45.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003c1"),
+                            Angle = 45.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -2.75,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003c2"),
+                            Angle = 45.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -2.7000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003c3"),
+                            Angle = 45.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -2.5299999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003c4"),
+                            Angle = 45.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -2.4500000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003c5"),
+                            Angle = 45.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -2.3900000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003c6"),
+                            Angle = 45.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -2.3399999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003c7"),
+                            Angle = 45.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -2.2799999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003c8"),
+                            Angle = 45.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -2.2000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003c9"),
+                            Angle = 45.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -2.1200000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003ca"),
+                            Angle = 45.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -2.02,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003cb"),
+                            Angle = 45.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -1.98,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003cc"),
+                            Angle = 45.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003cd"),
+                            Angle = 45.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -3.4500000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003ce"),
+                            Angle = 45.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -3.3799999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003cf"),
+                            Angle = 45.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -3.1699999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003d0"),
+                            Angle = 45.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -3.0699999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003d1"),
+                            Angle = 45.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -3.0,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003d2"),
+                            Angle = 45.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -2.9300000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003d3"),
+                            Angle = 45.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -2.8599999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003d4"),
+                            Angle = 45.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -2.7599999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003d5"),
+                            Angle = 45.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -2.6600000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003d6"),
+                            Angle = 45.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -2.5299999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003d7"),
+                            Angle = 45.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -2.48,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003d8"),
+                            Angle = 45.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003d9"),
+                            Angle = 45.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -4.3300000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003da"),
+                            Angle = 45.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -4.2400000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003db"),
+                            Angle = 45.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -3.98,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003dc"),
+                            Angle = 45.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -3.8500000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003dd"),
+                            Angle = 45.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -3.7599999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003de"),
+                            Angle = 45.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -3.6800000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003df"),
+                            Angle = 45.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -3.5899999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003e0"),
+                            Angle = 45.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -3.46,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003e1"),
+                            Angle = 45.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -3.3300000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003e2"),
+                            Angle = 45.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -3.1800000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003e3"),
+                            Angle = 45.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -3.1099999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003e4"),
+                            Angle = 45.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003e5"),
+                            Angle = 78.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.25,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003e6"),
+                            Angle = 78.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.23000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003e7"),
+                            Angle = 78.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.20000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003e8"),
+                            Angle = 78.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.17999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003e9"),
+                            Angle = 78.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.13,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003ea"),
+                            Angle = 78.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.10000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003eb"),
+                            Angle = 78.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.089999999999999997,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003ec"),
+                            Angle = 78.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.080000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003ed"),
+                            Angle = 78.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.059999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003ee"),
+                            Angle = 78.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.040000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003ef"),
+                            Angle = 78.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.029999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003f0"),
+                            Angle = 78.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003f1"),
+                            Angle = 78.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 1.26,
+                            Value = -0.52000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003f2"),
+                            Angle = 78.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 1.26,
+                            Value = -0.47999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003f3"),
+                            Angle = 78.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 1.26,
+                            Value = -0.44,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003f4"),
+                            Angle = 78.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 1.26,
+                            Value = -0.39000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003f5"),
+                            Angle = 78.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 1.26,
+                            Value = -0.34000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003f6"),
+                            Angle = 78.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 1.26,
+                            Value = -0.29999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003f7"),
+                            Angle = 78.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 1.26,
+                            Value = -0.23999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003f8"),
+                            Angle = 78.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 1.26,
+                            Value = -0.19,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003f9"),
+                            Angle = 78.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 1.26,
+                            Value = -0.12,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003fa"),
+                            Angle = 78.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 1.26,
+                            Value = -0.070000000000000007,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003fb"),
+                            Angle = 78.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 1.26,
+                            Value = -0.040000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003fc"),
+                            Angle = 78.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 1.26,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003fd"),
+                            Angle = 78.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.58999999999999997,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003fe"),
+                            Angle = 78.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.53000000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000003ff"),
+                            Angle = 78.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.48999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000400"),
+                            Angle = 78.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.45000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000401"),
+                            Angle = 78.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.39000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000402"),
+                            Angle = 78.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.32000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000403"),
+                            Angle = 78.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.28999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000404"),
+                            Angle = 78.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.23000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000405"),
+                            Angle = 78.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.19,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000406"),
+                            Angle = 78.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.13,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000407"),
+                            Angle = 78.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.080000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000408"),
+                            Angle = 78.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000409"),
+                            Angle = 78.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.73999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000040a"),
+                            Angle = 78.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.67000000000000004,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000040b"),
+                            Angle = 78.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.62,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000040c"),
+                            Angle = 78.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.56999999999999995,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000040d"),
+                            Angle = 78.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.48999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000040e"),
+                            Angle = 78.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.40999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000040f"),
+                            Angle = 78.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.37,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000410"),
+                            Angle = 78.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.29999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000411"),
+                            Angle = 78.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.23999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000412"),
+                            Angle = 78.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.16,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000413"),
+                            Angle = 78.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.10000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000414"),
+                            Angle = 78.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000415"),
+                            Angle = 78.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 2.71,
+                            Value = -0.96999999999999997,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000416"),
+                            Angle = 78.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 2.71,
+                            Value = -0.92000000000000004,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000417"),
+                            Angle = 78.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 2.71,
+                            Value = -0.85999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000418"),
+                            Angle = 78.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 2.71,
+                            Value = -0.81999999999999995,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000419"),
+                            Angle = 78.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 2.71,
+                            Value = -0.72999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000041a"),
+                            Angle = 78.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 2.71,
+                            Value = -0.68000000000000005,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000041b"),
+                            Angle = 78.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 2.71,
+                            Value = -0.62,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000041c"),
+                            Angle = 78.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 2.71,
+                            Value = -0.57999999999999996,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000041d"),
+                            Angle = 78.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 2.71,
+                            Value = -0.51000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000041e"),
+                            Angle = 78.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 2.71,
+                            Value = -0.32000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000041f"),
+                            Angle = 78.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 2.71,
+                            Value = -0.26000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000420"),
+                            Angle = 78.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 2.71,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000421"),
+                            Angle = 78.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.6699999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000422"),
+                            Angle = 78.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.6399999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000423"),
+                            Angle = 78.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.54,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000424"),
+                            Angle = 78.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.49,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000425"),
+                            Angle = 78.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.45,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000426"),
+                            Angle = 78.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.4199999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000427"),
+                            Angle = 78.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.3899999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000428"),
+                            Angle = 78.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.3400000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000429"),
+                            Angle = 78.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.29,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000042a"),
+                            Angle = 78.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.23,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000042b"),
+                            Angle = 78.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.2,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000042c"),
+                            Angle = 78.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000042d"),
+                            Angle = 78.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -2.4300000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000042e"),
+                            Angle = 78.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -2.3799999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000042f"),
+                            Angle = 78.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -2.2400000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000430"),
+                            Angle = 78.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -2.1600000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000431"),
+                            Angle = 78.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -2.1200000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000432"),
+                            Angle = 78.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -2.0699999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000433"),
+                            Angle = 78.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -2.02,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000434"),
+                            Angle = 78.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -1.95,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000435"),
+                            Angle = 78.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -1.8700000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000436"),
+                            Angle = 78.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -1.79,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000437"),
+                            Angle = 78.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -1.75,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000438"),
+                            Angle = 78.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000439"),
+                            Angle = 78.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -3.0499999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000043a"),
+                            Angle = 78.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -2.9900000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000043b"),
+                            Angle = 78.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -2.7999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000043c"),
+                            Angle = 78.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -2.71,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000043d"),
+                            Angle = 78.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -2.6499999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000043e"),
+                            Angle = 78.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -2.5899999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000043f"),
+                            Angle = 78.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -2.5299999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000440"),
+                            Angle = 78.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -2.4399999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000441"),
+                            Angle = 78.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -2.3500000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000442"),
+                            Angle = 78.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -2.2400000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000443"),
+                            Angle = 78.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -2.1899999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000444"),
+                            Angle = 78.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000445"),
+                            Angle = 78.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -3.8199999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000446"),
+                            Angle = 78.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -3.75,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000447"),
+                            Angle = 78.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -3.52,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000448"),
+                            Angle = 78.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -3.3999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000449"),
+                            Angle = 78.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -3.3300000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000044a"),
+                            Angle = 78.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -3.25,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000044b"),
+                            Angle = 78.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -3.1699999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000044c"),
+                            Angle = 78.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -3.0600000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000044d"),
+                            Angle = 78.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -2.9399999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000044e"),
+                            Angle = 78.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -2.8100000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000044f"),
+                            Angle = 78.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -2.75,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000450"),
+                            Angle = 78.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000451"),
+                            Angle = 101.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.17000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000452"),
+                            Angle = 101.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.14999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000453"),
+                            Angle = 101.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.13,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000454"),
+                            Angle = 101.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.12,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000455"),
+                            Angle = 101.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.089999999999999997,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000456"),
+                            Angle = 101.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.070000000000000007,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000457"),
+                            Angle = 101.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.059999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000458"),
+                            Angle = 101.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.050000000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000459"),
+                            Angle = 101.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.040000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000045a"),
+                            Angle = 101.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.02,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000045b"),
+                            Angle = 101.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.02,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000045c"),
+                            Angle = 101.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000045d"),
+                            Angle = 101.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 1.26,
+                            Value = -0.34999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000045e"),
+                            Angle = 101.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 1.26,
+                            Value = -0.31,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000045f"),
+                            Angle = 101.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 1.26,
+                            Value = -0.28999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000460"),
+                            Angle = 101.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 1.26,
+                            Value = -0.26000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000461"),
+                            Angle = 101.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 1.26,
+                            Value = -0.22,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000462"),
+                            Angle = 101.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 1.26,
+                            Value = -0.20000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000463"),
+                            Angle = 101.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 1.26,
+                            Value = -0.16,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000464"),
+                            Angle = 101.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 1.26,
+                            Value = -0.13,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000465"),
+                            Angle = 101.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 1.26,
+                            Value = -0.080000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000466"),
+                            Angle = 101.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 1.26,
+                            Value = -0.040000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000467"),
+                            Angle = 101.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 1.26,
+                            Value = -0.02,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000468"),
+                            Angle = 101.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 1.26,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000469"),
+                            Angle = 101.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.39000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000046a"),
+                            Angle = 101.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.34999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000046b"),
+                            Angle = 101.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.32000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000046c"),
+                            Angle = 101.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.29999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000046d"),
+                            Angle = 101.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.26000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000046e"),
+                            Angle = 101.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.20999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000046f"),
+                            Angle = 101.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.19,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000470"),
+                            Angle = 101.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.14999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000471"),
+                            Angle = 101.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.12,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000472"),
+                            Angle = 101.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.089999999999999997,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000473"),
+                            Angle = 101.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.050000000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000474"),
+                            Angle = 101.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000475"),
+                            Angle = 101.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.48999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000476"),
+                            Angle = 101.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.44,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000477"),
+                            Angle = 101.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.40999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000478"),
+                            Angle = 101.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.37,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000479"),
+                            Angle = 101.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.32000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000047a"),
+                            Angle = 101.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.27000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000047b"),
+                            Angle = 101.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.23999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000047c"),
+                            Angle = 101.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.19,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000047d"),
+                            Angle = 101.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.16,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000047e"),
+                            Angle = 101.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.11,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000047f"),
+                            Angle = 101.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.070000000000000007,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000480"),
+                            Angle = 101.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000481"),
+                            Angle = 101.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 2.71,
+                            Value = -0.64000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000482"),
+                            Angle = 101.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 2.71,
+                            Value = -0.59999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000483"),
+                            Angle = 101.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 2.71,
+                            Value = -0.56999999999999995,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000484"),
+                            Angle = 101.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 2.71,
+                            Value = -0.54000000000000004,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000485"),
+                            Angle = 101.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 2.71,
+                            Value = -0.47999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000486"),
+                            Angle = 101.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 2.71,
+                            Value = -0.44,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000487"),
+                            Angle = 101.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 2.71,
+                            Value = -0.40999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000488"),
+                            Angle = 101.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 2.71,
+                            Value = -0.38,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000489"),
+                            Angle = 101.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 2.71,
+                            Value = -0.34000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000048a"),
+                            Angle = 101.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 2.71,
+                            Value = -0.20999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000048b"),
+                            Angle = 101.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 2.71,
+                            Value = -0.17000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000048c"),
+                            Angle = 101.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 2.71,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000048d"),
+                            Angle = 101.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.1000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000048e"),
+                            Angle = 101.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.0800000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000048f"),
+                            Angle = 101.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -1.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000490"),
+                            Angle = 101.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.97999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000491"),
+                            Angle = 101.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.95999999999999996,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000492"),
+                            Angle = 101.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.93999999999999995,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000493"),
+                            Angle = 101.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.91000000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000494"),
+                            Angle = 101.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.88,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000495"),
+                            Angle = 101.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.84999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000496"),
+                            Angle = 101.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.81000000000000005,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000497"),
+                            Angle = 101.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.79000000000000004,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000498"),
+                            Angle = 101.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000499"),
+                            Angle = 101.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -1.6000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000049a"),
+                            Angle = 101.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -1.5700000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000049b"),
+                            Angle = 101.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -1.47,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000049c"),
+                            Angle = 101.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -1.4199999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000049d"),
+                            Angle = 101.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -1.3899999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000049e"),
+                            Angle = 101.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -1.3600000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000049f"),
+                            Angle = 101.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -1.3300000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004a0"),
+                            Angle = 101.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -1.28,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004a1"),
+                            Angle = 101.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -1.23,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004a2"),
+                            Angle = 101.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -1.1799999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004a3"),
+                            Angle = 101.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -1.1499999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004a4"),
+                            Angle = 101.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004a5"),
+                            Angle = 101.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -2.0099999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004a6"),
+                            Angle = 101.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -1.96,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004a7"),
+                            Angle = 101.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -1.8400000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004a8"),
+                            Angle = 101.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -1.78,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004a9"),
+                            Angle = 101.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -1.74,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004aa"),
+                            Angle = 101.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -1.7,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004ab"),
+                            Angle = 101.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -1.6599999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004ac"),
+                            Angle = 101.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -1.6000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004ad"),
+                            Angle = 101.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -1.54,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004ae"),
+                            Angle = 101.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -1.47,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004af"),
+                            Angle = 101.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -1.4399999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004b0"),
+                            Angle = 101.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004b1"),
+                            Angle = 101.25,
+                            DeadWeight = 10000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -2.52,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004b2"),
+                            Angle = 101.25,
+                            DeadWeight = 15000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -2.46,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004b3"),
+                            Angle = 101.25,
+                            DeadWeight = 19000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -2.3100000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004b4"),
+                            Angle = 101.25,
+                            DeadWeight = 25000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -2.2400000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004b5"),
+                            Angle = 101.25,
+                            DeadWeight = 40000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -2.1899999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004b6"),
+                            Angle = 101.25,
+                            DeadWeight = 50000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -2.1400000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004b7"),
+                            Angle = 101.25,
+                            DeadWeight = 60000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -2.0899999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004b8"),
+                            Angle = 101.25,
+                            DeadWeight = 75000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -2.0099999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004b9"),
+                            Angle = 101.25,
+                            DeadWeight = 90000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -1.9399999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004ba"),
+                            Angle = 101.25,
+                            DeadWeight = 120000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -1.8500000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004bb"),
+                            Angle = 101.25,
+                            DeadWeight = 150000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -1.8100000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004bc"),
+                            Angle = 101.25,
+                            DeadWeight = 999999.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004bd"),
+                            Angle = 135.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.13,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004be"),
+                            Angle = 135.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.12,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004bf"),
+                            Angle = 135.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.10000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004c0"),
+                            Angle = 135.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.089999999999999997,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004c1"),
+                            Angle = 135.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.070000000000000007,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004c2"),
+                            Angle = 135.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.050000000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004c3"),
+                            Angle = 135.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.050000000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004c4"),
+                            Angle = 135.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.040000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004c5"),
+                            Angle = 135.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.029999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004c6"),
+                            Angle = 135.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.02,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004c7"),
+                            Angle = 135.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004c8"),
+                            Angle = 135.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004c9"),
+                            Angle = 135.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 1.26,
+                            Value = -0.28000000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004ca"),
+                            Angle = 135.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 1.26,
+                            Value = -0.25,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004cb"),
+                            Angle = 135.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 1.26,
+                            Value = -0.23000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004cc"),
+                            Angle = 135.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 1.26,
+                            Value = -0.20999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004cd"),
+                            Angle = 135.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 1.26,
+                            Value = -0.17999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004ce"),
+                            Angle = 135.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 1.26,
+                            Value = -0.16,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004cf"),
+                            Angle = 135.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 1.26,
+                            Value = -0.12,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004d0"),
+                            Angle = 135.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 1.26,
+                            Value = -0.10000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004d1"),
+                            Angle = 135.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 1.26,
+                            Value = -0.059999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004d2"),
+                            Angle = 135.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 1.26,
+                            Value = -0.040000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004d3"),
+                            Angle = 135.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 1.26,
+                            Value = -0.02,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004d4"),
+                            Angle = 135.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 1.26,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004d5"),
+                            Angle = 135.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.31,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004d6"),
+                            Angle = 135.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.28000000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004d7"),
+                            Angle = 135.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.26000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004d8"),
+                            Angle = 135.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.23999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004d9"),
+                            Angle = 135.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.20000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004da"),
+                            Angle = 135.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.17000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004db"),
+                            Angle = 135.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.14999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004dc"),
+                            Angle = 135.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.12,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004dd"),
+                            Angle = 135.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.10000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004de"),
+                            Angle = 135.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.070000000000000007,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004df"),
+                            Angle = 135.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.040000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004e0"),
+                            Angle = 135.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004e1"),
+                            Angle = 135.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.39000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004e2"),
+                            Angle = 135.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.34999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004e3"),
+                            Angle = 135.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.33000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004e4"),
+                            Angle = 135.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.29999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004e5"),
+                            Angle = 135.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.26000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004e6"),
+                            Angle = 135.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.20999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004e7"),
+                            Angle = 135.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.19,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004e8"),
+                            Angle = 135.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.16,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004e9"),
+                            Angle = 135.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.12,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004ea"),
+                            Angle = 135.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.089999999999999997,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004eb"),
+                            Angle = 135.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.050000000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004ec"),
+                            Angle = 135.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004ed"),
+                            Angle = 135.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 2.71,
+                            Value = -0.51000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004ee"),
+                            Angle = 135.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 2.71,
+                            Value = -0.47999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004ef"),
+                            Angle = 135.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 2.71,
+                            Value = -0.45000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004f0"),
+                            Angle = 135.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 2.71,
+                            Value = -0.42999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004f1"),
+                            Angle = 135.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 2.71,
+                            Value = -0.39000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004f2"),
+                            Angle = 135.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 2.71,
+                            Value = -0.35999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004f3"),
+                            Angle = 135.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 2.71,
+                            Value = -0.33000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004f4"),
+                            Angle = 135.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 2.71,
+                            Value = -0.29999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004f5"),
+                            Angle = 135.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 2.71,
+                            Value = -0.27000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004f6"),
+                            Angle = 135.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 2.71,
+                            Value = -0.17000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004f7"),
+                            Angle = 135.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 2.71,
+                            Value = -0.14000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004f8"),
+                            Angle = 135.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 2.71,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004f9"),
+                            Angle = 135.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.88,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004fa"),
+                            Angle = 135.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.85999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004fb"),
+                            Angle = 135.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.81000000000000005,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004fc"),
+                            Angle = 135.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.78000000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004fd"),
+                            Angle = 135.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.77000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004fe"),
+                            Angle = 135.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.75,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000004ff"),
+                            Angle = 135.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.72999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000500"),
+                            Angle = 135.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.69999999999999996,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000501"),
+                            Angle = 135.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.68000000000000005,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000502"),
+                            Angle = 135.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.65000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000503"),
+                            Angle = 135.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.63,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000504"),
+                            Angle = 135.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000505"),
+                            Angle = 135.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -1.28,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000506"),
+                            Angle = 135.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -1.25,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000507"),
+                            Angle = 135.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -1.1799999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000508"),
+                            Angle = 135.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -1.1399999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000509"),
+                            Angle = 135.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -1.1100000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000050a"),
+                            Angle = 135.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -1.0900000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000050b"),
+                            Angle = 135.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -1.0600000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000050c"),
+                            Angle = 135.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -1.02,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000050d"),
+                            Angle = 135.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.98999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000050e"),
+                            Angle = 135.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.93999999999999995,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000050f"),
+                            Angle = 135.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.92000000000000004,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000510"),
+                            Angle = 135.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000511"),
+                            Angle = 135.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -1.6000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000512"),
+                            Angle = 135.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -1.5700000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000513"),
+                            Angle = 135.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -1.48,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000514"),
+                            Angle = 135.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -1.4299999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000515"),
+                            Angle = 135.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -1.3999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000516"),
+                            Angle = 135.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -1.3600000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000517"),
+                            Angle = 135.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -1.3300000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000518"),
+                            Angle = 135.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -1.28,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000519"),
+                            Angle = 135.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -1.24,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000051a"),
+                            Angle = 135.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -1.1799999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000051b"),
+                            Angle = 135.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -1.1499999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000051c"),
+                            Angle = 135.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000051d"),
+                            Angle = 135.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -2.0099999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000051e"),
+                            Angle = 135.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -1.97,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000051f"),
+                            Angle = 135.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -1.8500000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000520"),
+                            Angle = 135.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -1.79,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000521"),
+                            Angle = 135.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -1.75,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000522"),
+                            Angle = 135.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -1.71,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000523"),
+                            Angle = 135.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -1.6699999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000524"),
+                            Angle = 135.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -1.6100000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000525"),
+                            Angle = 135.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -1.55,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000526"),
+                            Angle = 135.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -1.48,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000527"),
+                            Angle = 135.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -1.45,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000528"),
+                            Angle = 135.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000529"),
+                            Angle = 168.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.11,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000052a"),
+                            Angle = 168.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.10000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000052b"),
+                            Angle = 168.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.080000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000052c"),
+                            Angle = 168.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.070000000000000007,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000052d"),
+                            Angle = 168.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.050000000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000052e"),
+                            Angle = 168.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.040000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000052f"),
+                            Angle = 168.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.040000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000530"),
+                            Angle = 168.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.029999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000531"),
+                            Angle = 168.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.029999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000532"),
+                            Angle = 168.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.02,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000533"),
+                            Angle = 168.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000534"),
+                            Angle = 168.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000535"),
+                            Angle = 168.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 1.26,
+                            Value = -0.22,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000536"),
+                            Angle = 168.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 1.26,
+                            Value = -0.20000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000537"),
+                            Angle = 168.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 1.26,
+                            Value = -0.19,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000538"),
+                            Angle = 168.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 1.26,
+                            Value = -0.17000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000539"),
+                            Angle = 168.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 1.26,
+                            Value = -0.14000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000053a"),
+                            Angle = 168.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 1.26,
+                            Value = -0.13,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000053b"),
+                            Angle = 168.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 1.26,
+                            Value = -0.10000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000053c"),
+                            Angle = 168.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 1.26,
+                            Value = -0.080000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000053d"),
+                            Angle = 168.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 1.26,
+                            Value = -0.050000000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000053e"),
+                            Angle = 168.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 1.26,
+                            Value = -0.029999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000053f"),
+                            Angle = 168.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 1.26,
+                            Value = -0.02,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000540"),
+                            Angle = 168.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 1.26,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000541"),
+                            Angle = 168.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.25,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000542"),
+                            Angle = 168.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.23000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000543"),
+                            Angle = 168.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.20999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000544"),
+                            Angle = 168.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.19,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000545"),
+                            Angle = 168.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.16,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000546"),
+                            Angle = 168.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.14000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000547"),
+                            Angle = 168.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.12,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000548"),
+                            Angle = 168.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.10000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000549"),
+                            Angle = 168.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.080000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000054a"),
+                            Angle = 168.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.050000000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000054b"),
+                            Angle = 168.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.029999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000054c"),
+                            Angle = 168.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000054d"),
+                            Angle = 168.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.31,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000054e"),
+                            Angle = 168.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.28000000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000054f"),
+                            Angle = 168.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.26000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000550"),
+                            Angle = 168.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.23999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000551"),
+                            Angle = 168.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.20999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000552"),
+                            Angle = 168.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.17000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000553"),
+                            Angle = 168.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.16,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000554"),
+                            Angle = 168.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.12,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000555"),
+                            Angle = 168.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.10000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000556"),
+                            Angle = 168.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.070000000000000007,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000557"),
+                            Angle = 168.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.040000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000558"),
+                            Angle = 168.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000559"),
+                            Angle = 168.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 2.71,
+                            Value = -0.40999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000055a"),
+                            Angle = 168.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 2.71,
+                            Value = -0.39000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000055b"),
+                            Angle = 168.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 2.71,
+                            Value = -0.35999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000055c"),
+                            Angle = 168.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 2.71,
+                            Value = -0.34999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000055d"),
+                            Angle = 168.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 2.71,
+                            Value = -0.31,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000055e"),
+                            Angle = 168.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 2.71,
+                            Value = -0.28000000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000055f"),
+                            Angle = 168.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 2.71,
+                            Value = -0.26000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000560"),
+                            Angle = 168.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 2.71,
+                            Value = -0.23999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000561"),
+                            Angle = 168.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 2.71,
+                            Value = -0.22,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000562"),
+                            Angle = 168.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 2.71,
+                            Value = -0.13,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000563"),
+                            Angle = 168.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 2.71,
+                            Value = -0.11,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000564"),
+                            Angle = 168.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 2.71,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000565"),
+                            Angle = 168.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.69999999999999996,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000566"),
+                            Angle = 168.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.68999999999999995,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000567"),
+                            Angle = 168.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.65000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000568"),
+                            Angle = 168.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.63,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000569"),
+                            Angle = 168.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.60999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000056a"),
+                            Angle = 168.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.59999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000056b"),
+                            Angle = 168.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.57999999999999996,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000056c"),
+                            Angle = 168.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.56000000000000005,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000056d"),
+                            Angle = 168.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.54000000000000004,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000056e"),
+                            Angle = 168.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.52000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000056f"),
+                            Angle = 168.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.51000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000570"),
+                            Angle = 168.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000571"),
+                            Angle = 168.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -1.02,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000572"),
+                            Angle = 168.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -1.0,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000573"),
+                            Angle = 168.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.93999999999999995,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000574"),
+                            Angle = 168.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.91000000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000575"),
+                            Angle = 168.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.89000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000576"),
+                            Angle = 168.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.87,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000577"),
+                            Angle = 168.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.84999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000578"),
+                            Angle = 168.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.81999999999999995,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000579"),
+                            Angle = 168.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.79000000000000004,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000057a"),
+                            Angle = 168.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.75,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000057b"),
+                            Angle = 168.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.73999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000057c"),
+                            Angle = 168.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000057d"),
+                            Angle = 168.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -1.28,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000057e"),
+                            Angle = 168.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -1.26,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000057f"),
+                            Angle = 168.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -1.1799999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000580"),
+                            Angle = 168.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -1.1399999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000581"),
+                            Angle = 168.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -1.1200000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000582"),
+                            Angle = 168.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -1.0900000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000583"),
+                            Angle = 168.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -1.0700000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000584"),
+                            Angle = 168.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -1.03,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000585"),
+                            Angle = 168.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -0.98999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000586"),
+                            Angle = 168.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -0.93999999999999995,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000587"),
+                            Angle = 168.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -0.92000000000000004,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000588"),
+                            Angle = 168.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000589"),
+                            Angle = 168.75,
+                            DeadWeight = 10000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -1.6100000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000058a"),
+                            Angle = 168.75,
+                            DeadWeight = 15000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -1.5800000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000058b"),
+                            Angle = 168.75,
+                            DeadWeight = 19000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -1.48,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000058c"),
+                            Angle = 168.75,
+                            DeadWeight = 25000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -1.4299999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000058d"),
+                            Angle = 168.75,
+                            DeadWeight = 40000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -1.3999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000058e"),
+                            Angle = 168.75,
+                            DeadWeight = 50000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -1.3700000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000058f"),
+                            Angle = 168.75,
+                            DeadWeight = 60000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -1.3400000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000590"),
+                            Angle = 168.75,
+                            DeadWeight = 75000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -1.29,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000591"),
+                            Angle = 168.75,
+                            DeadWeight = 90000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -1.24,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000592"),
+                            Angle = 168.75,
+                            DeadWeight = 120000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -1.1799999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000593"),
+                            Angle = 168.75,
+                            DeadWeight = 150000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -1.1599999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000594"),
+                            Angle = 168.75,
+                            DeadWeight = 999999.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000595"),
+                            Angle = 180.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.059999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000596"),
+                            Angle = 180.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.059999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000597"),
+                            Angle = 180.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.050000000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000598"),
+                            Angle = 180.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.040000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000599"),
+                            Angle = 180.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.029999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000059a"),
+                            Angle = 180.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.029999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000059b"),
+                            Angle = 180.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.02,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000059c"),
+                            Angle = 180.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.02,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000059d"),
+                            Angle = 180.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.02,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000059e"),
+                            Angle = 180.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000059f"),
+                            Angle = 180.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005a0"),
+                            Angle = 180.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 0.80000000000000004,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005a1"),
+                            Angle = 180.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 1.26,
+                            Value = -0.12,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005a2"),
+                            Angle = 180.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 1.26,
+                            Value = -0.11,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005a3"),
+                            Angle = 180.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 1.26,
+                            Value = -0.10000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005a4"),
+                            Angle = 180.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 1.26,
+                            Value = -0.089999999999999997,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005a5"),
+                            Angle = 180.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 1.26,
+                            Value = -0.080000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005a6"),
+                            Angle = 180.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 1.26,
+                            Value = -0.070000000000000007,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005a7"),
+                            Angle = 180.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 1.26,
+                            Value = -0.059999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005a8"),
+                            Angle = 180.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 1.26,
+                            Value = -0.050000000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005a9"),
+                            Angle = 180.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 1.26,
+                            Value = -0.029999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005aa"),
+                            Angle = 180.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 1.26,
+                            Value = -0.02,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005ab"),
+                            Angle = 180.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 1.26,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005ac"),
+                            Angle = 180.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 1.26,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005ad"),
+                            Angle = 180.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.14999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005ae"),
+                            Angle = 180.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.13,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005af"),
+                            Angle = 180.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.12,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005b0"),
+                            Angle = 180.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.11,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005b1"),
+                            Angle = 180.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.10000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005b2"),
+                            Angle = 180.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.080000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005b3"),
+                            Angle = 180.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.070000000000000007,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005b4"),
+                            Angle = 180.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.059999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005b5"),
+                            Angle = 180.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.050000000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005b6"),
+                            Angle = 180.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.029999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005b7"),
+                            Angle = 180.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.02,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005b8"),
+                            Angle = 180.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 2.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005b9"),
+                            Angle = 180.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.22,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005ba"),
+                            Angle = 180.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.20000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005bb"),
+                            Angle = 180.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.19,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005bc"),
+                            Angle = 180.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.17000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005bd"),
+                            Angle = 180.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.14999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005be"),
+                            Angle = 180.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.12,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005bf"),
+                            Angle = 180.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.11,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005c0"),
+                            Angle = 180.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.089999999999999997,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005c1"),
+                            Angle = 180.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.070000000000000007,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005c2"),
+                            Angle = 180.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.050000000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005c3"),
+                            Angle = 180.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.029999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005c4"),
+                            Angle = 180.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 2.3100000000000001,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005c5"),
+                            Angle = 180.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 2.71,
+                            Value = -0.28999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005c6"),
+                            Angle = 180.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 2.71,
+                            Value = -0.28000000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005c7"),
+                            Angle = 180.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 2.71,
+                            Value = -0.26000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005c8"),
+                            Angle = 180.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 2.71,
+                            Value = -0.25,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005c9"),
+                            Angle = 180.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 2.71,
+                            Value = -0.22,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005ca"),
+                            Angle = 180.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 2.71,
+                            Value = -0.20000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005cb"),
+                            Angle = 180.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 2.71,
+                            Value = -0.19,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005cc"),
+                            Angle = 180.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 2.71,
+                            Value = -0.17999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005cd"),
+                            Angle = 180.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 2.71,
+                            Value = -0.14999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005ce"),
+                            Angle = 180.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 2.71,
+                            Value = -0.10000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005cf"),
+                            Angle = 180.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 2.71,
+                            Value = -0.080000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005d0"),
+                            Angle = 180.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 2.71,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005d1"),
+                            Angle = 180.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.51000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005d2"),
+                            Angle = 180.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.5,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005d3"),
+                            Angle = 180.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.46999999999999997,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005d4"),
+                            Angle = 180.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.45000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005d5"),
+                            Angle = 180.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.44,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005d6"),
+                            Angle = 180.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.42999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005d7"),
+                            Angle = 180.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.41999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005d8"),
+                            Angle = 180.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.40000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005d9"),
+                            Angle = 180.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.39000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005da"),
+                            Angle = 180.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.37,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005db"),
+                            Angle = 180.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.35999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005dc"),
+                            Angle = 180.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 3.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005dd"),
+                            Angle = 180.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.77000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005de"),
+                            Angle = 180.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.75,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005df"),
+                            Angle = 180.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.70999999999999996,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005e0"),
+                            Angle = 180.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.68000000000000005,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005e1"),
+                            Angle = 180.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.67000000000000004,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005e2"),
+                            Angle = 180.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.65000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005e3"),
+                            Angle = 180.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.64000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005e4"),
+                            Angle = 180.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.60999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005e5"),
+                            Angle = 180.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.58999999999999997,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005e6"),
+                            Angle = 180.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.56000000000000005,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005e7"),
+                            Angle = 180.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.55000000000000004,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005e8"),
+                            Angle = 180.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 4.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005e9"),
+                            Angle = 180.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -0.92000000000000004,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005ea"),
+                            Angle = 180.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -0.90000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005eb"),
+                            Angle = 180.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -0.84999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005ec"),
+                            Angle = 180.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -0.81999999999999995,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005ed"),
+                            Angle = 180.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -0.80000000000000004,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005ee"),
+                            Angle = 180.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -0.78000000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005ef"),
+                            Angle = 180.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -0.77000000000000002,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005f0"),
+                            Angle = 180.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -0.73999999999999999,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005f1"),
+                            Angle = 180.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -0.70999999999999996,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005f2"),
+                            Angle = 180.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -0.68000000000000005,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005f3"),
+                            Angle = 180.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -0.66000000000000003,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005f4"),
+                            Angle = 180.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 5.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005f5"),
+                            Angle = 180.0,
+                            DeadWeight = 10000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -1.1100000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005f6"),
+                            Angle = 180.0,
+                            DeadWeight = 15000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -1.0800000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005f7"),
+                            Angle = 180.0,
+                            DeadWeight = 19000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -1.02,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005f8"),
+                            Angle = 180.0,
+                            DeadWeight = 25000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -0.97999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005f9"),
+                            Angle = 180.0,
+                            DeadWeight = 40000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -0.95999999999999996,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005fa"),
+                            Angle = 180.0,
+                            DeadWeight = 50000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -0.93999999999999995,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005fb"),
+                            Angle = 180.0,
+                            DeadWeight = 60000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -0.92000000000000004,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005fc"),
+                            Angle = 180.0,
+                            DeadWeight = 75000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -0.89000000000000001,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005fd"),
+                            Angle = 180.0,
+                            DeadWeight = 90000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -0.84999999999999998,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005fe"),
+                            Angle = 180.0,
+                            DeadWeight = 120000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -0.81000000000000005,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-0000000005ff"),
+                            Angle = 180.0,
+                            DeadWeight = 150000.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -0.80000000000000004,
+                            Weather = "Wave"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000600"),
+                            Angle = 180.0,
+                            DeadWeight = 999999.0,
+                            Magnitude = 6.0099999999999998,
+                            Value = -0.01,
+                            Weather = "Wave"
+                        });
                 });
 #pragma warning restore 612, 618
         }

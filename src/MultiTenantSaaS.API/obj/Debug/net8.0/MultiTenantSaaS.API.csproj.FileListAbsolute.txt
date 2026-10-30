@@ -361,3 +361,6 @@ C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.API\bin\Debug\net8.0\d
 C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.API\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.API\bin\Debug\net8.0\System.ClientModel.dll
 C:\Users\CHMOKUM\source\repos\backend\src\MultiTenantSaaS.API\obj\Debug\net8.0\swae.build.ex.cache
+C:\Users\CHMOKUM\source\repos\STEM\backend\src\MultiTenantSaaS.API\bin\Debug\net8.0\dotnet-tools.json
+C:\Users\CHMOKUM\source\repos\STEM\backend\src\MultiTenantSaaS.API\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\CHMOKUM\source\repos\STEM\backend\src\MultiTenantSaaS.API\bin\Debug\net8.0\System.ClientModel.dll

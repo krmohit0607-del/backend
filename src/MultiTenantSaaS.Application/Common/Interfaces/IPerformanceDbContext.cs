@@ -13,6 +13,7 @@ public interface IPerformanceDbContext
 {
     DbSet<TracksheetRow> TracksheetRows { get; }
     DbSet<VoyagePerformanceReport> PerformanceReports { get; }
+    DbSet<WeatherFactorEntry> WeatherFactorEntries { get; }
 
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }

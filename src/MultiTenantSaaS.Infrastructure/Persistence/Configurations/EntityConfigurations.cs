@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using MultiTenantSaaS.Domain.Entities;
+using MultiTenantSaaS.Domain.Entities.Optimization;
 
 namespace MultiTenantSaaS.Infrastructure.Persistence.Configurations;
 
@@ -933,4 +934,34 @@ public class WeatherGridSnapshotConfiguration : IEntityTypeConfiguration<Weather
         builder.HasIndex(w => new { w.FactorId, w.TimestampUtc, w.TileSouth, w.TileWest }).IsUnique();
     }
 }
+
+public class OptimizationRunConfiguration : IEntityTypeConfiguration<OptimizationRun>
+{
+    public void Configure(EntityTypeBuilder<OptimizationRun> builder)
+    {
+        builder.ToTable("OptimizationRuns");
+        builder.HasKey(r => r.Id);
+        builder.Property(r => r.VoyageId).IsRequired().HasMaxLength(100);
+        builder.Property(r => r.ScenariosRequestedJson).HasColumnType("nvarchar(max)");
+        builder.Property(r => r.RestrictedAreasJson).HasColumnType("nvarchar(max)");
+        builder.HasIndex(r => new { r.VoyageId, r.RequestedAtUtc });
+        builder.HasMany(r => r.ScenarioResults)
+            .WithOne(s => s.OptimizationRun)
+            .HasForeignKey(s => s.OptimizationRunId)
+            .OnDelete(DeleteBehavior.Cascade);
+    }
+}
+
+public class OptimizationScenarioResultConfiguration : IEntityTypeConfiguration<OptimizationScenarioResult>
+{
+    public void Configure(EntityTypeBuilder<OptimizationScenarioResult> builder)
+    {
+        builder.ToTable("OptimizationScenarioResults");
+        builder.HasKey(s => s.Id);
+        builder.Property(s => s.Scenario).IsRequired().HasMaxLength(50);
+        builder.Property(s => s.RouteWaypointsJson).HasColumnType("nvarchar(max)");
+        builder.HasIndex(s => new { s.OptimizationRunId, s.Scenario });
+    }
+}
+
 

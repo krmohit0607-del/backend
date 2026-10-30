@@ -194,3 +194,6 @@ C:\Users\CHMOKUM\source\repos\STEM\backend\tests\MultiTenantSaaS.UnitTests\bin\D
 C:\Users\CHMOKUM\source\repos\STEM\backend\tests\MultiTenantSaaS.UnitTests\bin\Debug\net8.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\Users\CHMOKUM\source\repos\STEM\backend\tests\MultiTenantSaaS.UnitTests\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
 C:\Users\CHMOKUM\source\repos\STEM\backend\tests\MultiTenantSaaS.UnitTests\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\CHMOKUM\source\repos\STEM\backend\tests\MultiTenantSaaS.UnitTests\bin\Debug\net8.0\dotnet-tools.json
+C:\Users\CHMOKUM\source\repos\STEM\backend\tests\MultiTenantSaaS.UnitTests\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\CHMOKUM\source\repos\STEM\backend\tests\MultiTenantSaaS.UnitTests\bin\Debug\net8.0\System.ClientModel.dll

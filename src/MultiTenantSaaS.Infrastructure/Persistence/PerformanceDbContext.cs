@@ -26,6 +26,7 @@ public class PerformanceDbContext : DbContext, IPerformanceDbContext
 
     public DbSet<TracksheetRow> TracksheetRows => Set<TracksheetRow>();
     public DbSet<VoyagePerformanceReport> PerformanceReports => Set<VoyagePerformanceReport>();
+    public DbSet<WeatherFactorEntry> WeatherFactorEntries => Set<WeatherFactorEntry>();
 
     private Guid? CurrentTenantId => _currentUserService?.TenantId;
     private string? CurrentUserRole => _currentUserService?.Role;
@@ -58,6 +59,15 @@ public class PerformanceDbContext : DbContext, IPerformanceDbContext
                 CurrentTenantId == null ||
                 CurrentUserRole == Domain.Enums.UserRoles.SuperAdmin ||
                 r.TenantId == CurrentTenantId);
+        });
+
+        builder.Entity<WeatherFactorEntry>(entity =>
+        {
+            entity.ToTable("WeatherFactorEntries");
+            entity.HasIndex(e => new { e.Weather, e.DeadWeight, e.Magnitude, e.Angle });
+            entity.Property(e => e.Weather).HasMaxLength(20).IsRequired();
+            // Global reference data — no tenant query filter, seeded once below.
+            entity.HasData(WeatherFactorSeedData.Entries);
         });
     }
 }
