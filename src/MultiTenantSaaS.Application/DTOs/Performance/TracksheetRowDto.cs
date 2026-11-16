@@ -12,6 +12,9 @@ public class TracksheetRowDto
     public string Lat { get; set; } = string.Empty;
     public string Lng { get; set; } = string.Empty;
 
+    /// <summary>Planned-departure placeholder row (not an observation).</summary>
+    public bool IsDefault { get; set; }
+
     public double? VlsfoRob { get; set; }
     public double? VlsfoBunkered { get; set; }
     public double? VlsfoCorrected { get; set; }

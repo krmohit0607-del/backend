@@ -21,6 +21,9 @@ public class TracksheetRow : BaseAuditableEntity, IHasTenant
     /// <summary>Preserves the grid's row order (rows can be inserted/removed anywhere).</summary>
     public int SortOrder { get; set; }
 
+    /// <summary>A planned-departure placeholder (first waypoint at the ETD) until the vessel's actual departure data replaces it; never used as an observation.</summary>
+    public bool IsDefault { get; set; }
+
     public string NextPort { get; set; } = string.Empty;
     public string Rt { get; set; } = string.Empty;
     public string Date { get; set; } = string.Empty;

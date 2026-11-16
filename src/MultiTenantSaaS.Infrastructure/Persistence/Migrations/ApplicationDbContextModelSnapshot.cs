@@ -506,6 +506,79 @@ namespace MultiTenantSaaS.Infrastructure.Persistence.Migrations
                     b.ToTable("AreaConstraints", (string)null);
                 });
 
+            modelBuilder.Entity("MultiTenantSaaS.Domain.Entities.Assistant.AssistantConversation", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatedByUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("LastMessageAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedByUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TenantId", "UserId", "LastMessageAtUtc");
+
+                    b.ToTable("AssistantConversations", (string)null);
+                });
+
+            modelBuilder.Entity("MultiTenantSaaS.Domain.Entities.Assistant.AssistantMessage", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ActionsJson")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("ConversationId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<Guid?>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ConversationId", "CreatedAtUtc");
+
+                    b.ToTable("AssistantMessages", (string)null);
+                });
+
             modelBuilder.Entity("MultiTenantSaaS.Domain.Entities.AuditLog", b =>
                 {
                     b.Property<Guid>("Id")
@@ -2169,6 +2242,151 @@ namespace MultiTenantSaaS.Infrastructure.Persistence.Migrations
                     b.ToTable("Modules", (string)null);
                 });
 
+            modelBuilder.Entity("MultiTenantSaaS.Domain.Entities.Optimization.EtsPolicy", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<double>("ExtraEuCoveragePct")
+                        .HasColumnType("float");
+
+                    b.Property<double>("IntraEuCoveragePct")
+                        .HasColumnType("float");
+
+                    b.Property<string>("PhaseInJson")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<double>("UnknownCoveragePct")
+                        .HasColumnType("float");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedByUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TenantId");
+
+                    b.ToTable("EtsPolicies", (string)null);
+                });
+
+            modelBuilder.Entity("MultiTenantSaaS.Domain.Entities.Optimization.OptimizationJob", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Attempts")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Error")
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
+
+                    b.Property<DateTime?>("FinishedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Percent")
+                        .HasColumnType("int");
+
+                    b.Property<string>("RequestJson")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("RunId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Stage")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<Guid?>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Status");
+
+                    b.HasIndex("TenantId", "CreatedAtUtc");
+
+                    b.ToTable("OptimizationJobs", (string)null);
+                });
+
+            modelBuilder.Entity("MultiTenantSaaS.Domain.Entities.Optimization.OptimizationRecommendation", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("LastEvaluatedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("MetricsJson")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("OptimizationRunId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ReasonsJson")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("ResolvedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("ResolvedByUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Scenario")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<Guid?>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("VoyageId")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OptimizationRunId", "Scenario");
+
+                    b.HasIndex("VoyageId", "Status", "CreatedAtUtc");
+
+                    b.ToTable("OptimizationRecommendations", (string)null);
+                });
+
             modelBuilder.Entity("MultiTenantSaaS.Domain.Entities.Optimization.OptimizationRun", b =>
                 {
                     b.Property<Guid>("Id")
@@ -2198,6 +2416,10 @@ namespace MultiTenantSaaS.Infrastructure.Persistence.Migrations
 
                     b.Property<double>("HireRatePerDayUsd")
                         .HasColumnType("float");
+
+                    b.Property<string>("InputSnapshotJson")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LoadCondition")
                         .IsRequired()
@@ -2247,6 +2469,10 @@ namespace MultiTenantSaaS.Infrastructure.Persistence.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("AnalysisJson")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("AverageSpeedKn")
                         .HasColumnType("float");
@@ -2311,6 +2537,10 @@ namespace MultiTenantSaaS.Infrastructure.Persistence.Migrations
                     b.Property<double>("TotalCostToGoUsd")
                         .HasColumnType("float");
 
+                    b.Property<string>("WarningsJson")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("WasConstrainedByZones")
                         .HasColumnType("bit");
 
@@ -2319,6 +2549,85 @@ namespace MultiTenantSaaS.Infrastructure.Persistence.Migrations
                     b.HasIndex("OptimizationRunId", "Scenario");
 
                     b.ToTable("OptimizationScenarioResults", (string)null);
+                });
+
+            modelBuilder.Entity("MultiTenantSaaS.Domain.Entities.Optimization.PerformanceCalibration", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("FittedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<double>("FuelFactor")
+                        .HasColumnType("float");
+
+                    b.Property<string>("LoadCondition")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<string>("ModelVersion")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<string>("MonthlyJson")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NotesJson")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Quality")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<DateTime?>("ReviewedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("ReviewedByUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("SampleCount")
+                        .HasColumnType("int");
+
+                    b.Property<double>("SpreadPct")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<Guid?>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<double?>("TrendPctPerMonth")
+                        .HasColumnType("float");
+
+                    b.Property<int>("UsedSampleCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("VesselImo")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<DateTime?>("WindowFromUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("WindowToUtc")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("VesselImo", "LoadCondition", "Status");
+
+                    b.ToTable("PerformanceCalibrations", (string)null);
                 });
 
             modelBuilder.Entity("MultiTenantSaaS.Domain.Entities.Passage", b =>
@@ -3097,6 +3406,9 @@ namespace MultiTenantSaaS.Infrastructure.Persistence.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LinesPerSide")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LoadDiagramJson")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MaxMcr")
@@ -4213,6 +4525,17 @@ namespace MultiTenantSaaS.Infrastructure.Persistence.Migrations
                     b.Navigation("Tenant");
                 });
 
+            modelBuilder.Entity("MultiTenantSaaS.Domain.Entities.Assistant.AssistantMessage", b =>
+                {
+                    b.HasOne("MultiTenantSaaS.Domain.Entities.Assistant.AssistantConversation", "Conversation")
+                        .WithMany("Messages")
+                        .HasForeignKey("ConversationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Conversation");
+                });
+
             modelBuilder.Entity("MultiTenantSaaS.Domain.Entities.AuditLog", b =>
                 {
                     b.HasOne("MultiTenantSaaS.Domain.Entities.Tenant", "Tenant")
@@ -4597,6 +4920,11 @@ namespace MultiTenantSaaS.Infrastructure.Persistence.Migrations
                     b.Navigation("ModulePermissions");
 
                     b.Navigation("RefreshTokens");
+                });
+
+            modelBuilder.Entity("MultiTenantSaaS.Domain.Entities.Assistant.AssistantConversation", b =>
+                {
+                    b.Navigation("Messages");
                 });
 
             modelBuilder.Entity("MultiTenantSaaS.Domain.Entities.Client", b =>

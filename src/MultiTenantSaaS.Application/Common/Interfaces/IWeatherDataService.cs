@@ -6,11 +6,17 @@ public interface IWeatherDataService
 {
     /// <summary>
     /// Get a weather grid for `factorId` at `timestampUtc` over the given
-    /// bounds, resampled to `cols` x `rows`. Transparently fetches-and-caches
-    /// any missing map tiles from the upstream weather API (Open-Meteo
-    /// forecast/marine for future hours, the historical archive API for
-    /// past ones) the first time they're requested; every call after that
-    /// for an overlapping viewport is served from the database.
+    /// bounds, resampled to `cols` x `rows`. Serves every request — live/
+    /// forecast hours and historical ones alike — from a persistent,
+    /// geographically fixed tile cache: the first request for a given
+    /// (factor, hour, tile) transparently fetches-and-caches it from the
+    /// upstream weather API (Open-Meteo forecast/marine for live hours,
+    /// falling back to the historical archive when live data isn't
+    /// available), and every later request for an overlapping viewport is
+    /// served from the database — including by other users. Because the
+    /// cache is keyed by fixed geography rather than the caller's exact
+    /// viewport, panning/zooming (including across the antimeridian) never
+    /// changes which underlying samples back a given point.
     /// </summary>
     Task<WeatherGridDto> GetGridAsync(
         string factorId,

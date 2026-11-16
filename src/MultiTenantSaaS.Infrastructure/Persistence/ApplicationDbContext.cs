@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using MultiTenantSaaS.Application.Common.Interfaces;
 using MultiTenantSaaS.Domain.Common;
 using MultiTenantSaaS.Domain.Entities;
+using MultiTenantSaaS.Domain.Entities.Assistant;
 using MultiTenantSaaS.Domain.Entities.Optimization;
 using MultiTenantSaaS.Domain.Enums;
 using Module = MultiTenantSaaS.Domain.Entities.Module;
@@ -74,6 +75,12 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, Applicati
     public DbSet<WeatherGridSnapshot> WeatherGridSnapshots => Set<WeatherGridSnapshot>();
     public DbSet<OptimizationRun> OptimizationRuns => Set<OptimizationRun>();
     public DbSet<OptimizationScenarioResult> OptimizationScenarioResults => Set<OptimizationScenarioResult>();
+    public DbSet<OptimizationRecommendation> OptimizationRecommendations => Set<OptimizationRecommendation>();
+    public DbSet<OptimizationJob> OptimizationJobs => Set<OptimizationJob>();
+    public DbSet<EtsPolicy> EtsPolicies => Set<EtsPolicy>();
+    public DbSet<PerformanceCalibration> PerformanceCalibrations => Set<PerformanceCalibration>();
+    public DbSet<AssistantConversation> AssistantConversations => Set<AssistantConversation>();
+    public DbSet<AssistantMessage> AssistantMessages => Set<AssistantMessage>();
 
     public Guid? CurrentTenantId => _currentUserService?.TenantId;
     public string? CurrentUserRole => _currentUserService?.Role;
@@ -276,6 +283,41 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, Applicati
             CurrentTenantId == null ||
             CurrentUserRole == MultiTenantSaaS.Domain.Enums.UserRoles.SuperAdmin ||
             wc.TenantId == CurrentTenantId);
+
+        builder.Entity<OptimizationRun>().HasQueryFilter(run =>
+            CurrentTenantId == null ||
+            CurrentUserRole == MultiTenantSaaS.Domain.Enums.UserRoles.SuperAdmin ||
+            run.TenantId == CurrentTenantId);
+
+        builder.Entity<OptimizationRecommendation>().HasQueryFilter(rec =>
+            CurrentTenantId == null ||
+            CurrentUserRole == MultiTenantSaaS.Domain.Enums.UserRoles.SuperAdmin ||
+            rec.TenantId == CurrentTenantId);
+
+        builder.Entity<OptimizationJob>().HasQueryFilter(job =>
+            CurrentTenantId == null ||
+            CurrentUserRole == MultiTenantSaaS.Domain.Enums.UserRoles.SuperAdmin ||
+            job.TenantId == CurrentTenantId);
+
+        builder.Entity<EtsPolicy>().HasQueryFilter(policy =>
+            CurrentTenantId == null ||
+            CurrentUserRole == MultiTenantSaaS.Domain.Enums.UserRoles.SuperAdmin ||
+            policy.TenantId == CurrentTenantId);
+
+        builder.Entity<PerformanceCalibration>().HasQueryFilter(calibration =>
+            CurrentTenantId == null ||
+            CurrentUserRole == MultiTenantSaaS.Domain.Enums.UserRoles.SuperAdmin ||
+            calibration.TenantId == CurrentTenantId);
+
+        builder.Entity<AssistantConversation>().HasQueryFilter(conversation =>
+            CurrentTenantId == null ||
+            CurrentUserRole == MultiTenantSaaS.Domain.Enums.UserRoles.SuperAdmin ||
+            conversation.TenantId == CurrentTenantId);
+
+        builder.Entity<AssistantMessage>().HasQueryFilter(message =>
+            CurrentTenantId == null ||
+            CurrentUserRole == MultiTenantSaaS.Domain.Enums.UserRoles.SuperAdmin ||
+            message.TenantId == CurrentTenantId);
     }
 
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)

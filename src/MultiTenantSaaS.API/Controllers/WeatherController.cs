@@ -7,8 +7,9 @@ using MultiTenantSaaS.Application.DTOs.Weather;
 namespace MultiTenantSaaS.API.Controllers;
 
 /// <summary>
-/// Persistent weather grid cache — backs the map's historical/date-range
-/// viewer. See <see cref="IWeatherDataService"/> for the tile-cache design.
+/// Persistent weather grid cache — backs the map's live overlay and its
+/// historical/date-range viewer alike. See <see cref="IWeatherDataService"/>
+/// for the tile-cache design.
 /// </summary>
 [Route("api/weather")]
 [Authorize]

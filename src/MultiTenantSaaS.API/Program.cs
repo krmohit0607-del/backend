@@ -31,6 +31,15 @@ try
     builder.Services.AddSingleton<IAuthorizationPolicyProvider, ModuleAccessPolicyProvider>();
     builder.Services.AddScoped<IAuthorizationHandler, ModuleAccessAuthorizationHandler>();
 
+    // Per-user limit on LLM calls (cost control)
+    builder.Services.AddRateLimiter(options =>
+    {
+        options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+        options.AddPolicy("assistant", httpContext => System.Threading.RateLimiting.RateLimitPartition.GetFixedWindowLimiter(
+            httpContext.User.Identity?.Name ?? httpContext.Connection.RemoteIpAddress?.ToString() ?? "anonymous",
+            _ => new System.Threading.RateLimiting.FixedWindowRateLimiterOptions { PermitLimit = 30, Window = TimeSpan.FromMinutes(1), QueueLimit = 0 }));
+    });
+
     // 4. Controllers & JSON Options
     builder.Services.AddControllers()
         .AddJsonOptions(options =>
@@ -121,6 +130,13 @@ try
 
             // Seed default SuperAdmin and Modules
             await ApplicationDbContextSeed.SeedDefaultDataAsync(context, userManager, roleManager, logger);
+
+            // The Performance module has its own physical database
+            var performanceContext = services.GetRequiredService<PerformanceDbContext>();
+            if (performanceContext.Database.IsRelational())
+            {
+                await performanceContext.Database.MigrateAsync();
+            }
         }
         catch (Exception ex)
         {
@@ -148,6 +164,7 @@ try
 
     app.UseAuthentication();
     app.UseAuthorization();
+    app.UseRateLimiter();
 
     app.MapControllers();
 

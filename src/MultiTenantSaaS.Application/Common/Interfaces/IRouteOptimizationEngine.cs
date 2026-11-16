@@ -15,4 +15,6 @@ namespace MultiTenantSaaS.Application.Common.Interfaces;
 public interface IRouteOptimizationEngine
 {
     Task<OptimizationRunResultDto> RunAsync(OptimizationRequestDto request, CancellationToken cancellationToken = default);
+
+    Task<OptimizationRunResultDto> RunAsync(OptimizationRequestDto request, IProgress<OptimizationProgress>? progress, CancellationToken cancellationToken = default);
 }

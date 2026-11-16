@@ -17,6 +17,7 @@ public class CurrentUserService : ICurrentUserService
     {
         get
         {
+            if (_httpContextAccessor.HttpContext == null && AmbientUser.Value is { } ambient) return ambient.UserId;
             var idClaim = _httpContextAccessor.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier)
                           ?? _httpContextAccessor.HttpContext?.User?.FindFirstValue("sub")
                           ?? _httpContextAccessor.HttpContext?.User?.FindFirstValue("userId");
@@ -29,6 +30,7 @@ public class CurrentUserService : ICurrentUserService
     {
         get
         {
+            if (_httpContextAccessor.HttpContext == null && AmbientUser.Value is { } ambient) return ambient.TenantId;
             var tenantClaim = _httpContextAccessor.HttpContext?.User?.FindFirstValue("tenantId");
             var result = Guid.TryParse(tenantClaim, out var guid) ? (Guid?)guid : null;
             var email = _httpContextAccessor.HttpContext?.User?.FindFirstValue(System.Security.Claims.ClaimTypes.Email) ?? "unknown";

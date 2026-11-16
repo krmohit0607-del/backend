@@ -53,6 +53,12 @@ public interface IApplicationDbContext
     DbSet<WeatherGridSnapshot> WeatherGridSnapshots { get; }
     DbSet<MultiTenantSaaS.Domain.Entities.Optimization.OptimizationRun> OptimizationRuns { get; }
     DbSet<MultiTenantSaaS.Domain.Entities.Optimization.OptimizationScenarioResult> OptimizationScenarioResults { get; }
+    DbSet<MultiTenantSaaS.Domain.Entities.Optimization.OptimizationRecommendation> OptimizationRecommendations { get; }
+    DbSet<MultiTenantSaaS.Domain.Entities.Optimization.OptimizationJob> OptimizationJobs { get; }
+    DbSet<MultiTenantSaaS.Domain.Entities.Optimization.EtsPolicy> EtsPolicies { get; }
+    DbSet<MultiTenantSaaS.Domain.Entities.Optimization.PerformanceCalibration> PerformanceCalibrations { get; }
+    DbSet<MultiTenantSaaS.Domain.Entities.Assistant.AssistantConversation> AssistantConversations { get; }
+    DbSet<MultiTenantSaaS.Domain.Entities.Assistant.AssistantMessage> AssistantMessages { get; }
 
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }

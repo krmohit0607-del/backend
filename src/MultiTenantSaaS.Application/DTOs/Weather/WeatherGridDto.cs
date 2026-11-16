@@ -24,8 +24,22 @@ public class WeatherGridDto
     /// <summary>ISO timestamp (UTC) this grid represents.</summary>
     public string? Time { get; set; }
 
-    /// <summary>True if every cell came from the persisted cache/upstream
-    /// API; false if any cell had to fall back to the synthetic model
-    /// (e.g. date too far in the past/future, or upstream fetch failed).</summary>
+    /// <summary>True if every cell came from the live forecast/marine API
+    /// (persisted cache counts, since it was live when first fetched);
+    /// false if any cell is outside the live forecast window and had to
+    /// fall back to historical/modelled data (see <see cref="HasData"/>) or
+    /// couldn't be found at all.</summary>
     public bool Live { get; set; }
+
+    /// <summary>True if every cell has real sampled data — either live (see
+    /// <see cref="Live"/>) or a historical/modelled fallback for dates
+    /// outside the live forecast window; false only when a cell has no data
+    /// whatsoever (both the live and historical fetch attempts failed).
+    /// Callers that must not silently treat "no data" as calm weather
+    /// (e.g. route optimization) should gate on this instead of
+    /// <see cref="Live"/>.</summary>
+    public bool HasData { get; set; }
+
+    /// <summary>When the oldest contributing tile was fetched from the upstream forecast API.</summary>
+    public DateTime? FetchedAtUtc { get; set; }
 }

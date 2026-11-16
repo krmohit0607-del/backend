@@ -56,7 +56,7 @@ internal static class OptimizationGeoMath
         return diff > 180.0 ? 360.0 - diff : diff;
     }
 
-    /// <summary>Ray-casting point-in-polygon test. `ring` is an ordered list of [lat, lng] vertices (need not be explicitly closed).</summary>
+    /// <summary>Ray-casting point-in-polygon test. `ring` is an ordered list of WGS84 GeoJSON [longitude, latitude] vertices.</summary>
     public static bool PointInRing(double lat, double lng, IReadOnlyList<double[]> ring)
     {
         var inside = false;
@@ -64,8 +64,8 @@ internal static class OptimizationGeoMath
         if (n < 3) return false;
         for (int i = 0, j = n - 1; i < n; j = i++)
         {
-            var yi = ring[i][0]; var xi = ring[i][1];
-            var yj = ring[j][0]; var xj = ring[j][1];
+            var xi = ring[i][0]; var yi = ring[i][1];
+            var xj = ring[j][0]; var yj = ring[j][1];
             var intersects = ((yi > lat) != (yj > lat)) &&
                               (lng < (xj - xi) * (lat - yi) / ((yj - yi) == 0 ? 1e-12 : (yj - yi)) + xi);
             if (intersects) inside = !inside;

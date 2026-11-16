@@ -249,6 +249,51 @@ All API responses follow a uniform JSON structure:
 |---|---|---|---|
 | `GET` | `/api/users/me` | Get profile details of the current logged-in user | Bearer Token |
 
+## Voyage AI Agent
+
+The authenticated `POST /api/assistant/chat` endpoint uses an OpenAI-compatible Chat Completions provider. Configure the provider on the backend; never put the API key in frontend environment variables or source control:
+
+```powershell
+$env:Assistant__ApiKey = "<provider-api-key>"
+$env:Assistant__BaseUrl = "https://api.openai.com/v1"
+$env:Assistant__Model = "gpt-4o-mini"
+npm run backend:run
+```
+
+`Assistant__BaseUrl` can point to another OpenAI-compatible endpoint. The agent has bounded tool calls for ETA, fuel, and cargo-margin calculations, vessel search, and module navigation. It can propose updates to a small allowlist of Operations recap fields; each update is tied to the active voyage and requires an explicit confirmation before it is saved.
+
+Document text is extracted in the browser from PDF (including OCR for scanned pages), DOCX, XLS/XLSX, CSV, images, and plain text. File bytes are not uploaded or stored by the assistant; extracted text and voyage context are sent to the configured LLM provider when a question is submitted. Extraction is limited to 15 MB per file and 20 PDF pages; chat allows up to 100,000 extracted characters total. Users should not attach sensitive documents unless their organization's provider/data-processing policy permits it.
+
+The agent can also read stored route-optimization results through `get_optimization_results` and `compare_optimization_routes`. These read the verified engine output from the database; the system prompt forbids it from calculating or inventing route, ETA, fuel or cost figures.
+
+## Route Optimization (`/api/optimization`)
+
+Deterministic weather- and zone-aware route optimization; the LLM never produces route numbers.
+
+| Method | Route | Description |
+|---|---|---|
+| `POST` | `/run` | Synchronous run (kept for compatibility) |
+| `POST` | `/jobs` | Start a background run; returns a job id |
+| `GET` | `/jobs/{jobId}` | Status, percent, stage and, when completed, the result |
+| `DELETE` | `/jobs/{jobId}` | Cancel a job |
+| `GET` | `/runs?voyageId=` / `/runs/{runId}` | Run history / full stored run (including analysis) |
+| `POST` | `/runs/{runId}/check`, `/voyages/{voyageId}/check` | Compare the latest report (or a supplied position/time/ROB) with the stored plan; may raise a re-optimization suggestion |
+| `GET` | `/recommendations?voyageId=&status=` | Suggestions for a voyage |
+| `POST` | `/recommendations/{id}/confirm`, `/dismiss` | Operator decision (a route is never replaced automatically) |
+| `GET` | `/runs/{runId}/performance-comparison` | Predicted vs actual speed, RPM, power, fuel and ROB, plus monthly observed operating points (read-only) |
+
+Notes and limits:
+- Speed/power/fuel: a calibrated calm-water curve is built from the operating points (monotone log-log interpolation, SFOC by load when brake power is available, fuel as power proxy otherwise). Wind and wave tables are converted to added-resistance forces and the power-resistance balance is solved numerically, so boost, heavy-weather settings and zone caps do not use a cube law. Currents are vectors (crab angle, along-track SOG). Operating points that break RPM, critical-RPM, blower, load-diagram or power limits are rejected and named in the infeasibility reason. Without two usable points the older constant-power approximation is used and flagged. Validation status: calibrated to supplied data only, not validated against sea trials.
+- Solver: two stages. A coarse corridor search (configured settings, one forecast sample per arc) is followed by a detailed search of that corridor with sub-stepped arcs (forecast re-sampled at each sub-step's position and time), intermediate settings on the calibrated curve (up to 8) and optional waiting (6/12/24 h, at most 48 h, engine stopped). Labels carry cost, time and ROB. A per-scenario time limit (default 90 s) returns the coarse route when reached; status, stages and evaluation counts are in `analysis.solver`. Optimality holds only within the 14 x 5 lattice, the discrete settings and the label cap. Scenarios run sequentially.
+- Outputs per route: segment-by-segment audit (`analysis.segments`), fuel and tank-to-wake CO2 by grade, chargeable CO2 under the tenant's EU ETS policy (`GET/PUT /ets-policy`; voyage type from the nearest port country at each end, phase-in by emission year; without a policy all CO2 is charged), savings against the planned route (original waypoints at the CP default setting), and a partial wind-ensemble distribution (Open-Meteo GFS ensemble; waves and currents stay deterministic).
+- Calibration (`/calibrations/fit|approve|reject`): a fit compares observed main-engine fuel with the CP curve using weather-corrected noon reports, drops outliers and reports drift per month. It is a proposal; only an approved factor scales configured fuel and power in later runs. Boiler and port consumption, well-to-wake emissions, seakeeping criteria (slamming, green water, accelerations) and wave/current ensembles are not modelled.
+- Jobs are stored in `OptimizationJobs` (tenant-isolated, two run at a time, 7-day retention). Jobs interrupted by an API restart are re-run from their stored request (up to 3 attempts).
+- Vessel weather limits are reported for reference and never enforced. Power boost and zone speed caps use a cube-law approximation.
+- Vessel profile `LoadDiagramJson` (RPM, min/max kW, max torque kNm; torque = 9.5493 x kW / RPM) is enforced between the first and last tabulated RPM. The blower cut-in/cut-off RPM band is avoided.
+- ETA comes from the forecast-based average speed; the latest ETA applies the voyage weather margin (speed x (1 - WM%)). It is an allowance, not a confidence interval.
+- Bunker supply counts only `Booked` requirements near the route; reserves are checked at every leg. Ports within 150 NM are ranked by detour cost only (run fuel prices apply to every port). When ROB comes from the tracksheet it is reduced for the time between the last report and departure.
+- Migrations: `AddOptimizationAnalysis`, `AddOptimizationRecommendations`, `AddOptimizationJobsAndLoadDiagram`, `AddEtsPolicyAndCalibration`.
+
 ### Module 1: Fleet & Voyages (`/api/voyages` & `/api/voyage-orders`)
 
 *Scoped by Tenant Global Query Filters*

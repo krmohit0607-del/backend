@@ -121,6 +121,7 @@ public class CreateVesselCommandHandler : IRequestHandler<CreateVesselCommand, A
             BlowerLadenMax = request.Dto.BlowerLadenMax,
             CriticalRpmMin = request.Dto.CriticalRpmMin,
             CriticalRpmMax = request.Dto.CriticalRpmMax,
+            LoadDiagramJson = request.Dto.LoadDiagramJson,
             DeadSlowRpm = request.Dto.DeadSlowRpm,
             SlowAheadRpm = request.Dto.SlowAheadRpm,
             HalfAheadRpm = request.Dto.HalfAheadRpm,
@@ -303,6 +304,7 @@ public class UpdateVesselCommandHandler : IRequestHandler<UpdateVesselCommand, A
         vessel.BlowerLadenMax = request.Dto.BlowerLadenMax;
         vessel.CriticalRpmMin = request.Dto.CriticalRpmMin;
         vessel.CriticalRpmMax = request.Dto.CriticalRpmMax;
+        vessel.LoadDiagramJson = request.Dto.LoadDiagramJson;
         vessel.DeadSlowRpm = request.Dto.DeadSlowRpm;
         vessel.SlowAheadRpm = request.Dto.SlowAheadRpm;
         vessel.HalfAheadRpm = request.Dto.HalfAheadRpm;

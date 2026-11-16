@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using MultiTenantSaaS.Domain.Entities;
+using MultiTenantSaaS.Domain.Entities.Assistant;
 using MultiTenantSaaS.Domain.Entities.Optimization;
 
 namespace MultiTenantSaaS.Infrastructure.Persistence.Configurations;
@@ -944,6 +945,7 @@ public class OptimizationRunConfiguration : IEntityTypeConfiguration<Optimizatio
         builder.Property(r => r.VoyageId).IsRequired().HasMaxLength(100);
         builder.Property(r => r.ScenariosRequestedJson).HasColumnType("nvarchar(max)");
         builder.Property(r => r.RestrictedAreasJson).HasColumnType("nvarchar(max)");
+        builder.Property(r => r.InputSnapshotJson).HasColumnType("nvarchar(max)");
         builder.HasIndex(r => new { r.VoyageId, r.RequestedAtUtc });
         builder.HasMany(r => r.ScenarioResults)
             .WithOne(s => s.OptimizationRun)
@@ -960,7 +962,93 @@ public class OptimizationScenarioResultConfiguration : IEntityTypeConfiguration<
         builder.HasKey(s => s.Id);
         builder.Property(s => s.Scenario).IsRequired().HasMaxLength(50);
         builder.Property(s => s.RouteWaypointsJson).HasColumnType("nvarchar(max)");
+        builder.Property(s => s.WarningsJson).HasColumnType("nvarchar(max)");
+        builder.Property(s => s.AnalysisJson).HasColumnType("nvarchar(max)");
         builder.HasIndex(s => new { s.OptimizationRunId, s.Scenario });
+    }
+}
+
+public class EtsPolicyConfiguration : IEntityTypeConfiguration<EtsPolicy>
+{
+    public void Configure(EntityTypeBuilder<EtsPolicy> builder)
+    {
+        builder.ToTable("EtsPolicies");
+        builder.HasKey(p => p.Id);
+        builder.Property(p => p.PhaseInJson).HasColumnType("nvarchar(max)");
+        builder.HasIndex(p => p.TenantId);
+    }
+}
+
+public class PerformanceCalibrationConfiguration : IEntityTypeConfiguration<PerformanceCalibration>
+{
+    public void Configure(EntityTypeBuilder<PerformanceCalibration> builder)
+    {
+        builder.ToTable("PerformanceCalibrations");
+        builder.HasKey(c => c.Id);
+        builder.Property(c => c.VesselImo).IsRequired().HasMaxLength(20);
+        builder.Property(c => c.LoadCondition).IsRequired().HasMaxLength(10);
+        builder.Property(c => c.ModelVersion).HasMaxLength(10);
+        builder.Property(c => c.Quality).HasMaxLength(20);
+        builder.Property(c => c.Status).IsRequired().HasMaxLength(20);
+        builder.Property(c => c.NotesJson).HasColumnType("nvarchar(max)");
+        builder.Property(c => c.MonthlyJson).HasColumnType("nvarchar(max)");
+        builder.HasIndex(c => new { c.VesselImo, c.LoadCondition, c.Status });
+    }
+}
+
+public class AssistantConversationConfiguration : IEntityTypeConfiguration<AssistantConversation>
+{
+    public void Configure(EntityTypeBuilder<AssistantConversation> builder)
+    {
+        builder.ToTable("AssistantConversations");
+        builder.HasKey(c => c.Id);
+        builder.Property(c => c.Title).IsRequired().HasMaxLength(200);
+        builder.HasIndex(c => new { c.TenantId, c.UserId, c.LastMessageAtUtc });
+        builder.HasMany(c => c.Messages).WithOne(m => m.Conversation).HasForeignKey(m => m.ConversationId).OnDelete(DeleteBehavior.Cascade);
+    }
+}
+
+public class AssistantMessageConfiguration : IEntityTypeConfiguration<AssistantMessage>
+{
+    public void Configure(EntityTypeBuilder<AssistantMessage> builder)
+    {
+        builder.ToTable("AssistantMessages");
+        builder.HasKey(m => m.Id);
+        builder.Property(m => m.Role).IsRequired().HasMaxLength(20);
+        builder.Property(m => m.Content).HasColumnType("nvarchar(max)");
+        builder.Property(m => m.ActionsJson).HasColumnType("nvarchar(max)");
+        builder.HasIndex(m => new { m.ConversationId, m.CreatedAtUtc });
+    }
+}
+
+public class OptimizationJobConfiguration : IEntityTypeConfiguration<OptimizationJob>
+{
+    public void Configure(EntityTypeBuilder<OptimizationJob> builder)
+    {
+        builder.ToTable("OptimizationJobs");
+        builder.HasKey(j => j.Id);
+        builder.Property(j => j.Status).IsRequired().HasMaxLength(20);
+        builder.Property(j => j.Stage).HasMaxLength(100);
+        builder.Property(j => j.Error).HasMaxLength(2000);
+        builder.Property(j => j.RequestJson).HasColumnType("nvarchar(max)");
+        builder.HasIndex(j => j.Status);
+        builder.HasIndex(j => new { j.TenantId, j.CreatedAtUtc });
+    }
+}
+
+public class OptimizationRecommendationConfiguration : IEntityTypeConfiguration<OptimizationRecommendation>
+{
+    public void Configure(EntityTypeBuilder<OptimizationRecommendation> builder)
+    {
+        builder.ToTable("OptimizationRecommendations");
+        builder.HasKey(r => r.Id);
+        builder.Property(r => r.Scenario).IsRequired().HasMaxLength(50);
+        builder.Property(r => r.VoyageId).IsRequired().HasMaxLength(100);
+        builder.Property(r => r.Status).IsRequired().HasMaxLength(20);
+        builder.Property(r => r.ReasonsJson).HasColumnType("nvarchar(max)");
+        builder.Property(r => r.MetricsJson).HasColumnType("nvarchar(max)");
+        builder.HasIndex(r => new { r.VoyageId, r.Status, r.CreatedAtUtc });
+        builder.HasIndex(r => new { r.OptimizationRunId, r.Scenario });
     }
 }
 

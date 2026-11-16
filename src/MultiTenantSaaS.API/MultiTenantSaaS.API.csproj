@@ -7,6 +7,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="../../../src/data/landPolygons.json" Link="Data/landPolygons.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>

@@ -39,6 +39,10 @@ public class OptimizationScenarioResult : BaseEntity
 
     public bool IsFeasible { get; set; } = true;
     public string? InfeasibleReason { get; set; }
+    public string WarningsJson { get; set; } = "[]";
+
+    /// <summary>ETA range, weather delay, engine/sea-state hours, bunker ROB, Pareto rank and calculation basis for this result.</summary>
+    public string AnalysisJson { get; set; } = "{}";
 
     public DateTime CreatedAtUtc { get; set; } = DateTime.UtcNow;
 

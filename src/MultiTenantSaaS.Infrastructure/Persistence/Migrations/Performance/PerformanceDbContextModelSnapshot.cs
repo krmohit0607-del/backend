@@ -69,6 +69,9 @@ namespace MultiTenantSaaS.Infrastructure.Persistence.Migrations.Performance
                     b.Property<double?>("Hrs")
                         .HasColumnType("float");
 
+                    b.Property<bool>("IsDefault")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Lat")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

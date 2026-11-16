@@ -102,6 +102,9 @@ public class Vessel : BaseAuditableEntity, IHasTenant
     public string? CriticalRpmMin { get; set; }
     public string? CriticalRpmMax { get; set; }
 
+    /// <summary>JSON array of load-diagram points [{rpm, minPowerKw, maxPowerKw, maxTorqueKnm}]; torque kNm = 9.5493 x kW / RPM.</summary>
+    public string? LoadDiagramJson { get; set; }
+
     // Telegraph table (RPM + Speed per order, ballast/laden)
     public string? DeadSlowRpm { get; set; }
     public string? SlowAheadRpm { get; set; }

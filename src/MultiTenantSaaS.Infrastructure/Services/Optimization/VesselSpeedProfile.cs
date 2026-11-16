@@ -2,96 +2,92 @@ using MultiTenantSaaS.Domain.Entities;
 
 namespace MultiTenantSaaS.Infrastructure.Services.Optimization;
 
-/// <summary>One achievable (speed, implied RPM, reference fuel rate) operating point the engine may choose for an arc.</summary>
-internal record SpeedSetting(double SpeedKn, double Rpm, double FuelRateMtPerDay);
+/// <summary>One operating point the engine may choose for an arc; Source is CP (configured paper values) or ACTUAL (observed noon reports).</summary>
+internal record SpeedSetting(
+    string Mode,
+    bool IsCpDefault,
+    double SpeedKn,
+    double Rpm,
+    double? PowerKw,
+    double? McrPercent,
+    double FuelRateMtPerDay,
+    double EcaFuelRateMtPerDay,
+    double Co2Factor,
+    double EcaCo2Factor,
+    string FuelType1,
+    string FuelType2,
+    double AuxGoRateMtPerDay = 0,
+    string Source = "CP",
+    int SampleCount = 0);
 
-/// <summary>
-/// Builds the discrete list of usable speed/RPM operating points for a
-/// vessel + load condition from its telegraph table (DeadSlow/Slow/Half/Full
-/// Ahead RPM + speed), excluding anything inside the critical/barred RPM
-/// range — the TNM OptiNav engine has no such concept natively, so (per the
-/// confirmed design) barred-RPM avoidance is enforced here, one layer above
-/// the search, simply by never offering those operating points to it.
-/// Fuel rate uses the admiralty cube-law approximation from the vessel's
-/// service speed/consumption (the same approximation the client-side
-/// synthetic optimizer already used) since no granular per-RPM fuel table
-/// is modelled yet on the backend.
-/// </summary>
+/// <summary>Configured (CP / paper) operating points from the voyage's Speed &amp; Cons rows, filtered by the vessel's declared speed, RPM and MCR limits.</summary>
 internal static class VesselSpeedProfile
 {
-    public static List<SpeedSetting> BuildCandidateSpeeds(Vessel vessel, string loadCondition, double stepKn = 0.5)
+    public static List<SpeedSetting> BuildCandidateSpeeds(
+        Vessel vessel,
+        string loadCondition,
+        IReadOnlyCollection<MultiTenantSaaS.Application.DTOs.Optimization.OptimizationOperatingProfileDto> profiles)
     {
-        bool laden = string.Equals(loadCondition, "Laden", StringComparison.OrdinalIgnoreCase);
+        var matches = profiles
+            .Where(profile => string.Equals(profile.LoadCondition, loadCondition, StringComparison.OrdinalIgnoreCase))
+            .Where(profile => profile.SpeedKn > 0 && profile.DailyCons1Mt > 0 && !string.IsNullOrWhiteSpace(profile.FuelType1))
+            .Where(profile => profile.DailyCons2Mt <= 0 || !string.IsNullOrWhiteSpace(profile.FuelType2))
+            .Where(profile => profile.DailyCons3Mt <= 0)
+            .Where(profile => IsFoGrade(profile.FuelType1))
+            .Where(profile => profile.DailyCons2Mt <= 0 || IsGoGrade(profile.FuelType2))
+            .ToList();
 
-        double D(string? s, double fallback = 0) => double.TryParse(s, out var v) ? v : fallback;
+        if (profiles.Any(profile => string.Equals(profile.LoadCondition, loadCondition, StringComparison.OrdinalIgnoreCase) && profile.DailyCons3Mt > 0))
+            throw new InvalidOperationException("An additional fuel grade is configured, but its price and emissions factor are not available to the optimization engine. No cost or emissions result was produced.");
 
-        var deadSlowRpm = D(vessel.DeadSlowRpm);
-        var slowRpm = D(vessel.SlowAheadRpm);
-        var halfRpm = D(vessel.HalfAheadRpm);
-        var fullRpm = D(vessel.FullAheadRpm);
+        if (matches.Count == 0)
+            throw new InvalidOperationException($"No complete, configured speed/consumption profiles are available for the {loadCondition} condition. Enter ECO, FULL, or CUSTOM speed and fuel consumption before optimization.");
 
-        var deadSlowSpeed = D(laden ? vessel.DeadSlowSpeedLaden : vessel.DeadSlowSpeedBallast);
-        var slowSpeed = D(laden ? vessel.SlowAheadSpeedLaden : vessel.SlowAheadSpeedBallast);
-        var halfSpeed = D(laden ? vessel.HalfAheadSpeedLaden : vessel.HalfAheadSpeedBallast);
-        var fullSpeed = D(laden ? vessel.FullAheadSpeedLaden : vessel.FullAheadSpeedBallast);
+        var minSpeed = double.TryParse(vessel.MinSpeed, out var parsedMin) ? parsedMin : double.NaN;
+        var maxSpeed = double.TryParse(vessel.MaxSpeed, out var parsedMax) ? parsedMax : double.NaN;
+        var criticalMin = double.TryParse(vessel.CriticalRpmMin, out var parsedCriticalMin) ? parsedCriticalMin : double.NaN;
+        var criticalMax = double.TryParse(vessel.CriticalRpmMax, out var parsedCriticalMax) ? parsedCriticalMax : double.NaN;
+        var hasBarredRange = double.IsFinite(criticalMin) && double.IsFinite(criticalMax) && criticalMax > criticalMin;
+        var minMcr = double.TryParse(vessel.MinMcr, out var parsedMinMcr) ? parsedMinMcr : double.NaN;
+        var maxMcr = double.TryParse(vessel.MaxMcr, out var parsedMaxMcr) ? parsedMaxMcr : double.NaN;
 
-        var telegraph = new List<(double Speed, double Rpm)>
-        {
-            (deadSlowSpeed, deadSlowRpm), (slowSpeed, slowRpm), (halfSpeed, halfRpm), (fullSpeed, fullRpm)
-        }.Where(p => p.Speed > 0 && p.Rpm > 0).OrderBy(p => p.Speed).ToList();
-
-        var minSpeed = D(vessel.MinSpeed, telegraph.Count > 0 ? telegraph[0].Speed : 8);
-        var maxSpeed = D(vessel.MaxSpeed, telegraph.Count > 0 ? telegraph[^1].Speed : 18);
-        if (maxSpeed <= minSpeed) maxSpeed = minSpeed + 1;
-
-        var refSpeed = D(vessel.ServiceSpeed, telegraph.Count > 0 ? telegraph[^1].Speed : maxSpeed);
-        var refConsPerDay = D(vessel.FuelConsMainEng, 30); // MT/day at reference/service speed
-        if (refSpeed <= 0) refSpeed = maxSpeed;
-        if (refConsPerDay <= 0) refConsPerDay = 30;
-
-        var criticalMin = D(vessel.CriticalRpmMin, double.NaN);
-        var criticalMax = D(vessel.CriticalRpmMax, double.NaN);
-        bool HasBarredRange = !double.IsNaN(criticalMin) && !double.IsNaN(criticalMax) && criticalMax > criticalMin;
-
-        double ImpliedRpm(double speedKn)
-        {
-            if (telegraph.Count < 2) return double.NaN;
-            for (int i = 0; i < telegraph.Count - 1; i++)
-            {
-                var (s0, r0) = telegraph[i];
-                var (s1, r1) = telegraph[i + 1];
-                if (speedKn >= s0 && speedKn <= s1 && s1 > s0)
-                {
-                    var t = (speedKn - s0) / (s1 - s0);
-                    return r0 + t * (r1 - r0);
-                }
-            }
-            // extrapolate from nearest segment
-            var (ls0, lr0) = telegraph[0];
-            var (ls1, lr1) = telegraph[^1];
-            if (ls1 <= ls0) return lr1;
-            var tt = (speedKn - ls0) / (ls1 - ls0);
-            return lr0 + tt * (lr1 - lr0);
-        }
-
-        var settings = new List<SpeedSetting>();
-        for (var speed = minSpeed; speed <= maxSpeed + 1e-9; speed += stepKn)
-        {
-            var rpm = ImpliedRpm(speed);
-            if (HasBarredRange && !double.IsNaN(rpm) && rpm > criticalMin && rpm < criticalMax)
-            {
-                continue; // inside the critical/barred RPM range — never offer this operating point
-            }
-            var fuelRate = refConsPerDay * Math.Pow(speed / refSpeed, 3);
-            settings.Add(new SpeedSetting(Math.Round(speed, 2), double.IsNaN(rpm) ? 0 : Math.Round(rpm, 1), fuelRate));
-        }
+        var settings = matches
+            .Where(profile => !double.IsFinite(minSpeed) || profile.SpeedKn >= minSpeed)
+            .Where(profile => !double.IsFinite(maxSpeed) || profile.SpeedKn <= maxSpeed)
+            .Where(profile => !hasBarredRange || !profile.Rpm.HasValue || !(profile.Rpm.Value > criticalMin && profile.Rpm.Value < criticalMax))
+            .Where(profile => !double.IsFinite(minMcr) || !profile.McrPercent.HasValue || profile.McrPercent.Value >= minMcr)
+            .Where(profile => !double.IsFinite(maxMcr) || !profile.McrPercent.HasValue || profile.McrPercent.Value <= maxMcr)
+            .Select(profile => new SpeedSetting(
+                profile.Mode,
+                profile.IsCpDefault,
+                profile.SpeedKn,
+                profile.Rpm ?? 0,
+                profile.PowerKw,
+                profile.McrPercent,
+                profile.DailyCons1Mt,
+                profile.DailyCons2Mt,
+                Co2Factor(profile.FuelType1),
+                profile.DailyCons2Mt > 0 ? Co2Factor(profile.FuelType2) : 0,
+                profile.FuelType1,
+                profile.FuelType2))
+            .OrderBy(setting => setting.SpeedKn)
+            .ToList();
 
         if (settings.Count == 0)
-        {
-            // Barred range swallowed the whole usable band (unlikely) — fall back to the reference speed alone.
-            settings.Add(new SpeedSetting(refSpeed, ImpliedRpm(refSpeed) is var r && !double.IsNaN(r) ? r : 0, refConsPerDay));
-        }
+            throw new InvalidOperationException("All configured speed/consumption profiles violate the vessel's declared speed or critical-RPM limits.");
 
         return settings;
     }
+
+    private static bool IsFoGrade(string grade) => grade.Trim().ToUpperInvariant() is "VLSFO" or "HSFO" or "HFO";
+
+    private static bool IsGoGrade(string grade) => grade.Trim().ToUpperInvariant() is "LSMGO" or "MGO" or "MDO";
+
+    internal static double Co2Factor(string grade) => grade.Trim().ToUpperInvariant() switch
+    {
+        "VLSFO" => 3.151,
+        "HSFO" or "HFO" => 3.114,
+        "LSMGO" or "MGO" or "MDO" => 3.206,
+        _ => throw new InvalidOperationException($"No approved CO2 conversion factor is configured for fuel grade '{grade}'."),
+    };
 }

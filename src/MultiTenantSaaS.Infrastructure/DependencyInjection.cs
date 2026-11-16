@@ -10,6 +10,7 @@ using MultiTenantSaaS.Domain.Entities;
 using MultiTenantSaaS.Infrastructure.Identity;
 using MultiTenantSaaS.Infrastructure.Persistence;
 using MultiTenantSaaS.Infrastructure.Services;
+using MultiTenantSaaS.Infrastructure.Services.Assistant;
 using MultiTenantSaaS.Infrastructure.Services.Optimization;
 
 namespace MultiTenantSaaS.Infrastructure;
@@ -98,8 +99,22 @@ public static class DependencyInjection
         services.AddScoped<IAuditService, AuditService>();
         services.AddHttpClient();
         services.AddSingleton<ICycloneDataService, CycloneDataService>();
+        services.AddSingleton<IMaritimeRegionService, MaritimeRegionService>();
         services.AddScoped<IWeatherDataService, WeatherDataService>();
         services.AddScoped<IRouteOptimizationEngine, RouteOptimizationEngine>();
+        services.AddSingleton<IOptimizationJobService, OptimizationJobService>();
+        services.AddHostedService<OptimizationJobRecoveryService>();
+        services.AddScoped<IOptimizationMonitoringService, OptimizationMonitoringService>();
+        services.AddScoped<IEnsembleWindService, OpenMeteoEnsembleWindService>();
+        services.AddScoped<IEtsPolicyService, EtsPolicyService>();
+        services.AddScoped<IPerformanceCalibrationService, PerformanceCalibrationService>();
+
+        // AI assistant tools: every IAssistantTool in this assembly is picked up automatically.
+        services.AddMemoryCache();
+        foreach (var toolType in typeof(AssistantToolRegistry).Assembly.GetTypes()
+                     .Where(t => t is { IsAbstract: false, IsInterface: false } && typeof(IAssistantTool).IsAssignableFrom(t)))
+            services.AddScoped(typeof(IAssistantTool), toolType);
+        services.AddScoped<IAssistantToolRegistry, AssistantToolRegistry>();
 
         return services;
     }

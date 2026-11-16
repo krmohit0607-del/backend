@@ -39,6 +39,9 @@ public class OptimizationRun : BaseEntity, IHasTenant
     /// <summary>JSON array of the restricted/ECA/no-go/speed-control areas used for this run (locked at run time).</summary>
     public string RestrictedAreasJson { get; set; } = "[]";
 
+    /// <summary>Full request snapshot: route geometry, operating profiles, scenario constraints, and market assumptions.</summary>
+    public string InputSnapshotJson { get; set; } = "{}";
+
     public string Status { get; set; } = "Completed"; // Pending, Running, Completed, Failed
     public string? ErrorMessage { get; set; }
 

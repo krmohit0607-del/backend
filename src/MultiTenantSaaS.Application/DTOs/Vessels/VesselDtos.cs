@@ -101,6 +101,9 @@ public class VesselDto
     public string? WslMaxSeaStateBallast { get; set; }
     public string? WslMaxSeaStateLaden { get; set; }
 
+    /// <summary>JSON array of engine load-diagram points: [{rpm, minPowerKw, maxPowerKw, maxTorqueKnm}].</summary>
+    public string? LoadDiagramJson { get; set; }
+
     public List<VesselHistoryDto> History { get; set; } = new();
 }
 
@@ -211,6 +214,7 @@ public class CreateVesselRequestDto
     public string? WslMaxWindsLaden { get; set; }
     public string? WslMaxSeaStateBallast { get; set; }
     public string? WslMaxSeaStateLaden { get; set; }
+    public string? LoadDiagramJson { get; set; }
 }
 
 public class UpdateVesselRequestDto : CreateVesselRequestDto
